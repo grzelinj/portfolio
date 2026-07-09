@@ -47,9 +47,9 @@ Replikujemy 1:1 flow z filmu referencyjnego ["Jak zbudować stronę www bez kodo
 2. Ten PRD (Krok 4 z filmu) — gotowy, zapisany tutaj.
 3. **Claude Design** — nowy prototyp (high fidelity), upload tego PRD + `ksiezyc koszykowka Higgsfield.mp4` jako referencji stylu. Poprosić Claude Design o zadanie pytań doprecyzowujących i zaproponowanie 2–3 wariantów. Model: Opus, jeśli dostępny limit.
 4. Eksport plików designu z powrotem do folderu tego projektu → dokończenie logiki w Claude Code.
-5. GitHub repo dla strony: **publiczne na start** (wymóg pierwszego połączenia z Hostingerem), przełączone na **prywatne** zaraz po podłączeniu Hostingera.
-6. Hosting: **Hostinger + GitHub**, auto-deploy po `git push`. Domena: `jangrzelinski.com` lub `.pl` (jeszcze nie kupiona — sprawdzić dostępność na etapie wdrożenia).
-7. Stack techniczny: **do rekomendacji Claude Code / Claude Design** w kolejnych krokach (tak jak w filmie referencyjnym — zaufanie rekomendacji narzędzia zamiast odgórnego wyboru).
+5. GitHub repo dla strony: **`grzelinj/portfolio`, publiczne** — https://github.com/grzelinj/portfolio.
+6. Hosting: **zmiana względem filmu.** Zamiast Hostingera (płatny plan + domena) wybraliśmy **GitHub Pages** — darmowy, zero dodatkowych kont, i kluczowe: **nie usypia/nie wygasa z braku ruchu** (w przeciwieństwie do Streamlit Cloud). Auto-deploy po `git push` do brancha `main`. Live pod: **https://grzelinj.github.io/portfolio/**. Własną domenę (`jangrzelinski.com`/`.pl`) można dopiąć w dowolnym momencie później (sama domena bez hostingu, tańsza opcja) — świadomie odłożone, nie blokuje niczego teraz.
+7. Stack techniczny: zwykły statyczny HTML/CSS/JS (bez frameworka) — dopasowany do wyjścia Claude Design i najprostszy do wdrożenia na GitHub Pages.
 
 ## Wdrożenie narzędzi (live demo)
 
