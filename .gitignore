@@ -1,0 +1,10 @@
+# Working files from the Claude Design handoff — not needed for the deployed site
+Portfolio design wstępny-handoff.zip
+Portfolio Webpage - Jan Grzelinski - Claude Design.html
+portfolio-design-wst-pny/
+
+# Raw source video — the processed copy used by the site lives in assets/hero.mp4
+ksiezyc koszykowka Higgsfield.mp4
+
+# Local Claude Code skills config — not part of the deployed site
+.claude/
