@@ -1,0 +1,51 @@
+# Log postępu — AI Portfolio JG
+
+Chronologiczny zapis pracy nad portfolio, sesja po sesji — co zrobione, jakie decyzje i dlaczego, co zostało. Czytaj od góry (najnowsze na górze).
+
+---
+
+## 2026-07-09 — Start projektu → live portfolio + 3 działające demo
+
+### Punkt wyjścia
+Pusty folder projektu z zainstalowaną paczką skilli Matta Pococka. Cel: portfolio prezentujące narzędzia AI Jana (Flight Tracker, Setup Checker, Timeline Generator) dla przyszłych pracodawców, wzorowane na flow z filmu YouTube "Jak zbudować stronę www bez kodowania z Claude Code?" (Clot Guys) — pełna transkrypcja zapisana w Obsidianie: `Inbox/tworzenie stron 1.md`.
+
+### Co zrobione
+1. **Grillowanie / PRD** (skill `grilling`) — ustalono zakres: hero z animowanym wideo (klip Jana z Higgsfield), sekcja O mnie/CV, 3 case studies projektów, kontakt (proste linki, bez MailerLite/waitlisty). Zapisane w `docs/PRD.md`.
+2. **Claude Design** — wygenerowano wstępny wygląd na bazie PRD + klipu wideo jako referencji stylu. Eksport (`Portfolio design wstępny-handoff.zip`) zaimportowany i rozpakowany.
+3. **Przepisanie na czysty kod** — `index.html` napisany od zera na bazie eksportu Claude Design (usunięty wewnętrzny silnik `<x-dc>`/`support.js`, zastąpiony zwykłym HTML/CSS/JS). Naprawione martwe linki (GitHub, LinkedIn, mail — wcześniej `href="#"` placeholdery).
+4. **Sprawdzenie realnego stanu 3 narzędzi** — okazało się, że żadne nie miało wtedy działającego live-linku:
+   - Setup Checker (`setup-check-streamlit`) i Timeline Generator (`Timeline-Generator`) — czyste Streamlit, zero sekretów.
+   - Flight Tracker (`flightwatch`) — dużo bardziej rozbudowany niż README sugerowało (Flask, ryanair-py, SerpAPI, Telegram, SMTP z prywatnego Gmaila, scheduler co 30 min). Nigdy nie było wdrożone publicznie.
+5. **Decyzja: v1 bez live demo** (tylko case studies + linki do repo) — potem **zmiana decyzji** na wyraźną prośbę Jana: chciał, żeby rekruter mógł kliknąć i zobaczyć działającą apkę, nie tylko kod.
+6. **DEMO_MODE w `flightwatch/app.py`** — dodana flaga env `DEMO_MODE`, która gate'uje `search_all`, `search_ryanair_multi`, `_explore_ryanair`, `_explore_wizzair` (zwracają przykładowe dane zamiast realnych zapytań) i wyłącza scheduler w tle. CRUD alertów zostaje w pełni funkcjonalny. Przetestowane lokalnie — brak realnych wywołań zewnętrznych. Wypchnięte na GitHub.
+7. **Wdrożenie trzech demo:**
+   - Setup Checker → Streamlit Community Cloud: https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/
+   - Timeline Generator → Streamlit Community Cloud: https://timeline-generator-cpu.streamlit.app/
+   - Flight Tracker (`DEMO_MODE=true`) → Render.com (free Web Service): https://flightwatch-yku0.onrender.com — Render zażądał karty do weryfikacji ($1 tymczasowa autoryzacja, bez obciążenia na planie Free); świadomie potwierdzone z Janem przed podaniem.
+8. **Setup Checker — dopisany branding** na wzór Timeline Generatora: tytuł z ikoną, opis, logo Computershare (`logo.png`).
+9. **Portfolio jako repo + hosting:**
+   - `git init`, repo `grzelinj/portfolio` na GitHubie (publiczne).
+   - **Zmiana względem filmu:** zamiast płatnego Hostingera → **GitHub Pages** (darmowe, bez wygasania z braku ruchu, zero nowego konta). Domena własna (`jangrzelinski.com`/`.pl`) świadomie odłożona na później — można dopiąć kiedykolwiek.
+   - Live: **https://grzelinj.github.io/portfolio/**
+10. **Fix mobile** — siatki 3-kolumnowe ("Wybrane projekty", "O mnie") nie miały breakpointu i ściskały się na telefonie. Dodany media query (`@media max-width:820px` → 1 kolumna) + nav bar wrap.
+
+### Kluczowe decyzje i dlaczego
+- **Case studies → live demo**: Jan chciał realnego "klik i zobacz", nie tylko GitHub.
+- **DEMO_MODE zamiast pełnej funkcjonalności na Flight Trackerze**: ochrona limitów darmowych API (SerpAPI) i prywatnego Gmaila Jana przed nadużyciem przez publicznych odwiedzających.
+- **Hostinger → GitHub Pages**: Jan już raz dostał nieoczekiwany rachunek (Timeline Generator na DigitalOcean) — priorytet to zero-kosztowe, trwałe rozwiązania. Zobacz też pamięć: `feedback-confirm-before-cost`.
+- **n8n wersja Flight Trackera odłożona** — niedokończona, Jan chce do niej wrócić osobno później.
+
+### Stan repozytoriów
+- Portfolio: `github.com/grzelinj/portfolio` (publiczne), lokalnie `C:\Users\user\AI\AI Portfolio JG`
+- Flight Tracker: `github.com/grzelinj/flightwatch` (prywatne), lokalnie `C:\Users\user\AI\Projekty AI do Portfolio\Flight AI Assistant\flighttracker`
+- Setup Checker: `github.com/grzelinj/setup-check-streamlit` (publiczne), lokalny klon `C:\Users\user\AI\Projekty AI do Portfolio\clones\setup-check-streamlit`
+- Timeline Generator: `github.com/grzelinj/Timeline-Generator` (publiczne), lokalny klon `C:\Users\user\AI\Projekty AI do Portfolio\clones\Timeline-Generator`
+
+### Co zostało / możliwe następne kroki
+- Własna domena (`jangrzelinski.com`/`.pl`) — opcjonalnie, kiedy Jan zechce.
+- Dopracowanie tekstów i prawdziwych zrzutów ekranu w kartach projektów (obecnie placeholder "zrzut ekranu").
+- Ewentualne dokończenie i pokazanie wersji n8n Flight Trackera.
+- Możliwe dodanie kolejnych narzędzi do sekcji Projekty w przyszłości.
+
+### Pełny kontekst
+Zobacz `docs/PRD.md` (specyfikacja) i pamięć projektu w `project-ai-portfolio-jg` (jeśli wracasz do tego w nowej sesji Claude Code — poproś Claude o sprawdzenie pamięci).
