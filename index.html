@@ -21,6 +21,27 @@
   .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
   .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .nav-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .photo-strip{display:flex;gap:14px;overflow-x:auto;padding:4px 4px 12px}
+  .photo-strip figure{flex:0 0 auto;margin:0}
+  .photo-strip img{display:block;width:140px;height:180px;object-fit:cover;border-radius:10px;border:1px solid rgba(169,184,255,.16)}
+  .photo-strip.corporate img{width:180px;height:220px}
+  .photo-strip figcaption{margin-top:8px;font:500 11px 'JetBrains Mono',monospace;color:rgba(232,236,246,.48);text-align:center;max-width:140px}
+  .timeline{position:relative;padding-left:30px;margin:36px 0}
+  .timeline-item{position:relative;padding-bottom:26px}
+  .timeline-item:last-child{padding-bottom:0}
+  .timeline-item::before{content:'';position:absolute;left:-30px;top:5px;bottom:-21px;width:1px;background:rgba(169,184,255,.2)}
+  .timeline-item:last-child::before{display:none}
+  .timeline-item::after{content:'';position:absolute;left:-34px;top:3px;width:9px;height:9px;border-radius:50%;background:#a9b8ff}
+  .timeline-year{font:600 12px 'JetBrains Mono',monospace;color:#a9b8ff;letter-spacing:.04em;margin-bottom:5px}
+  .timeline-text{font-size:14.5px;line-height:1.6;color:rgba(232,236,246,.75)}
+  .timeline-photos{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+  .timeline-photos img{width:180px;height:220px;object-fit:cover;border-radius:10px;border:1px solid rgba(169,184,255,.16)}
+  @media (max-width:600px){.timeline-photos img{width:130px;height:160px}}
+  .wiki-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:100px;border:1px solid rgba(169,184,255,.25);background:rgba(120,140,220,.08);font:500 12px 'JetBrains Mono',monospace;color:#e8ecf6}
+  .about-card{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)}
+  .about-card summary{list-style:none;cursor:pointer;padding:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .about-card summary img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(169,184,255,.2)}
+  .about-card[open] summary{border-bottom:1px solid rgba(169,184,255,.14)}
   @media (max-width:820px){
     .about-grid,.projects-grid{grid-template-columns:1fr}
   }
@@ -75,27 +96,59 @@
     <!-- O MNIE -->
     <section id="o-mnie" style="padding:clamp(72px,9vw,120px) clamp(24px,5vw,72px);border-top:1px solid rgba(232,236,246,.08)">
       <div style="max-width:1240px;margin:0 auto">
-        <div style="max-width:820px">
-          <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:22px">01 — O MNIE</div>
-          <p style="margin:0;font:400 clamp(24px,3vw,34px)/1.4 'Newsreader',serif;color:#dbe2f5">Buduję narzędzia AI jako <em style="color:#bcc9ff">długoterminową inwestycję</em> w karierę data &amp; analytics — nie jako hobby. Łączę dojrzałość biznesową z finansów i nieruchomości z realnie wdrożonym kodem.</p>
-        </div>
-        <div class="about-grid">
-          <div style="padding:28px;border-radius:16px;background:rgba(120,140,220,.08);border:1px solid rgba(169,184,255,.16)">
-            <div style="font:500 11px 'JetBrains Mono',monospace;color:#a9b8ff;margin-bottom:14px">TERAZ</div>
-            <div style="font:500 21px 'Newsreader',serif;margin-bottom:5px">Computershare</div>
-            <div style="font-size:14px;color:rgba(232,236,246,.6)">Equity Compensation</div>
+        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:22px">01 — O MNIE</div>
+
+        <details class="about-card">
+          <summary>
+            <img src="assets/o-mnie/cbre-2.jpg" alt="Jan Grzeliński">
+            <div style="flex:1;min-width:240px">
+              <p style="margin:0;font:400 clamp(20px,2.6vw,28px)/1.4 'Newsreader',serif;color:#dbe2f5">Od koszykarza reprezentacji Polski do budowania narzędzi <em style="color:#bcc9ff">AI</em>.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń pełną historię <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+            </div>
+          </summary>
+          <div style="padding:0 28px 32px">
+            <a href="https://pl.wikipedia.org/wiki/Jan_Grzeli%C5%84ski" target="_blank" rel="noopener" class="wiki-badge">📖 Zobacz profil na Wikipedii</a>
+
+            <div class="timeline" style="margin-top:32px">
+              <div class="timeline-item"><div class="timeline-year">2008</div><div class="timeline-text">Zaczynam grać w koszykówkę — od razu mistrz Polski i MVP turnieju młodzików.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2010</div><div class="timeline-text">Mistrz Polski kadetów i MVP turnieju, reprezentacja Polski na Mistrzostwach Europy U-16 (11. miejsce).</div></div>
+              <div class="timeline-item"><div class="timeline-year">2011</div><div class="timeline-text">Mistrz Polski juniorów, reprezentacja na Mistrzostwach Europy U-18 (6. miejsce) i Mistrzostwach Świata U-19 (7. miejsce).</div></div>
+              <div class="timeline-item"><div class="timeline-year">2013</div><div class="timeline-text">Mistrz Polski juniorów starszych i MVP, awans WKK Wrocław do I ligi. Rozpoczynam studia na Politechnice Wrocławskiej.</div></div>
+              <div class="timeline-item">
+                <div class="timeline-year">2014</div>
+                <div class="timeline-text">Reprezentacja Polski U-20 na Mistrzostwach Europy Dywizji A (9. miejsce). Pełne stypendium sportowe (~$50 000) do Canisius College (USA), NCAA Division I.</div>
+                <div class="timeline-photos"><img src="assets/o-mnie/canisius.jpg" alt="Canisius College"></div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-text">Powrót do Polski — kontynuacja kariery (Start Lublin) i studia na UMCS w Lublinie.</div>
+                <div class="timeline-photos">
+                  <img src="assets/o-mnie/start-lublin-wywiad.jpg" alt="Start Lublin">
+                  <img src="assets/o-mnie/start-lublin-akcja.jpg" alt="Start Lublin, w akcji">
+                  <img src="assets/o-mnie/start-lublin-koszulka.jpg" alt="Start Lublin Basketball">
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2017–2018</div>
+                <div class="timeline-text">Gra w Siarce Tarnobrzeg, Śląsku Wrocław i Księżaku Łowicz, równolegle studia na Akademii Leona Koźmińskiego.</div>
+                <div class="timeline-photos">
+                  <img src="assets/o-mnie/slask-wroclaw.jpg" alt="Śląsk Wrocław">
+                  <img src="assets/o-mnie/ksiezak-lowicz.jpg" alt="Księżak Łowicz">
+                </div>
+              </div>
+              <div class="timeline-item"><div class="timeline-year">2019</div><div class="timeline-text">Koniec kariery sportowej. Obrona licencjatu.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2020</div><div class="timeline-text">Start pracy w Knight Frank jako analityk rynku nieruchomości.</div></div>
+              <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-text">Obrona magisterki z finansów.</div>
+                <div class="timeline-photos"><img src="assets/o-mnie/cbre-1.jpg" alt="Jan Grzeliński"></div>
+              </div>
+              <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-text">CBRE, Business Analyst — wsparcie transakcji o łącznej wartości ponad pół miliarda euro.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2023</div><div class="timeline-text">Computershare, Vesting Specialist — globalni klienci (SAP, Coca-Cola, DHL, Barclays, AstraZeneca).</div></div>
+              <div class="timeline-item"><div class="timeline-year">2024 → dziś</div><div class="timeline-text">Zaczynam uczyć się Pythona i AI — świadomy start ścieżki w stronę data &amp; analytics.</div></div>
+            </div>
           </div>
-          <div style="padding:28px;border-radius:16px;background:rgba(120,140,220,.045);border:1px solid rgba(169,184,255,.1)">
-            <div style="font:500 11px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5);margin-bottom:14px">WCZEŚNIEJ</div>
-            <div style="font:500 21px 'Newsreader',serif;margin-bottom:5px">CBRE</div>
-            <div style="font-size:14px;color:rgba(232,236,246,.6)">Commercial Real Estate</div>
-          </div>
-          <div style="padding:28px;border-radius:16px;background:rgba(120,140,220,.045);border:1px solid rgba(169,184,255,.1)">
-            <div style="font:500 11px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5);margin-bottom:14px">WCZEŚNIEJ</div>
-            <div style="font:500 21px 'Newsreader',serif;margin-bottom:5px">Knight Frank</div>
-            <div style="font-size:14px;color:rgba(232,236,246,.6)">Commercial Real Estate</div>
-          </div>
-        </div>
+        </details>
       </div>
     </section>
 

@@ -4,6 +4,26 @@ Chronologiczny zapis pracy nad portfolio, sesja po sesji — co zrobione, jakie 
 
 ---
 
+## 2026-07-10 do 2026-07-13 — Sekcja "O mnie" (timeline koszykarz→korporacja) + start wątku Power BI
+
+### Co zrobione
+1. **Sekcja "O mnie" przebudowana na chronologiczny timeline** — bullet po roku (2008–2024→dziś), od startu kariery koszykarskiej (mistrz Polski młodzików, reprezentacja Polski U16/U18/U19/U20) przez stypendium do Canisius College (USA, 2014–2015), studia (Politechnika Wrocławska → UMCS Lublin → Akademia Leona Koźmińskiego, licencjat 2019 / magisterka 2021), po karierę korporacyjną (Knight Frank 2020 → CBRE 2022 → Computershare 2023) i start nauki Pythona/AI (2024). Źródła faktów: Wikipedia Jana (link dodany jako odznaka w sekcji) + CV w Obsidianie (`Biznes/Jan_Grzelinski_Final_CV.md`) + skany dyplomów w OneDrive.
+2. **8 zdjęć** (6 z kariery koszykarskiej: Canisius, Start Lublin ×3, Śląsk Wrocław, Księżak Łowicz; 2 korporacyjne z CBRE) skompresowane (z ~30MB do ~400KB łącznie) i umieszczone w `assets/o-mnie/`, przypisane do konkretnych lat w timeline (nie osobne "before/after" paski — zdjęcia chronologicznie przy właściwych wpisach, na wyraźną prośbę Jana o "smooth transition").
+3. Cała sekcja "O mnie" zamieniona na rozwijaną kartę (`<details>`, jak karty projektów) zamiast statycznego bloku — avatar + teaser w nagłówku, pełny timeline po rozwinięciu.
+4. **Nowy wątek: projekty Power BI do portfolio.** Jan zainstalował Power BI Desktop (przez Microsoft Store). Zaproponowane i zaakceptowane dwa tematy dopasowane do jego doświadczenia: (1) dashboard equity compensation/vesting, (2) dashboard portfela nieruchomości komercyjnych — oba na syntetycznych danych (nie prawdziwych danych pracodawców). Zbudowane **wizualne mockupy koncepcyjne** (HTML/SVG, nie prawdziwy Power BI) jako podgląd przed właściwą budową w Power BI Desktop — zapisane w `docs/powerbi-mockups/` (`equity-comp-dashboard.html`, `real-estate-dashboard.html`), oryginalnie opublikowane jako Claude Artifacts. Jan czeka też na przykłady realnych dashboardów od byłej koleżanki z CBRE (nie ma już do nich dostępu).
+
+### Kluczowe decyzje i dlaczego
+- Zdjęcia przypisane do konkretnych lat zamiast osobnych pasków "przed/po" — Jan chciał wyraźnie widocznej, płynnej transformacji koszykarz→korporacja wplecionej w samą narrację, nie oddzielnej galerii.
+- Power BI: moja rola to przygotowanie danych/mockupów i prowadzenie krok po kroku przez UI (jak wcześniej ze Streamlit Cloud/Render) — nie da się tego zbudować bezpośrednio z terminala, to appka desktopowa.
+
+### Co zostało / możliwe następne kroki
+- Ocena mockupów Power BI przez Jana → decyzja, czy iść w tym kierunku wizualnym, czy zmienić.
+- Realna budowa raportów w Power BI Desktop (dane + krok po kroku UI), potem publikacja (Power BI Service albo eksport) i dodanie jako kolejne karty projektów na portfolio.
+- Ewentualna korekta tematów/danych, jeśli koleżanka z CBRE podeśle przykłady realnych dashboardów.
+- Wciąż otwarte z poprzedniej sesji: własna domena, prawdziwe zrzuty ekranu w kartach istniejących projektów, wersja n8n Flight Trackera.
+
+---
+
 ## 2026-07-09 — Start projektu → live portfolio + 3 działające demo
 
 ### Punkt wyjścia
