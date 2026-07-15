@@ -4,6 +4,25 @@ Chronologiczny zapis pracy nad portfolio, sesja po sesji — co zrobione, jakie 
 
 ---
 
+## 2026-07-13 (ciąg dalszy) — Prawdziwe screeny, nowy hero copy, 4. projekt (Second Brain)
+
+### Co zrobione
+1. **Poprawka avatara w karcie "O mnie"** — powiększony z 64px kółka do 120×150px zaokrąglonego prostokąta, bo zdjęcie w garniturze było nierozpoznawalne przy takim przycięciu.
+2. **Prawdziwe zrzuty ekranu trzech demo** zamiast szarych placeholderów — zrobione automatycznie przez headless Chromium (Playwright): FlightWatch, Setup Checker, Timeline Generator. Oba Streamlit-owe demo trzeba było "obudzić" (Streamlit Cloud usypia po bezczynności), Render też miał cold-start ~40s — skrypt czekał/pollował aż zniknie ekran ładowania.
+3. **Nowy hero copy** — nagłówek zmieniony z krótkiego "Od finansów do budowania narzędzi AI" na pełny łuk: "Zmieniłem boisko na *dane* — zasady gry zostały te same." + rozszerzony akapit (koszykówka → nieruchomości/finanse → AI, "przygotowanie, dyscyplina, wynik"). Dobierane iteracyjnie — Jan odrzucił kilka krótszych/metaforycznych wersji, wybrał pełną, dosłowną.
+4. **Intro-overlay i eyebrow rozszerzone** z "Finanse → Dane → AI" na "Koszykówka → Nieruchomości → Finanse → Dane → AI" (też `<title>`), żeby cały łuk kariery był widoczny od pierwszej sekundy.
+5. **Czwarty projekt: Obsidian Second Brain.** Osobisty system zarządzania wiedzą (Whisper Flow + transkrypcja YouTube/Instagram + Claude Code kategoryzujący notatki w Obsidianie + cotygodniowy digest mailem) — opisany w `C:\Users\user\Documents\obsidian\CLAUDE.md` i `System-ktory-teraz-masz.md`. Dodany jako pełnoszerokościowa karta pod siatką pozostałych trzech projektów, z **diagramem architektury zamiast zrzutów ekranu** (świadoma decyzja — realne screeny ujawniałyby prywatne notatki/pocztę). Brak linku do repo/demo — działa wyłącznie lokalnie.
+
+### Kluczowe decyzje i dlaczego
+- Second Brain jako osobna, szersza karta (nie w 3-kolumnowej siatce) — to inny typ projektu (system/narzędzie osobiste, nie apka z demo), więc inny format prezentacji.
+- Diagram zamiast screenów dla Second Brain — ochrona prywatności treści notatek/maila, a przy okazji lepiej pokazuje architekturę technicznie zorientowanemu rekruterowi niż zrzut ekranu Obsidiana.
+
+### Co zostało / otwarte pytania
+- Jan zgłosił, że chce, by "portfolio otwierało się w nowej karcie po kliknięciu" — nie ustalone jeszcze, o który dokładnie link/miejsce chodzi (karty projektów już mają `target="_blank"`). Do wyjaśnienia w kolejnej sesji.
+- Własna domena, mockupy Power BI (czeka na materiały od koleżanki z CBRE), ewentualna publikacja repo Second Brain (wymagałoby sanitizacji `.env`/prywatnych notatek).
+
+---
+
 ## 2026-07-10 do 2026-07-13 — Sekcja "O mnie" (timeline koszykarz→korporacja) + start wątku Power BI
 
 ### Co zrobione

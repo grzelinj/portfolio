@@ -30,6 +30,9 @@ Każdy projekt jako karta: opis, stack, link "Zobacz demo" + link do repo. Wszys
 3. **Timeline Generator** — demo: https://timeline-generator-cpu.streamlit.app/ · repo: https://github.com/grzelinj/Timeline-Generator (publiczne)
    Aplikacja Streamlit generująca harmonogramy projektów z szablonów Excel — zbudowana do automatyzacji tworzenia harmonogramów vestingowych (RSU/ESPP/SAYE) w Computershare; skróciła proces z godzin do minut.
 
+4. **Obsidian Second Brain** — projekt osobisty, brak repo/demo (dotyka prywatnych notatek i poczty)
+   System zarządzania wiedzą sterowany rozmową z Claude Code: transkrypcja (Whisper AI, youtube-transcript-api), automatyczna kategoryzacja/tagowanie/wikilinkowanie w Obsidianie, cotygodniowy digest mailem. Prezentowany jako pełnoszerokościowa karta z diagramem architektury (nie zrzutami ekranu — ochrona prywatności treści notatek), pod siatką pozostałych trzech projektów.
+
 ### 4. Kontakt
 Proste linki kontaktowe: email, LinkedIn, GitHub (jako klikalne linki/ikony w hero i/lub stopce). Brak formularza, brak newslettera/MailerLite — to nie jest waitlista.
 
