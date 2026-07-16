@@ -38,6 +38,16 @@
   .timeline-photos img{width:180px;height:220px;object-fit:cover;border-radius:10px;border:1px solid rgba(169,184,255,.16)}
   @media (max-width:600px){.timeline-photos img{width:130px;height:160px}}
   .wiki-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:100px;border:1px solid rgba(169,184,255,.25);background:rgba(120,140,220,.08);font:500 12px 'JetBrains Mono',monospace;color:#e8ecf6}
+  .flag-pl,.flag-us,.flag-es{display:inline-block;border-radius:3px;overflow:hidden;flex:0 0 auto;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
+  .flag-pl{background:linear-gradient(to bottom, #fff 50%, #dc143c 50%)}
+  .flag-es{background:linear-gradient(to bottom, #aa151b 25%, #f1bf00 25%, #f1bf00 75%, #aa151b 75%)}
+  .flag-us{background:repeating-linear-gradient(to bottom, #b22234 0 7.7%, #fff 7.7% 15.4%);position:relative}
+  .flag-us::before{content:'';position:absolute;top:0;left:0;width:42%;height:53.8%;background:#3c3b6e}
+  .flags-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .flag-chip{display:flex;align-items:center;gap:8px;padding:8px 15px 8px 9px;border-radius:100px;border:1px solid rgba(169,184,255,.22);background:rgba(120,140,220,.06);cursor:pointer;font:500 13px 'Instrument Sans',sans-serif;color:#e8ecf6;transition:background .2s,border-color .2s}
+  .flag-chip:hover{background:rgba(169,184,255,.14)}
+  .flag-chip.active{background:rgba(169,184,255,.2);border-color:rgba(169,184,255,.5)}
+  .flag-detail{margin-top:14px;padding:16px 18px;border-radius:12px;background:rgba(120,140,220,.06);border:1px solid rgba(169,184,255,.16);font-size:13.5px;line-height:1.6;color:rgba(232,236,246,.72);max-width:640px}
   .about-card{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)}
   .about-card summary{list-style:none;cursor:pointer;padding:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .about-card summary img{width:120px;height:150px;border-radius:12px;object-fit:cover;object-position:top;border:1px solid rgba(169,184,255,.2)}
@@ -83,7 +93,7 @@
       <div style="margin-top:18px;font:400 clamp(20px,3.2vw,38px)/1.3 'Newsreader',serif;color:#f2f5ff;opacity:0;animation:introUp 1s ease 1.4s forwards;max-width:90vw">Koszykówka <span style="opacity:.5">→</span> Nieruchomości <span style="opacity:.5">→</span> Finanse <span style="opacity:.5">→</span> Dane <span style="opacity:.5">→</span> <em style="font-style:italic;color:#c8d2ff">AI</em></div>
     </div>
     <div id="intro-flash" style="position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,rgba(255,252,240,.9),rgba(200,210,255,.4) 30%,transparent 62%);opacity:0;transition:opacity .45s ease;pointer-events:none"></div>
-    <button id="intro-skip" style="position:absolute;right:26px;bottom:24px;background:rgba(232,236,246,.08);border:1px solid rgba(232,236,246,.2);color:#e8ecf6;font:500 12px 'JetBrains Mono',monospace;padding:9px 16px;border-radius:100px;cursor:pointer;backdrop-filter:blur(6px);opacity:0;animation:introUp .8s ease 2.4s forwards">Pomiń intro →</button>
+    <button id="intro-skip" style="position:absolute;right:26px;bottom:24px;background:rgba(232,236,246,.08);border:1px solid rgba(232,236,246,.2);color:#e8ecf6;font:500 12px 'JetBrains Mono',monospace;padding:9px 16px;border-radius:100px;cursor:pointer;backdrop-filter:blur(6px)">Pomiń intro →</button>
   </div>
 
   <!-- ============ SITE ============ -->
@@ -141,6 +151,13 @@
           </summary>
           <div style="padding:0 28px 32px">
             <a href="https://pl.wikipedia.org/wiki/Jan_Grzeli%C5%84ski" target="_blank" rel="noopener" class="wiki-badge">📖 Zobacz profil na Wikipedii</a>
+
+            <div class="flags-row" id="flags-row">
+              <div class="flag-chip active" data-country="pl"><span class="flag-pl" style="width:22px;height:16px"></span>Polska</div>
+              <div class="flag-chip" data-country="us"><span class="flag-us" style="width:22px;height:16px"></span>USA</div>
+              <div class="flag-chip" data-country="es"><span class="flag-es" style="width:22px;height:16px"></span>Hiszpania</div>
+            </div>
+            <div class="flag-detail" id="flag-detail">Urodzony we Wrocławiu. Reprezentant Polski w koszykówce (U16–U20), studia (Politechnika Wrocławska, UMCS, Akademia Koźmińskiego), dziś kariera w Warszawie (Computershare).</div>
 
             <div class="timeline" style="margin-top:32px">
               <div class="timeline-item"><div class="timeline-year">2008</div><div class="timeline-text">Zaczynam grać w koszykówkę — od razu mistrz Polski i MVP turnieju młodzików.</div></div>
@@ -322,6 +339,21 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  var flagDetails = {
+    pl: "Urodzony we Wrocławiu. Reprezentant Polski w koszykówce (U16–U20), studia (Politechnika Wrocławska, UMCS, Akademia Koźmińskiego), dziś kariera w Warszawie (Computershare).",
+    us: "Pełne stypendium sportowe (~$50 000) do Canisius College, Buffalo — koszykówka NCAA Division I i studia, 2014–2015.",
+    es: "Dziś część czasu spędzam w Barcelonie — międzynarodowa perspektywa i hiszpański w praktyce."
+  };
+  var flagChips = document.querySelectorAll('.flag-chip');
+  var flagDetail = document.getElementById('flag-detail');
+  flagChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      flagChips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      if (flagDetail) flagDetail.textContent = flagDetails[chip.getAttribute('data-country')];
+    });
+  });
+
   var overlay = document.getElementById('intro-overlay');
   var vid = document.getElementById('intro-vid');
   var flash = document.getElementById('intro-flash');
