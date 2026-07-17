@@ -19,7 +19,7 @@
   @keyframes hintBob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
   details[open] .exp-caret{transform:rotate(180deg)}
   .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
   .nav-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
   .photo-strip{display:flex;gap:14px;overflow-x:auto;padding:4px 4px 12px}
   .photo-strip figure{flex:0 0 auto;margin:0}
@@ -163,7 +163,7 @@
             <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:16px">01 — PROJECTS</div>
             <h2 style="margin:0;font:400 clamp(34px,4.4vw,48px)/1 'Newsreader',serif">Selected projects</h2>
           </div>
-          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">03 CASE STUDIES · click to expand</span>
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">04 CASE STUDIES · click to expand</span>
         </div>
         <div class="projects-grid">
 
@@ -240,6 +240,32 @@
                 <a href="https://timeline-generator-cpu.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ View demo</a>
                 <a href="https://github.com/grzelinj/Timeline-Generator" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/Timeline-Generator</a>
               </div>
+            </div>
+          </details>
+
+          <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
+            <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
+              <img src="assets/projekty/asystent-diety.jpg" alt="Asystent diety (Diet Assistant) screenshot" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
+                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Asystent diety (Diet Assistant)</h3>
+                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">with Kacper Rogowski</span>
+              </div>
+              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that generates a personalized diet recommendation and meal plan via Claude, based on a user's profile and goals.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+            </summary>
+            <div style="padding:0 26px 28px">
+              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Built together with Kacper Rogowski. Based on a user's profile, goal, and preferences, Claude generates a full diet recommendation (macros, foods, supplements) and a full week's meal plan, exportable to PDF. Products can also be scanned via barcode, with data pulled from Open Food Facts.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
+                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
+                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
+                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Claude API</span>
+                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Open Food Facts API</span>
+              </div>
+              <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
+                <a href="https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ View demo</a>
+                <a href="https://github.com/grzelinj/asystent-diety-demo" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/asystent-diety-demo</a>
+              </div>
+              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo with sample data (no real calls to the Claude API) — the first load may take ~30–50s, since the free hosting tier sleeps after inactivity.</p>
             </div>
           </details>
 
