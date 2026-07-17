@@ -4,6 +4,20 @@ Chronologiczny zapis pracy nad portfolio, sesja po sesji — co zrobione, jakie 
 
 ---
 
+## 2026-07-17 — 5. projekt: Asystent diety (wspólnie z Kacprem Rogowskim)
+
+### Co zrobione
+1. **DEMO_MODE dodany do `asystent-diety`** (apka Streamlit Kacpra Rogowskiego, wspólnie budowana) — analogicznie do FlightWatch: `config.py` czyta zmienną środowiskową `DEMO_MODE`, a `diet_advisor.py`/`meal_planner.py` w tym trybie zwracają canned przykładowe dane (rekomendacja diety, plan posiłków) zamiast wywoływać Anthropic Claude API. Klient Anthropic tworzony leniwie (`None` w DEMO_MODE), więc demo działa bez żadnego klucza API. Zmiany wypchnięte bezpośrednio do `kacperrogowski98/asystent-diety` (Jan ma dostęp jako collaborator).
+2. **Wdrożenie na Streamlit Community Cloud** napotkało na twarde ograniczenie GitHuba: OAuth Streamlit dla konta Jana widzi tylko repozytoria publiczne, a fork prywatnego repo nie może zostać upubliczniony (`422: Private forks can't be made public`). Rozwiązanie: nowe, niezależne (nie-fork) publiczne repo `grzelinj/asystent-diety-demo` z tym samym kodem — wdrożone poprawnie pod `asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app`, `DEMO_MODE=true` w Secrets.
+3. **Weryfikacja end-to-end przez Playwright** na żywym demo: utworzenie profilu, zapis danych, wygenerowanie rekomendacji diety — potwierdzone canned output "(przykład — tryb demo)", zero błędów, zero realnych wywołań API. Testowy profil usunięty z bazy po weryfikacji, żeby rekruterzy widzieli czysty stan startowy.
+4. **5. karta projektu** dodana do `index.html` i `en.html` — z realnym zrzutem ekranu, odznaką współautorstwa "z Kacprem Rogowskim" / "with Kacper Rogowski", linkiem do demo i do `grzelinj/asystent-diety-demo`. Siatka projektów zmieniona z 3 na 2 kolumny (2×2), żeby 4 karty tools mieściły się równo bez osamotnionej karty w nowym rzędzie.
+
+### Kluczowe decyzje i dlaczego
+- Osobne, niezależne repo zamiast forka — jedyny sposób obejścia ograniczenia GitHuba (forki prywatnych repo są trwale prywatne).
+- Link do repo na karcie wskazuje na `grzelinj/asystent-diety-demo` (publiczne, zawiera DEMO_MODE), nie na oryginalne `kacperrogowski98/asystent-diety` (prywatne, pełna wersja z realnym API).
+
+---
+
 ## 2026-07-13 (ciąg dalszy) — Prawdziwe screeny, nowy hero copy, 4. projekt (Second Brain)
 
 ### Co zrobione
