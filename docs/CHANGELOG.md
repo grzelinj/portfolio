@@ -4,6 +4,16 @@ Chronologiczny zapis pracy nad portfolio, sesja po sesji — co zrobione, jakie 
 
 ---
 
+## 2026-07-17 (ciąg dalszy) — Angielska wersja jako domyślna, flagowy przełącznik języka
+
+### Co zrobione
+1. **Zamiana ról plików**: `en.html` → `index.html` (teraz domyślna, angielska wersja pod adresem głównym), stara polska wersja → `pl.html`. Zaktualizowane wzajemne linki między wersjami.
+2. **Flagowy przełącznik języka** (PL/USA, zamiast tekstowego "PL"/"EN") dodany w dwóch miejscach: (a) pasek nawigacji, (b) ekran intro — widoczny natychmiast w prawym górnym rogu, tuż przy tym samym kadrze wideo, w którym księżyc wschodzi przez obręcz kosza (Jan opisał to jako "piłka z księżycem"). Flaga aktualnego języka jest statyczna (bez linku), druga to link przełączający.
+3. Świadomie użyto flagi USA mimo że nawigacja ma już osobną flagę USA w rzędzie flag biograficznych (inne znaczenie: stypendium w Canisius College) — Jan potwierdził tę opcję mimo zwróconej uwagi na potencjalną niejednoznaczność; złagodzone przez wizualnie odrębną "pigułkę" z obramowaniem i tooltipy przy najechaniu.
+
+### Kluczowe decyzje i dlaczego
+- Przełącznik dodany też na ekranie intro (nie tylko w nav) — Jan chciał wyboru języka widocznego "już na pierwszej stronie", zanim intro się skończy.
+
 ## 2026-07-17 — 5. projekt: Asystent diety (wspólnie z Kacprem Rogowskim)
 
 ### Co zrobione

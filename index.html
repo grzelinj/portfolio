@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jan Grzeliński — Koszykówka → Nieruchomości → Finanse → Dane → AI</title>
-<meta name="description" content="Od reprezentacji Polski w koszykówce, przez nieruchomości komercyjne i finanse, po budowanie narzędzi AI — przygotowanie, dyscyplina, wynik. Strony, narzędzia i aplikacje, zawsze w kierunku efektywności i progresu.">
+<title>Jan Grzeliński — Basketball → Real Estate → Finance → Data → AI</title>
+<meta name="description" content="From Poland's national basketball team, through commercial real estate and finance, to building AI tools — preparation, discipline, results. Websites, tools and apps, always aimed at efficiency and progress.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -51,6 +51,11 @@
   .nav-flag{position:relative;display:block}
   .nav-flag-tip{position:absolute;z-index:30;top:calc(100% + 12px);left:50%;transform:translateX(-50%);width:200px;background:#12172a;border:1px solid rgba(169,184,255,.25);color:rgba(232,236,246,.85);font:400 12px/1.5 'Instrument Sans',sans-serif;padding:10px 13px;border-radius:9px;opacity:0;visibility:hidden;transition:opacity .15s ease;pointer-events:none;box-shadow:0 10px 28px rgba(0,0,0,.45)}
   .nav-flag:hover .nav-flag-tip,.nav-flag:focus .nav-flag-tip{opacity:1;visibility:visible}
+  .lang-switch{display:flex;align-items:center;gap:9px;border:1px solid rgba(232,236,246,.22);padding:6px 11px;border-radius:100px;background:rgba(232,236,246,.05)}
+  .lang-switch .lang-divider{width:1px;height:12px;background:rgba(232,236,246,.2)}
+  .lang-switch a{display:block;opacity:.4;transition:opacity .2s ease}
+  .lang-switch a:hover{opacity:1}
+  .lang-switch span.lang-current{display:block;cursor:default}
   .nav-flag-tip b{color:#fff;font:600 12px 'JetBrains Mono',monospace}
   .about-card{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)}
   .about-card summary{list-style:none;cursor:pointer;padding:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -94,10 +99,15 @@
     <div style="position:absolute;inset:0;background:radial-gradient(75% 60% at 50% 42%,transparent,rgba(5,7,15,.35) 70%,rgba(5,7,15,.85) 100%)"></div>
     <div style="position:absolute;left:0;right:0;bottom:11%;text-align:center;padding:0 24px">
       <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.34em;color:#a9b8ff;opacity:0;animation:introUp .9s ease .6s forwards">JAN&nbsp;&nbsp;GRZELIŃSKI</div>
-      <div style="margin-top:18px;font:400 clamp(20px,3.2vw,38px)/1.3 'Newsreader',serif;color:#f2f5ff;opacity:0;animation:introUp 1s ease 1.4s forwards;max-width:90vw">Koszykówka <span style="opacity:.5">→</span> Nieruchomości <span style="opacity:.5">→</span> Finanse <span style="opacity:.5">→</span> Dane <span style="opacity:.5">→</span> <em style="font-style:italic;color:#c8d2ff">AI</em></div>
+      <div style="margin-top:18px;font:400 clamp(20px,3.2vw,38px)/1.3 'Newsreader',serif;color:#f2f5ff;opacity:0;animation:introUp 1s ease 1.4s forwards;max-width:90vw">Basketball <span style="opacity:.5">→</span> Real Estate <span style="opacity:.5">→</span> Finance <span style="opacity:.5">→</span> Data <span style="opacity:.5">→</span> <em style="font-style:italic;color:#c8d2ff">AI</em></div>
     </div>
     <div id="intro-flash" style="position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,rgba(255,252,240,.9),rgba(200,210,255,.4) 30%,transparent 62%);opacity:0;transition:opacity .45s ease;pointer-events:none"></div>
-    <button id="intro-skip" style="position:absolute;right:26px;bottom:24px;background:rgba(232,236,246,.08);border:1px solid rgba(232,236,246,.2);color:#e8ecf6;font:500 12px 'JetBrains Mono',monospace;padding:9px 16px;border-radius:100px;cursor:pointer;backdrop-filter:blur(6px)">Pomiń intro →</button>
+    <div class="lang-switch" style="position:absolute;right:26px;top:24px;backdrop-filter:blur(6px)">
+      <span class="flag-us lang-current" style="width:20px;height:14px" title="English"></span>
+      <span class="lang-divider"></span>
+      <a href="pl.html" title="Przełącz na polski"><span class="flag-pl" style="width:20px;height:14px"></span></a>
+    </div>
+    <button id="intro-skip" style="position:absolute;right:26px;bottom:24px;background:rgba(232,236,246,.08);border:1px solid rgba(232,236,246,.2);color:#e8ecf6;font:500 12px 'JetBrains Mono',monospace;padding:9px 16px;border-radius:100px;cursor:pointer;backdrop-filter:blur(6px)">Skip intro →</button>
   </div>
 
   <!-- ============ SITE ============ -->
@@ -107,24 +117,28 @@
     <div class="nav-bar" style="position:absolute;top:0;left:0;right:0;z-index:20;padding:28px clamp(24px,5vw,72px)">
       <a href="#top" style="font:500 17px/1 'Newsreader',serif;letter-spacing:.02em;color:#e8ecf6">Jan Grzeliński</a>
       <div style="display:flex;gap:clamp(20px,3vw,36px);font-size:14px;align-items:center">
-        <a href="#projekty" style="color:rgba(232,236,246,.72)">Projekty</a>
+        <a href="#projekty" style="color:rgba(232,236,246,.72)">Projects</a>
         <div style="display:flex;gap:8px;align-items:center">
           <a href="#o-mnie" class="nav-flag">
             <span class="flag-pl" style="width:18px;height:13px"></span>
-            <span class="nav-flag-tip"><b>Od zawsze</b> — Wrocław, Lublin, Warszawa (z przerwą na USA 2014–2015 oraz Hiszpanię).</span>
+            <span class="nav-flag-tip"><b>Always</b> — Wrocław, Lublin, Warsaw (with a break for the US 2014–2015 and Spain).</span>
           </a>
           <a href="#o-mnie" class="nav-flag">
             <span class="flag-us" style="width:18px;height:13px"></span>
-            <span class="nav-flag-tip"><b>2014–2015</b> — Canisius College, Buffalo, stypendium sportowe NCAA Division I.</span>
+            <span class="nav-flag-tip"><b>2014–2015</b> — Canisius College, Buffalo, NCAA Division I athletic scholarship.</span>
           </a>
           <a href="#o-mnie" class="nav-flag">
             <span class="flag-es" style="width:18px;height:13px"></span>
-            <span class="nav-flag-tip"><b>2024–dziś</b> — Barcelona, praca dla Computershare.</span>
+            <span class="nav-flag-tip"><b>2024–now</b> — Barcelona, working for Computershare.</span>
           </a>
         </div>
-        <a href="#o-mnie" style="color:rgba(232,236,246,.72)">O mnie</a>
-        <a href="#kontakt" style="color:rgba(232,236,246,.72)">Kontakt</a>
-        <a href="en.html" style="color:rgba(232,236,246,.5);font:500 12px 'JetBrains Mono',monospace;border:1px solid rgba(232,236,246,.2);padding:6px 11px;border-radius:100px">EN</a>
+        <a href="#o-mnie" style="color:rgba(232,236,246,.72)">About</a>
+        <a href="#kontakt" style="color:rgba(232,236,246,.72)">Contact</a>
+        <div class="lang-switch">
+          <span class="flag-us lang-current" style="width:20px;height:14px" title="English"></span>
+          <span class="lang-divider"></span>
+          <a href="pl.html" title="Przełącz na polski"><span class="flag-pl" style="width:20px;height:14px"></span></a>
+        </div>
       </div>
     </div>
 
@@ -143,16 +157,16 @@
       <div style="position:absolute;inset:0;z-index:1;background:radial-gradient(120% 70% at 88% 6%,rgba(120,140,220,.22),transparent 52%),linear-gradient(180deg,rgba(10,14,28,.62),rgba(10,14,28,.88) 55%,#0a0e1c 92%)"></div>
       <div style="position:absolute;top:-8%;right:-4%;width:min(46vw,620px);height:min(46vw,620px);border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(201,211,245,.16),rgba(125,139,196,.06) 46%,transparent 68%);filter:blur(2px);pointer-events:none;z-index:1"></div>
       <div style="position:relative;width:100%;max-width:960px;margin:0 auto;z-index:2">
-        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#a9b8ff;margin-bottom:28px">KOSZYKÓWKA · NIERUCHOMOŚCI · FINANSE · DANE · AI</div>
-        <h1 style="margin:0;font:400 clamp(36px,6.4vw,76px)/1.12 'Newsreader',serif;letter-spacing:-.015em;max-width:16ch">Grałem na boisku. Dziś gram <em style="font-style:italic;color:#bcc9ff">danymi</em> — reguły się nie zmieniły.</h1>
-        <p style="margin:32px 0 0;font-size:clamp(17px,1.6vw,22px);line-height:1.6;color:rgba(232,236,246,.78);max-width:640px">Od reprezentacji Polski w koszykówce, przez nieruchomości komercyjne i finanse, po budowanie narzędzi AI. Wszędzie to samo: przygotowanie, dyscyplina, wynik. Buduję strony, narzędzia i aplikacje — część usprawnia mi pracę, część po prostu ułatwia codzienne życie. Zawsze w tym samym kierunku: efektywność i progres.</p>
+        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#a9b8ff;margin-bottom:28px">BASKETBALL · REAL ESTATE · FINANCE · DATA · AI</div>
+        <h1 style="margin:0;font:400 clamp(36px,6.4vw,76px)/1.12 'Newsreader',serif;letter-spacing:-.015em;max-width:16ch">I used to play on the court. Now I play with <em style="font-style:italic;color:#bcc9ff">data</em> — the rules haven't changed.</h1>
+        <p style="margin:32px 0 0;font-size:clamp(17px,1.6vw,22px);line-height:1.6;color:rgba(232,236,246,.78);max-width:640px">From Poland's national basketball team, through commercial real estate and finance, to building AI tools. Always the same: preparation, discipline, results. I build websites, tools and apps — some make my own work easier, some just make everyday life simpler. Always in the same direction: efficiency and progress.</p>
         <div style="display:flex;gap:14px;margin-top:40px;flex-wrap:wrap">
-          <a href="#projekty" style="padding:15px 30px;border-radius:9px;background:#e8ecf6;color:#0a0e1c;font-weight:600;font-size:15px">Zobacz projekty</a>
-          <a href="#o-mnie" style="padding:15px 30px;border-radius:9px;border:1px solid rgba(232,236,246,.26);color:#e8ecf6;font-size:15px">O mnie</a>
-          <a href="#kontakt" style="padding:15px 30px;border-radius:9px;border:1px solid rgba(232,236,246,.26);color:#e8ecf6;font-size:15px">Kontakt</a>
+          <a href="#projekty" style="padding:15px 30px;border-radius:9px;background:#e8ecf6;color:#0a0e1c;font-weight:600;font-size:15px">View projects</a>
+          <a href="#o-mnie" style="padding:15px 30px;border-radius:9px;border:1px solid rgba(232,236,246,.26);color:#e8ecf6;font-size:15px">About</a>
+          <a href="#kontakt" style="padding:15px 30px;border-radius:9px;border:1px solid rgba(232,236,246,.26);color:#e8ecf6;font-size:15px">Contact</a>
         </div>
       </div>
-      <div style="position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(232,236,246,.5);font:500 11px 'JetBrains Mono',monospace;letter-spacing:.1em;animation:hintBob 2.2s ease-in-out infinite">PRZEWIŃ<span style="font-size:16px">↓</span></div>
+      <div style="position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(232,236,246,.5);font:500 11px 'JetBrains Mono',monospace;letter-spacing:.1em;animation:hintBob 2.2s ease-in-out infinite">SCROLL<span style="font-size:16px">↓</span></div>
     </section>
 
     <!-- PROJEKTY -->
@@ -160,25 +174,25 @@
       <div style="max-width:1240px;margin:0 auto">
         <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:16px">
           <div>
-            <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:16px">01 — PROJEKTY</div>
-            <h2 style="margin:0;font:400 clamp(34px,4.4vw,48px)/1 'Newsreader',serif">Wybrane projekty</h2>
+            <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:16px">01 — PROJECTS</div>
+            <h2 style="margin:0;font:400 clamp(34px,4.4vw,48px)/1 'Newsreader',serif">Selected projects</h2>
           </div>
-          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">04 CASE STUDIES · kliknij, by rozwinąć</span>
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">04 CASE STUDIES · click to expand</span>
         </div>
         <div class="projects-grid">
 
           <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
             <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/flightwatch.jpg" alt="Zrzut ekranu Flight Tracker" style="width:100%;height:170px;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+              <img src="assets/projekty/flightwatch.jpg" alt="Flight Tracker screenshot" style="width:100%;height:170px;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
               <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
                 <h3 style="margin:0;font:500 25px 'Newsreader',serif">Flight Tracker</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">repo prywatne</span>
+                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">private repo</span>
               </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">System alertów cenowych dla lotów — monitoruje ceny 24/7 i wysyła e‑mail, gdy cena spadnie poniżej progu.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A flight price-alert system — monitors prices 24/7 and emails you when the price drops below your threshold.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
             </summary>
             <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Silnik cyklicznie odpytuje API lotnicze, zapisuje historię cen w SQLite i wyzwala powiadomienia po przekroczeniu reguł progowych. Działa lokalnie — nie było wdrażane publicznie (prywatne klucze API).</p>
+              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">The engine periodically queries flight APIs, stores price history in SQLite, and triggers notifications once a threshold rule is crossed. Runs locally — never deployed publicly (private API keys).</p>
               <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Flask</span>
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">SQLite</span>
@@ -186,25 +200,25 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Skyscanner (RapidAPI)</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-                <a href="https://flightwatch-yku0.onrender.com" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://flightwatch-yku0.onrender.com" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ View demo</a>
                 <a href="https://github.com/grzelinj/flightwatch" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/flightwatch</a>
               </div>
-              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo z przykładowymi danymi (bez realnych zapytań do zewnętrznych API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności.</p>
+              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo runs on sample data (no real calls to external APIs) — first load can take ~30–50s, since the free hosting sleeps when idle.</p>
             </div>
           </details>
 
           <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
             <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/setup-checker.jpg" alt="Zrzut ekranu Setup Checker" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+              <img src="assets/projekty/setup-checker.jpg" alt="Setup Checker screenshot" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
               <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
                 <h3 style="margin:0;font:500 25px 'Newsreader',serif">Setup Checker</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">repo publiczne</span>
+                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">public repo</span>
               </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">Aplikacja Streamlit przetwarzająca dane z Excela i generująca gotowe zapytania SQL do setup checków.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that processes Excel data and generates ready-to-run SQL queries for setup checks.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
             </summary>
             <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Wczytuje arkusz, waliduje pola i zwraca gotowy do użycia SQL. Automatyzuje żmudne, powtarzalne budowanie zapytań — oszczędza do 70% ręcznej pracy.</p>
+              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Reads a spreadsheet, validates the fields, and returns ready-to-use SQL. Automates a tedious, repetitive query-building task — saves up to 70% of manual work.</p>
               <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
@@ -212,7 +226,7 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">SQL</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap">
-                <a href="https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ View demo</a>
                 <a href="https://github.com/grzelinj/setup-check-streamlit" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/setup-check-streamlit</a>
               </div>
             </div>
@@ -220,16 +234,16 @@
 
           <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
             <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/timeline-generator.jpg" alt="Zrzut ekranu Timeline Generator" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+              <img src="assets/projekty/timeline-generator.jpg" alt="Timeline Generator screenshot" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
               <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
                 <h3 style="margin:0;font:500 25px 'Newsreader',serif">Timeline Generator</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">repo publiczne</span>
+                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">public repo</span>
               </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">Aplikacja Streamlit generująca harmonogramy projektów z szablonów Excel.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that generates project timelines from Excel templates.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
             </summary>
             <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Zbudowana do automatyzacji harmonogramów vestingowych (RSU / ESPP / SAYE) w Computershare — skróciła proces z godzin do minut.</p>
+              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Built to automate vesting timelines (RSU / ESPP / SAYE) at Computershare — cut the process from hours to minutes.</p>
               <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
@@ -237,7 +251,7 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Excel</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap">
-                <a href="https://timeline-generator-cpu.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://timeline-generator-cpu.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ View demo</a>
                 <a href="https://github.com/grzelinj/Timeline-Generator" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/Timeline-Generator</a>
               </div>
             </div>
@@ -245,16 +259,16 @@
 
           <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
             <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/asystent-diety.jpg" alt="Zrzut ekranu Asystent diety" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+              <img src="assets/projekty/asystent-diety.jpg" alt="Asystent diety (Diet Assistant) screenshot" style="width:100%;height:170px;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
               <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
-                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Asystent diety</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">z Kacprem Rogowskim</span>
+                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Asystent diety (Diet Assistant)</h3>
+                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">with Kacper Rogowski</span>
               </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">Aplikacja Streamlit, która na podstawie profilu i celu generuje spersonalizowaną rekomendację diety i plan posiłków przez Claude API.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that generates a personalized diet recommendation and meal plan via Claude, based on a user's profile and goals.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
             </summary>
             <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Wspólny projekt z Kacprem Rogowskim. Na podstawie profilu, celu i preferencji Claude generuje pełną rekomendację diety (makro, produkty, suplementacja) oraz plan posiłków na cały tydzień, z eksportem do PDF. Produkty można też zeskanować kodem kreskowym — dane pobierane z Open Food Facts.</p>
+              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Built together with Kacper Rogowski. Based on a user's profile, goal, and preferences, Claude generates a full diet recommendation (macros, foods, supplements) and a full week's meal plan, exportable to PDF. Products can also be scanned via barcode, with data pulled from Open Food Facts.</p>
               <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
@@ -262,10 +276,10 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Open Food Facts API</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-                <a href="https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ View demo</a>
                 <a href="https://github.com/grzelinj/asystent-diety-demo" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/asystent-diety-demo</a>
               </div>
-              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo z przykładowymi danymi (bez realnych zapytań do Claude API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności.</p>
+              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo with sample data (no real calls to the Claude API) — the first load may take ~30–50s, since the free hosting tier sleeps after inactivity.</p>
             </div>
           </details>
 
@@ -273,16 +287,16 @@
 
         <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
           <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-            <img src="assets/projekty/second-brain-diagram.jpg" alt="Architektura systemu: wejście, przetwarzanie, baza wiedzy, podsumowanie" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14);background:#0a0e1c">
+            <img src="assets/projekty/second-brain-diagram-en.jpg" alt="System architecture: input, processing, knowledge base, summary" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14);background:#0a0e1c">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
               <h3 style="margin:0;font:500 25px 'Newsreader',serif">Obsidian Second Brain</h3>
-              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">projekt osobisty · działa lokalnie</span>
+              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">personal project · runs locally</span>
             </div>
-            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">System zarządzania wiedzą osobistą sterowany rozmową z Claude Code — automatycznie transkrybuje, kategoryzuje i linkuje wszystko, co przechwycę głosem, z web clippera albo z YouTube/Instagrama, a raz w tygodniu wysyła mailowe podsumowanie.</p>
-            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A personal knowledge-management system driven by conversation with Claude Code — automatically transcribes, categorizes and links everything I capture by voice, from a web clipper, or from YouTube/Instagram, then emails a weekly summary.</p>
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
           </summary>
           <div style="padding:0 26px 28px">
-            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Trzy kanały wejścia (Whisper Flow do notatek głosowych, web clipper na artykuły, "share to Obsidian" z YouTube/Instagrama) trafiają do jednego Inbox-a. <code style="font-family:'JetBrains Mono',monospace;color:#bcc9ff">transcribe.py</code> zamienia linki wideo na tekst (darmowe napisy YouTube albo lokalny Whisper AI dla Instagrama), a komenda "przejrzyj inbox" uruchamia Claude Code, który kategoryzuje, taguje i linkuje wszystko do właściwych folderów wiedzy. W Claude Code działa też Cron przypominający o cotygodniowym przeglądzie, po którym <code style="font-family:'JetBrains Mono',monospace;color:#bcc9ff">send_review_email.py</code> wysyła podsumowanie "Poranna Prasa" na maila.</p>
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Three intake channels (Whisper Flow for voice notes, a web clipper for articles, "share to Obsidian" from YouTube/Instagram) all feed into one Inbox. <code style="font-family:'JetBrains Mono',monospace;color:#bcc9ff">transcribe.py</code> turns video links into text (free YouTube captions, or local Whisper AI for Instagram), and saying "review the inbox" launches Claude Code, which categorizes, tags and links everything into the right knowledge folders. Claude Code also runs a Cron job that nags for a weekly review, after which <code style="font-family:'JetBrains Mono',monospace;color:#bcc9ff">send_review_email.py</code> emails a "Morning Press" summary.</p>
             <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Claude Code (custom skills + Cron)</span>
@@ -291,7 +305,7 @@
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Obsidian</span>
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Gmail SMTP</span>
             </div>
-            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Działa wyłącznie lokalnie — brak publicznego demo (dostęp do prywatnych notatek i poczty).</p>
+            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Runs entirely locally — no public demo (touches private notes and email).</p>
           </div>
         </details>
       </div>
@@ -300,63 +314,63 @@
     <!-- O MNIE -->
     <section id="o-mnie" style="padding:clamp(72px,9vw,120px) clamp(24px,5vw,72px);border-top:1px solid rgba(232,236,246,.08)">
       <div style="max-width:1240px;margin:0 auto">
-        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:22px">02 — O MNIE</div>
+        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:22px">02 — ABOUT</div>
 
         <details class="about-card">
           <summary>
             <img src="assets/o-mnie/cbre-2.jpg" alt="Jan Grzeliński">
             <div style="flex:1;min-width:240px">
-              <p style="margin:0;font:400 clamp(20px,2.6vw,28px)/1.4 'Newsreader',serif;color:#dbe2f5">Od koszykarza reprezentacji Polski do budowania narzędzi <em style="color:#bcc9ff">AI</em>.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń pełną historię <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+              <p style="margin:0;font:400 clamp(20px,2.6vw,28px)/1.4 'Newsreader',serif;color:#dbe2f5">From a Polish national basketball player to building <em style="color:#bcc9ff">AI</em> tools.</p>
+              <span style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand the full story <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
             </div>
           </summary>
           <div style="padding:0 28px 32px">
-            <a href="https://pl.wikipedia.org/wiki/Jan_Grzeli%C5%84ski" target="_blank" rel="noopener" class="wiki-badge">📖 Zobacz profil na Wikipedii</a>
+            <a href="https://pl.wikipedia.org/wiki/Jan_Grzeli%C5%84ski" target="_blank" rel="noopener" class="wiki-badge">📖 See Wikipedia profile (PL)</a>
 
             <div class="flags-row" id="flags-row">
-              <div class="flag-chip active" data-country="pl"><span class="flag-pl" style="width:22px;height:16px"></span>Polska</div>
+              <div class="flag-chip active" data-country="pl"><span class="flag-pl" style="width:22px;height:16px"></span>Poland</div>
               <div class="flag-chip" data-country="us"><span class="flag-us" style="width:22px;height:16px"></span>USA</div>
-              <div class="flag-chip" data-country="es"><span class="flag-es" style="width:22px;height:16px"></span>Hiszpania</div>
+              <div class="flag-chip" data-country="es"><span class="flag-es" style="width:22px;height:16px"></span>Spain</div>
             </div>
-            <div class="flag-detail" id="flag-detail">Urodzony we Wrocławiu. Reprezentant Polski w koszykówce (U16–U20), studia (Politechnika Wrocławska, UMCS, Akademia Koźmińskiego), dziś kariera w Warszawie (Computershare).</div>
+            <div class="flag-detail" id="flag-detail">Born in Wrocław. Polish national basketball team member (U16–U20), studied at Wrocław University of Technology, UMCS, and Kozminski University, today building a career in Warsaw (Computershare).</div>
 
             <div class="timeline" style="margin-top:32px">
-              <div class="timeline-item"><div class="timeline-year">2008</div><div class="timeline-text">Zaczynam grać w koszykówkę — od razu mistrz Polski i MVP turnieju młodzików.</div></div>
-              <div class="timeline-item"><div class="timeline-year">2010</div><div class="timeline-text">Mistrz Polski kadetów i MVP turnieju, reprezentacja Polski na Mistrzostwach Europy U-16 (11. miejsce).</div></div>
-              <div class="timeline-item"><div class="timeline-year">2011</div><div class="timeline-text">Mistrz Polski juniorów, reprezentacja na Mistrzostwach Europy U-18 (6. miejsce) i Mistrzostwach Świata U-19 (7. miejsce).</div></div>
-              <div class="timeline-item"><div class="timeline-year">2013</div><div class="timeline-text">Mistrz Polski juniorów starszych i MVP, awans WKK Wrocław do I ligi. Rozpoczynam studia na Politechnice Wrocławskiej.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2008</div><div class="timeline-text">Start playing basketball — Polish champion and MVP of the youth (młodzik) tournament right away.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2010</div><div class="timeline-text">Polish champion (kadet level) and tournament MVP, Poland national team at the U-16 European Championship (11th place).</div></div>
+              <div class="timeline-item"><div class="timeline-year">2011</div><div class="timeline-text">Polish champion (junior level), national team at the U-18 European Championship (6th place) and U-19 World Championship (7th place).</div></div>
+              <div class="timeline-item"><div class="timeline-year">2013</div><div class="timeline-text">Polish champion (senior junior level) and MVP, WKK Wrocław promoted to the 1st league. Start studying at Wrocław University of Technology.</div></div>
               <div class="timeline-item">
                 <div class="timeline-year">2014</div>
-                <div class="timeline-text">Reprezentacja Polski U-20 na Mistrzostwach Europy Dywizji A (9. miejsce). Pełne stypendium sportowe (~$50 000) do Canisius College (USA), NCAA Division I.</div>
+                <div class="timeline-text">Poland U-20 national team at the European Championship Division A (9th place). Full athletic scholarship (~$50,000) to Canisius College (USA), NCAA Division I.</div>
                 <div class="timeline-photos"><img src="assets/o-mnie/canisius.jpg" alt="Canisius College"></div>
               </div>
               <div class="timeline-item">
                 <div class="timeline-year">2015</div>
-                <div class="timeline-text">Powrót do Polski — kontynuacja kariery (Start Lublin) i studia na UMCS w Lublinie.</div>
+                <div class="timeline-text">Back to Poland — continue playing (Start Lublin) and study at UMCS in Lublin.</div>
                 <div class="timeline-photos">
                   <img src="assets/o-mnie/start-lublin-wywiad.jpg" alt="Start Lublin">
-                  <img src="assets/o-mnie/start-lublin-akcja.jpg" alt="Start Lublin, w akcji">
+                  <img src="assets/o-mnie/start-lublin-akcja.jpg" alt="Start Lublin, in action">
                   <img src="assets/o-mnie/start-lublin-koszulka.jpg" alt="Start Lublin Basketball">
                 </div>
               </div>
               <div class="timeline-item">
                 <div class="timeline-year">2017–2018</div>
-                <div class="timeline-text">Gra w Siarce Tarnobrzeg, Śląsku Wrocław i Księżaku Łowicz, równolegle studia na Akademii Leona Koźmińskiego.</div>
+                <div class="timeline-text">Play for Siarka Tarnobrzeg, Śląsk Wrocław and Księżak Łowicz, while studying at Kozminski University.</div>
                 <div class="timeline-photos">
                   <img src="assets/o-mnie/slask-wroclaw.jpg" alt="Śląsk Wrocław">
                   <img src="assets/o-mnie/ksiezak-lowicz.jpg" alt="Księżak Łowicz">
                 </div>
               </div>
-              <div class="timeline-item"><div class="timeline-year">2019</div><div class="timeline-text">Koniec kariery sportowej. Obrona licencjatu.</div></div>
-              <div class="timeline-item"><div class="timeline-year">2020</div><div class="timeline-text">Start pracy w Knight Frank jako analityk rynku nieruchomości.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2019</div><div class="timeline-text">End of playing career. Bachelor's degree defended.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2020</div><div class="timeline-text">Start working at Knight Frank as a real estate analyst.</div></div>
               <div class="timeline-item">
                 <div class="timeline-year">2021</div>
-                <div class="timeline-text">Obrona magisterki z finansów.</div>
+                <div class="timeline-text">Master's degree in Finance defended.</div>
                 <div class="timeline-photos"><img src="assets/o-mnie/cbre-1.jpg" alt="Jan Grzeliński"></div>
               </div>
-              <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-text">CBRE, Business Analyst — wsparcie transakcji o łącznej wartości ponad pół miliarda euro.</div></div>
-              <div class="timeline-item"><div class="timeline-year">2023</div><div class="timeline-text">Computershare, Vesting Specialist — globalni klienci (SAP, Coca-Cola, DHL, Barclays, AstraZeneca).</div></div>
-              <div class="timeline-item"><div class="timeline-year">2024 → dziś</div><div class="timeline-text">Zaczynam uczyć się Pythona i AI — świadomy start ścieżki w stronę data &amp; analytics.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-text">CBRE, Business Analyst — supporting transactions worth over half a billion euros combined.</div></div>
+              <div class="timeline-item"><div class="timeline-year">2023</div><div class="timeline-text">Computershare, Vesting Specialist — global clients (SAP, Coca-Cola, DHL, Barclays, AstraZeneca).</div></div>
+              <div class="timeline-item"><div class="timeline-year">2024 → today</div><div class="timeline-text">Start learning Python and AI — a deliberate step toward a data &amp; analytics career.</div></div>
             </div>
           </div>
         </details>
@@ -366,8 +380,8 @@
     <!-- KONTAKT -->
     <section id="kontakt" style="padding:clamp(80px,10vw,120px) clamp(24px,5vw,72px) 72px;text-align:center;background:radial-gradient(80% 130% at 50% 0%,rgba(120,140,220,.18),transparent 58%);border-top:1px solid rgba(232,236,246,.08)">
       <div style="width:56px;height:56px;border-radius:50%;margin:0 auto 32px;background:radial-gradient(circle at 38% 32%,#fff,#c9d3f5 46%,#7d8bc4);box-shadow:0 0 70px 8px rgba(169,184,255,.42);animation:glowPulse 4s ease-in-out infinite"></div>
-      <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:20px">03 — KONTAKT</div>
-      <h2 style="margin:0 auto;font:400 clamp(34px,4.6vw,52px)/1.08 'Newsreader',serif;max-width:640px">Chętnie porozmawiam o&nbsp;rolach w&nbsp;danych i&nbsp;AI.</h2>
+      <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:20px">03 — CONTACT</div>
+      <h2 style="margin:0 auto;font:400 clamp(34px,4.6vw,52px)/1.08 'Newsreader',serif;max-width:640px">Happy to talk about roles in&nbsp;data and&nbsp;AI.</h2>
       <div style="display:flex;gap:clamp(20px,3vw,32px);justify-content:center;margin-top:38px;flex-wrap:wrap;font:500 14px 'JetBrains Mono',monospace">
         <a href="mailto:grzelinskijan94@gmail.com">grzelinskijan94@gmail.com ↗</a>
         <a href="tel:+48501493633">+48 501 493 633</a>
@@ -375,7 +389,7 @@
         <a href="https://github.com/grzelinj" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
       <div style="margin-top:72px;padding-top:26px;border-top:1px solid rgba(232,236,246,.1);max-width:1240px;margin-left:auto;margin-right:auto;display:flex;justify-content:space-between;font-size:13px;color:rgba(232,236,246,.42);flex-wrap:wrap;gap:8px">
-        <span>© 2026 Jan Grzeliński</span><span style="font-family:'JetBrains Mono',monospace">Warszawa, PL</span>
+        <span>© 2026 Jan Grzeliński</span><span style="font-family:'JetBrains Mono',monospace">Warsaw, PL</span>
       </div>
     </section>
 
@@ -385,9 +399,9 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var flagDetails = {
-    pl: "Urodzony we Wrocławiu. Reprezentant Polski w koszykówce (U16–U20), studia (Politechnika Wrocławska, UMCS, Akademia Koźmińskiego), dziś kariera w Warszawie (Computershare).",
-    us: "Pełne stypendium sportowe (~$50 000) do Canisius College, Buffalo — koszykówka NCAA Division I i studia, 2014–2015.",
-    es: "Dziś część czasu spędzam w Barcelonie — międzynarodowa perspektywa i hiszpański w praktyce."
+    pl: "Born in Wrocław. Polish national basketball team member (U16–U20), studied at Wrocław University of Technology, UMCS, and Kozminski University, today building a career in Warsaw (Computershare).",
+    us: "Full athletic scholarship (~$50,000) to Canisius College, Buffalo — NCAA Division I basketball and studies, 2014–2015.",
+    es: "Today I split my time with Barcelona — an international perspective, and Spanish in practice."
   };
   var flagChips = document.querySelectorAll('.flag-chip');
   var flagDetail = document.getElementById('flag-detail');
