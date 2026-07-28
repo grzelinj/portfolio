@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gmail Inbox Agent — example report | Jan Grzeliński</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#0a0e1c;font-family:'Instrument Sans',system-ui,sans-serif;color:#e8ecf6;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:#a9b8ff;text-decoration:none}
+  a:hover{color:#c8d2ff}
+  .wrap{max-width:760px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(20px,5vw,24px) 96px}
+  .back{display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;margin-bottom:32px}
+  h1{font:500 30px 'Newsreader',serif;margin:0 0 6px}
+  .meta{font:400 13px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5);margin:0 0 4px}
+  .note{font-size:13px;line-height:1.6;color:rgba(232,236,246,.55);background:rgba(120,140,220,.08);border:1px solid rgba(169,184,255,.16);border-radius:10px;padding:14px 16px;margin:20px 0 36px}
+  h2{font:500 18px 'Newsreader',serif;margin:34px 0 12px;padding-top:18px;border-top:1px solid rgba(232,236,246,.08)}
+  h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  p{font-size:14.5px;color:rgba(232,236,246,.78);margin:0 0 12px}
+  strong{color:#e8ecf6}
+  code{font-family:'JetBrains Mono',monospace;font-size:13px;color:#bcc9ff;background:rgba(169,184,255,.1);padding:2px 6px;border-radius:5px}
+  ul{margin:0 0 12px;padding-left:20px}
+  li{font-size:14.5px;color:rgba(232,236,246,.78);margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 16px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(232,236,246,.08);vertical-align:top}
+  th{color:rgba(232,236,246,.5);font:500 11px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+  .footnote{margin-top:36px;padding-top:18px;border-top:1px solid rgba(232,236,246,.08);font-size:12px;color:rgba(232,236,246,.45)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html#projekty">← Back to portfolio</a>
+
+  <h1>Gmail report — example run</h1>
+  <p class="meta">Gmail Inbox Agent · AI agent (n8n + Claude) triaging a mailbox</p>
+  <p class="meta">Scope: last ~2 weeks from the author's real inbox</p>
+
+  <div class="note">This is a <strong>real report</strong> from an actual run of the agent on the author's inbox — the content, classification, and reasoning are original. Company names, recruiter names, and addresses were replaced with descriptive placeholders before publishing; sections unrelated to this project (an account security alert, and a mention of a family member's private correspondence) were removed entirely.</div>
+
+  <h2>🔴 Needs your attention now</h2>
+  <p><strong>[Investment bank] — manager call RESCHEDULED.</strong> The team manager asked to reschedule for personal reasons. New time: <strong>Monday, 12:30–13:15</strong>. Already confirmed by email this morning.</p>
+
+  <h2>🟢 Positive progress</h2>
+  <p><strong>[Fintech, EU] — People Specialist (Equity) / Universal People Specialist</strong><br>
+  Full chain of events: screening call with a recruiter (day 1) → online assessment (Criteria Corp, sent by the process coordinator) → completed same day, confirmed by email → <strong>Skills Interview with a second recruiter took place a few days later</strong>. Now waiting on a decision/next step — no response after this call in the data I can see.</p>
+
+  <p><strong>[Real-estate firm, international] — both applications alive</strong></p>
+  <ul>
+    <li><em>Lease Administration Assistant</em> (foreign languages) — application receipt confirmed</li>
+    <li><em>Product Specialist — Enterprise AI</em> — application receipt confirmed, and <strong>already under active recruiter review</strong> (follow-up email same day: "being reviewed by one of our recruiters")</li>
+  </ul>
+
+  <p><strong>[Current employer] — annual performance review</strong><br>
+  Result received: <strong>"Successful"</strong> — higher than previous cycles. Replied to the manager with a compensation summary. Worth keeping in mind as a reference point when negotiating a new role.</p>
+
+  <h2>🟡 In progress, no new news from the employer</h2>
+  <ul>
+    <li><strong>[Energy-sector company]</strong> (Business Intelligence Analyst, via job board) — application "being compared" against other candidates</li>
+    <li><strong>[Online portal]</strong> (Junior Data Scientist) — application accepted, no further news</li>
+  </ul>
+
+  <h2>🔴 Likely rejection — worth checking yourself</h2>
+  <p><strong>[Sports league]</strong> (Commercial Intelligence Analyst) — the email opens with: <em>"After carefully reviewing a large number of highly qualified applications, we have made..."</em> — a standard rejection-email opener. The agent didn't read further (didn't want to guess on your behalf) — recommended opening it to confirm.</p>
+
+  <h2>⚪ Closed postings, no outcome</h2>
+  <ul>
+    <li><strong>[IT consulting firm]</strong> (IT Business Analyst) — application window closed, no decision visible in the data</li>
+    <li><strong>[Analytics firm]</strong> (Data Analyst — Advanced Analytics) — application window closed, no decision</li>
+  </ul>
+
+  <h2>📧 Most frequent senders — your call (keep / mute)</h2>
+  <table>
+    <tr><th>Sender</th><th>Frequency</th><th>What it is</th><th>Agent's suggestion</th></tr>
+    <tr><td><code>rekomendacje@wysylka.pracuj.pl</code></td><td>several times/day</td><td>Generic daily job recommendations</td><td>Top candidate to mute</td></tr>
+    <tr><td><code>notify@mg.flexjobs.com</code></td><td>every 1–2 days</td><td>"Don't miss today's jobs" newsletter</td><td>Candidate to mute</td></tr>
+    <tr><td><code>mailer@jobleads.com</code></td><td>every 2–3 days</td><td>Job matches</td><td>Your call — occasionally relevant</td></tr>
+    <tr><td>[upsell sender]</td><td>less often</td><td>Premium account upsell</td><td>Candidate to mute</td></tr>
+    <tr><td>[weekly IT-firm alert]</td><td>weekly</td><td>Weekly job alert</td><td>Low frequency, fine to keep</td></tr>
+    <tr><td><code>noreply@aplikacje.pracuj.pl</code></td><td>on status change</td><td>⚠️ Real application status updates</td><td><strong>Keep</strong> — don't confuse with the above</td></tr>
+  </table>
+
+  <p class="footnote">The agent cannot send, delete, or block emails — only read and label. The sender list above waits for the user's decision; nothing in the mailbox was changed.</p>
+</div>
+</body>
+</html>

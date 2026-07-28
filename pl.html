@@ -304,6 +304,31 @@
             <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Działa wyłącznie lokalnie — brak publicznego demo (dostęp do prywatnych notatek i poczty).</p>
           </div>
         </details>
+
+        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
+          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
+            <img src="assets/projekty/gmail-inbox-agent-diagram.svg" alt="Diagram przepływu: harmonogram, pobranie, klasyfikacja przez Claude, wysyłka" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14);background:#0a0e1c">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
+              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Gmail Inbox Agent</h3>
+              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">projekt osobisty · działa na n8n</span>
+            </div>
+            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">Codzienny agent AI, który podczas szukania pracy przegląda moją skrzynkę — wyłapuje na samą górę każdą realną odpowiedź od rekrutera, ocenia generyczne oferty względem mojego profilu i wysyła jedno priorytetyzowane poranne podsumowanie zamiast przewijania setek maili.</p>
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+          </summary>
+          <div style="padding:0 26px 28px">
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Powstał po tym, jak omal nie przegapiłem prawdziwej odpowiedzi rekrutera zagubionej w codziennym szumie z portali ogłoszeniowych. Claude (przez konektor Anthropic w n8n) czyta każdego nowego maila i klasyfikuje go jako krytyczny / warty uwagi / szum, aktywnie dopasowując generyczne digesty ofert do moich realnych umiejętności i doświadczenia, a nie tylko je redukując. Harmonogram n8n odpala się co rano, pobiera nieoetykietowane maile, wysyła podsumowanie z krytycznymi sprawami na górze, a potem etykietuje przetworzone maile, żeby kolejne uruchomienie nigdy nie zdublowało raportu.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">n8n</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Claude API (Sonnet)</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Gmail API</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">JavaScript (Code nodes)</span>
+            </div>
+            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
+              <a href="gmail-inbox-agent-raport.html" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz przykładowy raport</a>
+            </div>
+            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Brak publicznego demo (dostęp do mojej prywatnej skrzynki) — podlinkowany raport to prawdziwy wynik z mojej skrzynki, zanonimizowany przed publikacją.</p>
+          </div>
+        </details>
       </div>
     </section>
 
