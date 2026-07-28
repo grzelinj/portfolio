@@ -329,6 +329,33 @@
             <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">No public demo (connects to my personal inbox) — the linked report is real output from my own mailbox, anonymized before publishing.</p>
           </div>
         </details>
+
+        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
+          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
+            <img src="assets/projekty/padel-court-finder.jpg" alt="Padel Court Finder screenshot: priority slots list and a map of Warsaw clubs" style="width:100%;aspect-ratio:1.43/1;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
+              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Padel Court Finder</h3>
+              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">private repo</span>
+            </div>
+            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A Next.js app that finds a free padel court in Warsaw tonight — scrapes every local club's schedule, geocodes and maps them, and surfaces the slots that actually match my preferred time and court type instead of me checking each club's site one by one.</p>
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+          </summary>
+          <div style="padding:0 26px 28px">
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">An API route logs into kluby.org and scrapes each Warsaw padel club's schedule with cheerio, deliberately paced with pauses between clubs so it reads like a person clicking through sites rather than a bot hammering them — the trade-off is a ~1-2 minute cold-start scrape, smoothed over by a 5-minute cache. Addresses are geocoded via Nominatim (rate-limited to ~1 req/sec) and merged onto a Leaflet map, with singles courts and evening prime-time slots bubbled to the top and everything ranked by distance from home. A Playtomic integration exists in the code too, currently paused after getting rate-limited during testing — kluby.org alone already covers most Warsaw clubs.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Next.js</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">TypeScript</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Leaflet</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">cheerio (scraping)</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Nominatim (geocoding)</span>
+            </div>
+            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
+              <a href="https://github.com/grzelinj/padel-court-finder" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/padel-court-finder</a>
+            </div>
+            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">No public demo — it runs under my personal kluby.org login and is deliberately paced for one polite user, not concurrent site traffic. Screenshot above is a real run against live data.</p>
+          </div>
+        </details>
+
       </div>
     </section>
 

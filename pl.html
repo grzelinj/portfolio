@@ -329,6 +329,33 @@
             <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Brak publicznego demo (dostęp do mojej prywatnej skrzynki) — podlinkowany raport to prawdziwy wynik z mojej skrzynki, zanonimizowany przed publikacją.</p>
           </div>
         </details>
+
+        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
+          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
+            <img src="assets/projekty/padel-court-finder.jpg" alt="Zrzut ekranu Padel Court Finder: lista priorytetowych terminów i mapa klubów w Warszawie" style="width:100%;aspect-ratio:1.43/1;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
+              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Padel Court Finder</h3>
+              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">prywatne repo</span>
+            </div>
+            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">Aplikacja Next.js, która na dziś wieczór znajduje wolny kort do padla w Warszawie — scrapuje grafiki wszystkich lokalnych klubów, geokoduje i nanosi je na mapę, i pokazuje terminy faktycznie pasujące do mojej preferowanej pory i typu kortu, zamiast sprawdzania strony każdego klubu z osobna.</p>
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Rozwiń <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
+          </summary>
+          <div style="padding:0 26px 28px">
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Endpoint API loguje się do kluby.org i scrapuje grafik każdego warszawskiego klubu padla przez cheerio, celowo z przerwami między klubami, żeby wyglądało to jak człowiek klikający po kolei strony, a nie bot zasypujący je requestami — kosztem ~1-2 minut na "zimne" uruchomienie, złagodzone przez 5-minutowy cache. Adresy są geokodowane przez Nominatim (limit ~1 zapytanie/s) i nanoszone na mapę Leaflet, a korty single'owe i wieczorne godziny szczytu wypływają na górę listy posortowanej dodatkowo według odległości od domu. W kodzie istnieje też integracja z Playtomic, obecnie wstrzymana po zablokowaniu przez rate-limit podczas testów — samo kluby.org pokrywa już większość warszawskich klubów.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Next.js</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">TypeScript</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Leaflet</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">cheerio (scraping)</span>
+              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Nominatim (geokodowanie)</span>
+            </div>
+            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
+              <a href="https://github.com/grzelinj/padel-court-finder" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/padel-court-finder</a>
+            </div>
+            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Brak publicznego demo — działa na moim prywatnym loginie do kluby.org i jest celowo spowolnione pod jednego, uprzejmego użytkownika, nie pod równoczesny ruch z internetu. Zrzut ekranu powyżej to prawdziwe uruchomienie na żywych danych.</p>
+          </div>
+        </details>
+
       </div>
     </section>
 
