@@ -38,6 +38,8 @@
   .timeline-photos img{width:180px;height:220px;object-fit:cover;border-radius:10px;border:1px solid rgba(169,184,255,.16)}
   @media (max-width:600px){.timeline-photos img{width:130px;height:160px}}
   .wiki-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:100px;border:1px solid rgba(169,184,255,.25);background:rgba(120,140,220,.08);font:500 12px 'JetBrains Mono',monospace;color:#e8ecf6}
+  .btn-demo{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;background:rgba(169,184,255,.18);border:1px solid rgba(169,184,255,.45);color:#e8ecf6;font:500 13px 'JetBrains Mono',monospace;transition:background .2s ease,border-color .2s ease}
+  .btn-demo:hover{background:rgba(169,184,255,.3);border-color:rgba(169,184,255,.7);color:#fff}
   .flag-pl,.flag-us,.flag-es{display:inline-block;border-radius:3px;overflow:hidden;flex:0 0 auto;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
   .flag-pl{background:linear-gradient(to bottom, #fff 50%, #dc143c 50%)}
   .flag-es{background:linear-gradient(to bottom, #aa151b 25%, #f1bf00 25%, #f1bf00 75%, #aa151b 75%)}
@@ -196,7 +198,7 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Skyscanner (RapidAPI)</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-                <a href="https://flightwatch-yku0.onrender.com" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://flightwatch-yku0.onrender.com" target="_blank" rel="noopener" class="btn-demo">▶ Zobacz demo</a>
                 <a href="https://github.com/grzelinj/flightwatch" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/flightwatch</a>
               </div>
               <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo z przykładowymi danymi (bez realnych zapytań do zewnętrznych API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności.</p>
@@ -222,7 +224,7 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">SQL</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap">
-                <a href="https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/" target="_blank" rel="noopener" class="btn-demo">▶ Zobacz demo</a>
                 <a href="https://github.com/grzelinj/setup-check-streamlit" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/setup-check-streamlit</a>
               </div>
             </div>
@@ -247,7 +249,7 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Excel</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap">
-                <a href="https://timeline-generator-cpu.streamlit.app/" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://timeline-generator-cpu.streamlit.app/" target="_blank" rel="noopener" class="btn-demo">▶ Zobacz demo</a>
                 <a href="https://github.com/grzelinj/Timeline-Generator" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/Timeline-Generator</a>
               </div>
             </div>
@@ -272,7 +274,7 @@
                 <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Open Food Facts API</span>
               </div>
               <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-                <a href="https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz demo</a>
+                <a href="https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app" target="_blank" rel="noopener" class="btn-demo">▶ Zobacz demo</a>
                 <a href="https://github.com/grzelinj/asystent-diety-demo" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/asystent-diety-demo</a>
               </div>
               <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo z przykładowymi danymi (bez realnych zapytań do Claude API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności.</p>
@@ -324,7 +326,7 @@
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">JavaScript (Code nodes)</span>
             </div>
             <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="gmail-inbox-agent-raport.html" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz przykładowy raport</a>
+              <a href="gmail-inbox-agent-raport.html" class="btn-demo">▶ Zobacz przykładowy raport</a>
             </div>
             <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Brak publicznego demo (dostęp do mojej prywatnej skrzynki) — podlinkowany raport to prawdziwy wynik z mojej skrzynki, zanonimizowany przed publikacją.</p>
           </div>
@@ -374,7 +376,7 @@
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Equity compensation</span>
             </div>
             <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="powerbi-equity-comp-mockup.html" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz mockup</a>
+              <a href="powerbi-equity-comp-mockup.html" class="btn-demo">▶ Zobacz mockup</a>
             </div>
             <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Mockup koncepcyjny na syntetycznych danych, nie prawdziwy raport Power BI — zbudowanie właściwej wersji w Power BI Desktop to kolejny krok.</p>
           </div>
@@ -398,7 +400,7 @@
               <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Nieruchomości komercyjne</span>
             </div>
             <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="powerbi-real-estate-mockup.html" style="font:500 13px 'JetBrains Mono',monospace;color:#e8ecf6">▶ Zobacz mockup</a>
+              <a href="powerbi-real-estate-mockup.html" class="btn-demo">▶ Zobacz mockup</a>
             </div>
             <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Mockup koncepcyjny na syntetycznych danych, nie prawdziwy raport Power BI — zbudowanie właściwej wersji w Power BI Desktop to kolejny krok.</p>
           </div>
