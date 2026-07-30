@@ -50,6 +50,68 @@
   .wiki-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:100px;border:1px solid rgba(169,184,255,.25);background:rgba(120,140,220,.08);font:500 12px 'JetBrains Mono',monospace;color:#e8ecf6}
   .btn-demo{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;background:rgba(169,184,255,.18);border:1px solid rgba(169,184,255,.45);color:#e8ecf6;font:500 13px 'JetBrains Mono',monospace;transition:background .2s ease,border-color .2s ease}
   .btn-demo:hover{background:rgba(169,184,255,.3);border-color:rgba(169,184,255,.7);color:#fff}
+  /* ── Terminal Style project list ── */
+  .ts-crt{border:1px solid rgba(169,184,255,.18);border-radius:14px;background:#0d1226;font-family:'JetBrains Mono',monospace}
+  .ts-crt-bar{padding:12px 20px;border-bottom:1px solid rgba(169,184,255,.16);font-size:11.5px;color:rgba(232,236,246,.45)}
+  .ts-crt-body{padding:24px 26px 30px}
+  .ts-line{color:#8fd6a8;margin-bottom:6px;font-size:14px}
+  .ts-boot{display:flex;align-items:center;gap:9px;color:rgba(232,236,246,.55);font-size:13px;margin:0 0 20px;min-height:18px}
+  .ts-boot .glyph{color:#a9b8ff;display:inline-block;width:14px;text-align:center}
+  .ts-row{display:grid;grid-template-columns:34px 22px 1fr auto;gap:12px;align-items:baseline;padding:11px 4px;cursor:pointer;color:#e8ecf6;opacity:0;transition:opacity .12s ease,background .15s ease;border-radius:8px;font-size:14.5px}
+  .ts-row.show{opacity:1}
+  .ts-row:hover{background:rgba(169,184,255,.09)}
+  .ts-row .ts-idx{color:rgba(232,236,246,.4)}
+  .ts-row .ts-meta{color:rgba(232,236,246,.45);font-size:11.5px;opacity:0;transition:opacity .3s ease;white-space:nowrap}
+  .ts-row .ts-meta.show{opacity:1}
+  .ts-chev{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(169,184,255,.1);border:1px solid rgba(169,184,255,.3);color:#a9b8ff;font-size:11px;opacity:0;transition:opacity .3s ease,background .18s ease,border-color .18s ease,transform .18s ease}
+  .ts-chev svg{width:9px;height:9px;display:block}
+  .ts-chev.show{opacity:1;animation:tsChevHint 1.8s ease-out 1;animation-fill-mode:forwards}
+  .ts-row:hover .ts-chev.show{background:rgba(169,184,255,.22);border-color:rgba(169,184,255,.6);transform:scale(1.12)}
+  .ts-chev.open{transform:rotate(90deg);background:rgba(169,184,255,.24);border-color:rgba(169,184,255,.6)}
+  @keyframes tsChevHint{0%{box-shadow:0 0 0 rgba(169,184,255,0)}15%{box-shadow:0 0 10px rgba(169,184,255,.8);background:rgba(169,184,255,.22)}30%{box-shadow:0 0 0 rgba(169,184,255,0);background:rgba(169,184,255,.1)}45%{box-shadow:0 0 10px rgba(169,184,255,.8);background:rgba(169,184,255,.22)}60%,100%{box-shadow:0 0 0 rgba(169,184,255,0);background:rgba(169,184,255,.1)}}
+  .ts-cursor-sq{display:none;width:8px;height:14px;background:#8fd6a8;margin-left:1px;vertical-align:-2px;box-shadow:0 0 7px #8fd6a8;animation:tsBlink .8s step-end infinite}
+  .ts-cursor-sq.on{display:inline-block}
+  @keyframes tsBlink{50%{opacity:0}}
+  .ts-dots{display:inline-flex;gap:4px;margin-left:8px;vertical-align:middle}
+  .ts-dots span{width:5px;height:5px;border-radius:50%;background:#8fd6a8;opacity:0}
+  .ts-dots.show span{opacity:.25;box-shadow:0 0 6px #8fd6a8;animation:tsDotPulse 1.3s ease-in-out infinite}
+  .ts-dots.show span:nth-child(2){animation-delay:.22s}
+  .ts-dots.show span:nth-child(3){animation-delay:.44s}
+  @keyframes tsDotPulse{0%,60%,100%{opacity:.25}30%{opacity:1}}
+  .ts-panel{margin:2px 0 16px 34px;padding:18px 20px;border-left:2px solid rgba(169,184,255,.4);background:rgba(169,184,255,.045);border-radius:0 10px 10px 0;display:none}
+  .ts-panel.open{display:block}
+  .ts-shot{border-radius:10px;overflow:hidden;margin-bottom:16px;border:1px solid rgba(169,184,255,.16);background:#0a0e1c}
+  .ts-shot-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#11162a;border-bottom:1px solid rgba(169,184,255,.14)}
+  .ts-shot-dot{width:8px;height:8px;border-radius:50%;background:rgba(232,236,246,.18)}
+  .ts-shot-name{margin-left:6px;font:400 11px 'JetBrains Mono',monospace;color:rgba(232,236,246,.4)}
+  .ts-shot img{width:100%;display:block}
+  .ts-panel .ts-desc{color:rgba(232,236,246,.72);font-size:13.5px;line-height:1.6;font-family:'Instrument Sans',sans-serif;margin:0 0 14px}
+  .ts-panel .ts-tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+  .ts-panel .ts-tag{border:1px solid rgba(169,184,255,.35);color:#bcc9ff;padding:4px 9px;font-size:11.5px;border-radius:5px;background:rgba(169,184,255,.08)}
+  .ts-panel .ts-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+  .ts-panel .ts-repo-link{font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff}
+  .ts-panel .ts-note{margin:0;font-size:12px;color:rgba(232,236,246,.45);font-family:'Instrument Sans',sans-serif}
+  .ts-progress-wrap{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(169,184,255,.14);opacity:0;transition:opacity .3s ease}
+  .ts-progress-wrap.show{opacity:1}
+  .ts-progress-track{flex:1;height:6px;border-radius:100px;background:rgba(169,184,255,.12);overflow:hidden}
+  .ts-progress-fill{height:100%;width:0%;border-radius:100px;background:linear-gradient(90deg,#8fd6a8,#a9b8ff);box-shadow:0 0 8px rgba(169,184,255,.6);transition:width .12s linear}
+  .ts-progress-fill.done{background:linear-gradient(90deg,#8fd6a8,#6fe0a0)}
+  .ts-progress-pct{font-size:11.5px;color:rgba(232,236,246,.5);min-width:34px;text-align:right}
+  .ts-success{display:inline-flex;align-items:center;gap:7px;color:#8fd6a8;font-size:12.5px;opacity:0;transform:scale(.6);white-space:nowrap}
+  .ts-success.show{animation:tsSuccessPop .55s cubic-bezier(.34,1.56,.64,1) forwards}
+  .ts-success .ts-check{width:18px;height:18px;border-radius:50%;background:rgba(143,214,168,.16);border:1px solid rgba(143,214,168,.6);display:inline-flex;align-items:center;justify-content:center}
+  .ts-success.show .ts-check{animation:tsSuccessRing 1s ease-out .1s 1}
+  @keyframes tsSuccessPop{0%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+  @keyframes tsSuccessRing{0%{box-shadow:0 0 0 rgba(143,214,168,.7)}70%{box-shadow:0 0 14px rgba(143,214,168,0)}100%{box-shadow:0 0 0 rgba(143,214,168,0)}}
+  @media (prefers-reduced-motion:reduce){.ts-chev.show{animation:none}.ts-success.show{animation:none;opacity:1;transform:none}.ts-success.show .ts-check{animation:none}}
+  @media (max-width:600px){
+    .ts-row{grid-template-columns:26px 20px 1fr;grid-template-areas:"idx chev name" "meta meta meta";row-gap:3px;column-gap:8px;font-size:13px}
+    .ts-row .ts-idx{grid-area:idx}
+    .ts-row .ts-chev{grid-area:chev}
+    .ts-row .ts-name{grid-area:name;min-width:0}
+    .ts-row .ts-meta{grid-area:meta;white-space:normal;padding-left:46px;font-size:10.5px}
+    .ts-panel{margin-left:26px}
+  }
   .flag-pl,.flag-us,.flag-es{display:inline-block;border-radius:3px;overflow:hidden;flex:0 0 auto;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
   .flag-pl{background:linear-gradient(to bottom, #fff 50%, #dc143c 50%)}
   .flag-es{background:linear-gradient(to bottom, #aa151b 25%, #f1bf00 25%, #f1bf00 75%, #aa151b 75%)}
@@ -187,237 +249,223 @@
           </div>
           <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">09 CASE STUDIES · click to expand</span>
         </div>
-        <div class="projects-grid">
-
-          <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-            <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/flightwatch.jpg" alt="Flight Tracker screenshot" style="width:100%;aspect-ratio:3.28/1;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
-                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Flight Tracker</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">private repo</span>
-              </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A flight price-alert system — monitors prices 24/7 and emails you when the price drops below your threshold.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-            </summary>
-            <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">The engine periodically queries flight APIs, stores price history in SQLite, and triggers notifications once a threshold rule is crossed. Runs locally — never deployed publicly (private API keys).</p>
-              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Flask</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">SQLite</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Kiwi/Tequila API</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Skyscanner (RapidAPI)</span>
-              </div>
-              <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-                <a href="https://flightwatch-yku0.onrender.com" target="_blank" rel="noopener" class="btn-demo">▶ View demo</a>
-                <a href="https://github.com/grzelinj/flightwatch" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/flightwatch</a>
-              </div>
-              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo runs on sample data (no real calls to external APIs) — first load can take ~30–50s, since the free hosting sleeps when idle.</p>
+        <div class="ts-crt">
+          <div class="ts-crt-bar">jan@portfolio:~$ projects — 80x24</div>
+          <div class="ts-crt-body">
+            <div class="ts-line">$ list projects<span class="ts-dots" id="ts-dots"><span></span><span></span><span></span></span></div>
+            <div class="ts-boot" id="ts-boot"></div>
+            <div id="ts-rows"></div>
+            <div class="ts-progress-wrap" id="ts-progress-wrap">
+              <div class="ts-progress-track"><div class="ts-progress-fill" id="ts-progress-fill"></div></div>
+              <span class="ts-progress-pct" id="ts-progress-pct">0%</span>
+              <span class="ts-success" id="ts-success"><span class="ts-check">✓</span> All listed</span>
             </div>
-          </details>
-
-          <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-            <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/setup-checker.jpg" alt="Setup Checker screenshot" style="width:100%;aspect-ratio:3.28/1;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
-                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Setup Checker</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">public repo</span>
-              </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that processes Excel data and generates ready-to-run SQL queries for setup checks.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-            </summary>
-            <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Reads a spreadsheet, validates the fields, and returns ready-to-use SQL. Automates a tedious, repetitive query-building task — saves up to 70% of manual work.</p>
-              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Pandas</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">SQL</span>
-              </div>
-              <div style="display:flex;gap:18px;flex-wrap:wrap">
-                <a href="https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/" target="_blank" rel="noopener" class="btn-demo">▶ View demo</a>
-                <a href="https://github.com/grzelinj/setup-check-streamlit" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/setup-check-streamlit</a>
-              </div>
-            </div>
-          </details>
-
-          <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-            <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/timeline-generator.jpg" alt="Timeline Generator screenshot" style="width:100%;aspect-ratio:3.28/1;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
-                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Timeline Generator</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">public repo</span>
-              </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that generates project timelines from Excel templates.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-            </summary>
-            <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Built to automate vesting timelines (RSU / ESPP / SAYE) at Computershare — cut the process from hours to minutes.</p>
-              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">openpyxl</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Excel</span>
-              </div>
-              <div style="display:flex;gap:18px;flex-wrap:wrap">
-                <a href="https://timeline-generator-cpu.streamlit.app/" target="_blank" rel="noopener" class="btn-demo">▶ View demo</a>
-                <a href="https://github.com/grzelinj/Timeline-Generator" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/Timeline-Generator</a>
-              </div>
-            </div>
-          </details>
-
-          <details style="border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-            <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-              <img src="assets/projekty/asystent-diety.jpg" alt="Asystent diety (Diet Assistant) screenshot" style="width:100%;aspect-ratio:3.28/1;object-fit:cover;object-position:left top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px">
-                <h3 style="margin:0;font:500 25px 'Newsreader',serif">Asystent diety (Diet Assistant)</h3>
-                <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">with Kacper Rogowski</span>
-              </div>
-              <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7)">A Streamlit app that generates a personalized diet recommendation and meal plan via Claude, based on a user's profile and goals.</p>
-              <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-            </summary>
-            <div style="padding:0 26px 28px">
-              <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px">Built together with Kacper Rogowski. Based on a user's profile, goal, and preferences, Claude generates a full diet recommendation (macros, foods, supplements) and a full week's meal plan, exportable to PDF. Products can also be scanned via barcode, with data pulled from Open Food Facts.</p>
-              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Streamlit</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Claude API</span>
-                <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Open Food Facts API</span>
-              </div>
-              <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-                <a href="https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app" target="_blank" rel="noopener" class="btn-demo">▶ View demo</a>
-                <a href="https://github.com/grzelinj/asystent-diety-demo" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/asystent-diety-demo</a>
-              </div>
-              <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Demo with sample data (no real calls to the Claude API) — the first load may take ~30–50s, since the free hosting tier sleeps after inactivity.</p>
-            </div>
-          </details>
-
+          </div>
         </div>
-
-        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-            <img src="assets/projekty/second-brain-diagram-en.jpg" alt="System architecture: input, processing, knowledge base, summary" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14);background:#0a0e1c">
-            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
-              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Obsidian Second Brain</h3>
-              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">personal project · runs locally</span>
-            </div>
-            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A personal knowledge-management system driven by conversation with Claude Code — automatically transcribes, categorizes and links everything I capture by voice, from a web clipper, or from YouTube/Instagram, then emails a weekly summary.</p>
-            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-          </summary>
-          <div style="padding:0 26px 28px">
-            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Three intake channels (Whisper Flow for voice notes, a web clipper for articles, "share to Obsidian" from YouTube/Instagram) all feed into one Inbox. <code style="font-family:'JetBrains Mono',monospace;color:#bcc9ff">transcribe.py</code> turns video links into text (free YouTube captions, or local Whisper AI for Instagram), and saying "review the inbox" launches Claude Code, which categorizes, tags and links everything into the right knowledge folders. Claude Code also runs a Cron job that nags for a weekly review, after which <code style="font-family:'JetBrains Mono',monospace;color:#bcc9ff">send_review_email.py</code> emails a "Morning Press" summary.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Python</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Claude Code (custom skills + Cron)</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Whisper AI</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">youtube-transcript-api</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Obsidian</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Gmail SMTP</span>
-            </div>
-            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Runs entirely locally — no public demo (touches private notes and email).</p>
-          </div>
-        </details>
-
-        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-            <img src="assets/projekty/gmail-inbox-agent-diagram-en.svg" alt="Workflow diagram: schedule, fetch, classify with Claude, deliver" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14);background:#0a0e1c">
-            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
-              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Gmail Inbox Agent</h3>
-              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">personal project · live on n8n</span>
-            </div>
-            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A daily AI agent that triages my inbox during a job search — flags any real recruiter reply at the top, scores generic job-alert blasts against my profile, and emails me one prioritized morning summary instead of me scrolling hundreds of emails.</p>
-            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-          </summary>
-          <div style="padding:0 26px 28px">
-            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Built after I nearly missed a real recruiter reply buried in daily job-board noise. Claude (via n8n's Anthropic connector) reads each new email and classifies it into critical / worth-a-look / noise, actively matching generic job-alert digests against my actual skills and experience rather than just deduplicating them. An n8n Schedule Trigger fires every morning, fetches unlabeled mail, sends the summary with critical items on top, then labels processed emails so the next run never double-reports.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">n8n</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Claude API (Sonnet)</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Gmail API</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">JavaScript (Code nodes)</span>
-            </div>
-            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="gmail-inbox-agent-report.html" class="btn-demo">▶ See example report</a>
-            </div>
-            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">No public demo (connects to my personal inbox) — the linked report is real output from my own mailbox, anonymized before publishing.</p>
-          </div>
-        </details>
-
-        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-            <img src="assets/projekty/padel-court-finder.jpg" alt="Padel Court Finder screenshot: priority slots list and a map of Warsaw clubs" style="width:100%;aspect-ratio:1.43/1;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
-              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Padel Court Finder</h3>
-              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">private repo</span>
-            </div>
-            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A Next.js app that finds a free padel court in Warsaw tonight — scrapes every local club's schedule, geocodes and maps them, and surfaces the slots that actually match my preferred time and court type instead of me checking each club's site one by one.</p>
-            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-          </summary>
-          <div style="padding:0 26px 28px">
-            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">An API route logs into kluby.org and scrapes each Warsaw padel club's schedule with cheerio, deliberately paced with pauses between clubs so it reads like a person clicking through sites rather than a bot hammering them — the trade-off is a ~1-2 minute cold-start scrape, smoothed over by a 5-minute cache. Addresses are geocoded via Nominatim (rate-limited to ~1 req/sec) and merged onto a Leaflet map, with singles courts and evening prime-time slots bubbled to the top and everything ranked by distance from home. A Playtomic integration exists in the code too, currently paused after getting rate-limited during testing — kluby.org alone already covers most Warsaw clubs.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Next.js</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">TypeScript</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Leaflet</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">cheerio (scraping)</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Nominatim (geocoding)</span>
-            </div>
-            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="https://github.com/grzelinj/padel-court-finder" target="_blank" rel="noopener" style="font:500 13px 'JetBrains Mono',monospace">↗ github.com/grzelinj/padel-court-finder</a>
-            </div>
-            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">No public demo — it runs under my personal kluby.org login and is deliberately paced for one polite user, not concurrent site traffic. Screenshot above is a real run against live data.</p>
-          </div>
-        </details>
-
-        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-            <img src="assets/projekty/powerbi-equity-comp.jpg" alt="Equity Compensation dashboard concept mockup" style="width:100%;aspect-ratio:2/1;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
-              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Equity Compensation Dashboard (concept)</h3>
-              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">concept mockup · Power BI</span>
-            </div>
-            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A concept mockup of a Power BI report for vesting/equity compensation — portfolio value, upcoming vesting events, breakdown by plan type — modeled directly on the reporting I build by hand today at Computershare.</p>
-            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-          </summary>
-          <div style="padding:0 26px 28px">
-            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Built as an HTML/SVG visual concept — not a real Power BI file — to validate the direction before building the actual Power BI Desktop report on (synthetic) data. Mirrors the KPIs I actually work with day to day: active plan participants, value released over the last 12 months, unvested value still outstanding, upcoming vesting events, a breakdown by plan type (RSU / ESPP / SAYE), and top companies by vesting value.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Power BI (concept)</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Data visualization</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Equity compensation</span>
-            </div>
-            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="powerbi-equity-comp-mockup.html" class="btn-demo">▶ See mockup</a>
-            </div>
-            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Concept mockup with synthetic data, not a real Power BI report — building the actual Power BI Desktop version is next.</p>
-          </div>
-        </details>
-
-        <details style="margin-top:22px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(120,140,220,.09),rgba(120,140,220,.02));border:1px solid rgba(169,184,255,.16)">
-          <summary style="list-style:none;cursor:pointer;padding:26px;display:block">
-            <img src="assets/projekty/powerbi-real-estate.jpg" alt="Commercial real estate portfolio dashboard concept mockup" style="width:100%;aspect-ratio:2/1;object-fit:cover;object-position:top;border-radius:12px;margin-bottom:24px;border:1px solid rgba(169,184,255,.14)">
-            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:10px;flex-wrap:wrap">
-              <h3 style="margin:0;font:500 25px 'Newsreader',serif">Real Estate Portfolio Dashboard (concept)</h3>
-              <span style="font:500 10px 'JetBrains Mono',monospace;color:rgba(232,236,246,.45);white-space:nowrap">concept mockup · Power BI</span>
-            </div>
-            <p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:rgba(232,236,246,.7);max-width:760px">A concept mockup of a Power BI report for a commercial real estate portfolio — occupancy, value by asset type, lease-expiry schedule — drawing on my earlier real estate analyst background (CBRE, Knight Frank).</p>
-            <span style="display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;color:#a9b8ff">Expand <span class="exp-caret" style="display:inline-block;transition:transform .25s ease">↓</span></span>
-          </summary>
-          <div style="padding:0 26px 28px">
-            <p style="margin:0 0 18px;font-size:14px;line-height:1.62;color:rgba(232,236,246,.64);border-top:1px solid rgba(169,184,255,.14);padding-top:18px;max-width:760px">Same idea as the equity-comp mockup: an HTML/SVG visual concept to validate direction before the real Power BI Desktop build, on synthetic portfolio data. Covers total portfolio value, occupancy trend over 12 months, value breakdown by asset type (office / retail / warehouse / residential), an upcoming lease-expiry schedule by year, and top assets by value — the kind of overview report I'd have wanted at CBRE and Knight Frank.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Power BI (concept)</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Data visualization</span>
-              <span style="font:400 12px 'JetBrains Mono',monospace;color:#bcc9ff;background:rgba(169,184,255,.1);padding:5px 11px;border-radius:7px">Commercial real estate</span>
-            </div>
-            <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px">
-              <a href="powerbi-real-estate-mockup.html" class="btn-demo">▶ See mockup</a>
-            </div>
-            <p style="margin:0;font-size:12px;color:rgba(232,236,246,.45)">Concept mockup with synthetic data, not a real Power BI report — building the actual Power BI Desktop version is next.</p>
-          </div>
-        </details>
 
       </div>
     </section>
+
+    <script>
+    (function(){
+      const TS_PROJECTS = [
+        {slug:"flight-tracker", name:"Flight Tracker", visibility:"private repo",
+         img:{src:"assets/projekty/flightwatch.jpg", alt:"Flight Tracker screenshot", ratio:"3.28/1", pos:"top"},
+         desc:"A flight price-alert system — monitors prices 24/7 and emails you when the price drops below your threshold. The engine periodically queries flight APIs, stores price history in SQLite, and triggers notifications once a threshold rule is crossed. Runs locally — never deployed publicly (private API keys).",
+         tags:["Flask","SQLite","Kiwi/Tequila API","Skyscanner (RapidAPI)"],
+         demoText:"View demo", demoHref:"https://flightwatch-yku0.onrender.com",
+         repoHref:"https://github.com/grzelinj/flightwatch", repoLabel:"github.com/grzelinj/flightwatch",
+         note:"Demo runs on sample data (no real calls to external APIs) — first load can take ~30–50s, since the free hosting sleeps when idle."},
+        {slug:"setup-checker", name:"Setup Checker", visibility:"public repo",
+         img:{src:"assets/projekty/setup-checker.jpg", alt:"Setup Checker screenshot", ratio:"3.28/1", pos:"left top"},
+         desc:"A Streamlit app that processes Excel data and generates ready-to-run SQL queries for setup checks. Reads a spreadsheet, validates the fields, and returns ready-to-use SQL. Automates a tedious, repetitive query-building task — saves up to 70% of manual work.",
+         tags:["Streamlit","Python","Pandas","SQL"],
+         demoText:"View demo", demoHref:"https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/",
+         repoHref:"https://github.com/grzelinj/setup-check-streamlit", repoLabel:"github.com/grzelinj/setup-check-streamlit",
+         note:null},
+        {slug:"timeline-generator", name:"Timeline Generator", visibility:"public repo",
+         img:{src:"assets/projekty/timeline-generator.jpg", alt:"Timeline Generator screenshot", ratio:"3.28/1", pos:"left top"},
+         desc:"A Streamlit app that generates project timelines from Excel templates. Built to automate vesting timelines (RSU / ESPP / SAYE) at Computershare — cut the process from hours to minutes.",
+         tags:["Streamlit","Python","openpyxl","Excel"],
+         demoText:"View demo", demoHref:"https://timeline-generator-cpu.streamlit.app/",
+         repoHref:"https://github.com/grzelinj/Timeline-Generator", repoLabel:"github.com/grzelinj/Timeline-Generator",
+         note:null},
+        {slug:"asystent-diety", name:"Asystent diety (Diet Assistant)", visibility:"with Kacper Rogowski",
+         img:{src:"assets/projekty/asystent-diety.jpg", alt:"Asystent diety (Diet Assistant) screenshot", ratio:"3.28/1", pos:"left top"},
+         desc:"A Streamlit app that generates a personalized diet recommendation and meal plan via Claude, based on a user's profile and goals. Built together with Kacper Rogowski. Claude generates a full diet recommendation (macros, foods, supplements) and a full week's meal plan, exportable to PDF. Products can also be scanned via barcode, with data pulled from Open Food Facts.",
+         tags:["Streamlit","Python","Claude API","Open Food Facts API"],
+         demoText:"View demo", demoHref:"https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app",
+         repoHref:"https://github.com/grzelinj/asystent-diety-demo", repoLabel:"github.com/grzelinj/asystent-diety-demo",
+         note:"Demo with sample data (no real calls to the Claude API) — the first load may take ~30–50s, since the free hosting tier sleeps after inactivity."},
+        {slug:"obsidian-second-brain", name:"Obsidian Second Brain", visibility:"personal · runs locally",
+         img:{src:"assets/projekty/second-brain-diagram-en.jpg", alt:"System architecture: input, processing, knowledge base, summary", ratio:null, pos:null},
+         desc:"A personal knowledge-management system driven by conversation with Claude Code. Three intake channels (Whisper Flow for voice notes, a web clipper for articles, \"share to Obsidian\" from YouTube/Instagram) all feed into one Inbox — transcribed, categorized and linked into the right knowledge folders, with a Cron job nagging for a weekly review that emails a \"Morning Press\" summary.",
+         tags:["Python","Claude Code (custom skills + Cron)","Whisper AI","youtube-transcript-api","Obsidian","Gmail SMTP"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Runs entirely locally — no public demo (touches private notes and email)."},
+        {slug:"gmail-inbox-agent", name:"Gmail Inbox Agent", visibility:"personal · live on n8n",
+         img:{src:"assets/projekty/gmail-inbox-agent-diagram-en.svg", alt:"Workflow diagram: schedule, fetch, classify with Claude, deliver", ratio:null, pos:null},
+         desc:"A daily AI agent that triages my inbox during a job search — flags any real recruiter reply at the top, scores generic job-alert blasts against my profile, and emails me one prioritized morning summary instead of me scrolling hundreds of emails. An n8n Schedule Trigger fires every morning, fetches unlabeled mail, sends the summary with critical items on top, then labels processed emails so the next run never double-reports.",
+         tags:["n8n","Claude API (Sonnet)","Gmail API","JavaScript (Code nodes)"],
+         demoText:"See example report", demoHref:"gmail-inbox-agent-report.html",
+         repoHref:null, repoLabel:null,
+         note:"No public demo (connects to my personal inbox) — the linked report is real output from my own mailbox, anonymized before publishing."},
+        {slug:"padel-court-finder", name:"Padel Court Finder", visibility:"private repo",
+         img:{src:"assets/projekty/padel-court-finder.jpg", alt:"Padel Court Finder screenshot: priority slots list and a map of Warsaw clubs", ratio:"1.43/1", pos:"top"},
+         desc:"A Next.js app that finds a free padel court in Warsaw tonight — scrapes every local club's schedule, geocodes and maps them, and surfaces the slots that actually match my preferred time and court type. Addresses are geocoded via Nominatim and merged onto a Leaflet map, with singles courts and evening prime-time slots bubbled to the top, ranked by distance from home.",
+         tags:["Next.js","TypeScript","Leaflet","cheerio (scraping)","Nominatim (geocoding)"],
+         demoText:null, demoHref:null,
+         repoHref:"https://github.com/grzelinj/padel-court-finder", repoLabel:"github.com/grzelinj/padel-court-finder",
+         note:"No public demo — it runs under my personal kluby.org login and is deliberately paced for one polite user, not concurrent site traffic. Screenshot above is a real run against live data."},
+        {slug:"equity-comp-dashboard", name:"Equity Compensation Dashboard (concept)", visibility:"concept mockup · Power BI",
+         img:{src:"assets/projekty/powerbi-equity-comp.jpg", alt:"Equity Compensation dashboard concept mockup", ratio:"2/1", pos:"top"},
+         desc:"A concept mockup of a Power BI report for vesting/equity compensation — portfolio value, upcoming vesting events, breakdown by plan type — modeled directly on the reporting I build by hand today at Computershare. Mirrors the KPIs I actually work with: active plan participants, value released, unvested value, upcoming vesting events, breakdown by plan type (RSU / ESPP / SAYE), top companies by vesting value.",
+         tags:["Power BI (concept)","Data visualization","Equity compensation"],
+         demoText:"See mockup", demoHref:"powerbi-equity-comp-mockup.html",
+         repoHref:null, repoLabel:null,
+         note:"Concept mockup with synthetic data, not a real Power BI report — building the actual Power BI Desktop version is next."},
+        {slug:"real-estate-dashboard", name:"Real Estate Portfolio Dashboard (concept)", visibility:"concept mockup · Power BI",
+         img:{src:"assets/projekty/powerbi-real-estate.jpg", alt:"Commercial real estate portfolio dashboard concept mockup", ratio:"2/1", pos:"top"},
+         desc:"A concept mockup of a Power BI report for a commercial real estate portfolio — occupancy, value by asset type, lease-expiry schedule — drawing on my earlier real estate analyst background (CBRE, Knight Frank). Covers total portfolio value, occupancy trend, value by asset type, upcoming lease-expiry schedule, and top assets by value.",
+         tags:["Power BI (concept)","Data visualization","Commercial real estate"],
+         demoText:"See mockup", demoHref:"powerbi-real-estate-mockup.html",
+         repoHref:null, repoLabel:null,
+         note:"Concept mockup with synthetic data, not a real Power BI report — building the actual Power BI Desktop version is next."}
+      ];
+      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"9 results. click a row to open." };
+      const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
+      const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
+      let tsBootInterval = null;
+
+      function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+      function render(){
+        const container = document.getElementById('ts-rows');
+        if(!container) return;
+        container.innerHTML = TS_PROJECTS.map((p,i)=>`
+          <div class="ts-row" id="ts-row-${i}" onclick="tsToggleRow(${i})">
+            <span class="ts-idx">${String(i+1).padStart(2,'0')}</span>
+            <span class="ts-chev" id="ts-chev-${i}"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="ts-name"><span class="ts-typed" id="ts-typed-${i}"></span><span class="ts-cursor-sq" id="ts-cur-${i}"></span></span>
+            <span class="ts-meta" id="ts-meta-${i}">${esc(p.visibility)}</span>
+          </div>
+          <div class="ts-panel" id="ts-panel-${i}">
+            ${p.img ? `<div class="ts-shot"><div class="ts-shot-bar"><span class="ts-shot-dot"></span><span class="ts-shot-dot"></span><span class="ts-shot-dot"></span><span class="ts-shot-name">${esc(p.img.src.split('/').pop())}</span></div><img src="${p.img.src}" alt="${esc(p.img.alt)}" style="${p.img.ratio ? `aspect-ratio:${p.img.ratio};object-fit:cover;object-position:${p.img.pos};` : 'height:auto;'}"></div>` : ''}
+            <p class="ts-desc">${esc(p.desc)}</p>
+            <div class="ts-tags">${p.tags.map(t=>`<span class="ts-tag">${esc(t)}</span>`).join('')}</div>
+            <div class="ts-links">
+              ${p.demoHref ? `<a href="${p.demoHref}"${/^https?:/.test(p.demoHref) ? ' target="_blank" rel="noopener"' : ''} class="btn-demo">▶ ${esc(p.demoText)}</a>` : ''}
+              ${p.repoHref ? `<a href="${p.repoHref}" target="_blank" rel="noopener" class="ts-repo-link">↗ ${esc(p.repoLabel)}</a>` : ''}
+            </div>
+            ${p.note ? `<p class="ts-note">${esc(p.note)}</p>` : ''}
+          </div>
+        `).join('');
+
+        if(sessionStorage.getItem('tsProjectsSeen')){
+          showInstant();
+        } else {
+          runBoot();
+        }
+      }
+
+      function setProgress(charsDone){
+        const pct = Math.round((charsDone / TS_TOTAL_CHARS) * 100);
+        const fill = document.getElementById('ts-progress-fill');
+        fill.style.width = pct + '%';
+        document.getElementById('ts-progress-pct').textContent = pct + '%';
+        if(pct >= 100) fill.classList.add('done');
+      }
+
+      function runBoot(){
+        const boot = document.getElementById('ts-boot');
+        let tick = 0;
+        boot.innerHTML = `<span class="glyph" id="ts-boot-glyph">${TS_GLYPHS[0]}</span><span id="ts-boot-word">${TS_STRINGS.bootWords[0]}…</span>`;
+        tsBootInterval = setInterval(()=>{
+          tick++;
+          const g = document.getElementById('ts-boot-glyph'), w = document.getElementById('ts-boot-word');
+          if(!g){ clearInterval(tsBootInterval); return; }
+          g.textContent = TS_GLYPHS[tick % TS_GLYPHS.length];
+          w.textContent = TS_STRINGS.bootWords[Math.floor(tick/3) % TS_STRINGS.bootWords.length] + '…';
+        }, 110);
+        document.getElementById('ts-progress-wrap').classList.add('show');
+        setTimeout(()=>typeRow(0), 500);
+      }
+
+      function typeRow(i){
+        if(i >= TS_PROJECTS.length){
+          clearInterval(tsBootInterval);
+          document.getElementById('ts-boot').textContent = TS_STRINGS.resultsText;
+          document.getElementById('ts-dots').classList.add('show');
+          setProgress(TS_TOTAL_CHARS);
+          setTimeout(()=>document.getElementById('ts-success').classList.add('show'), 150);
+          sessionStorage.setItem('tsProjectsSeen', '1');
+          return;
+        }
+        const row = document.getElementById('ts-row-'+i);
+        const typed = document.getElementById('ts-typed-'+i);
+        const cur = document.getElementById('ts-cur-'+i);
+        const meta = document.getElementById('ts-meta-'+i);
+        const chev = document.getElementById('ts-chev-'+i);
+        if(!row) return;
+        row.classList.add('show');
+        cur.classList.add('on');
+        const text = TS_PROJECTS[i].slug;
+        const priorChars = TS_PROJECTS.slice(0, i).reduce((s,p)=>s+p.slug.length, 0);
+        let c = 0;
+        const iv = setInterval(()=>{
+          c++;
+          typed.textContent = text.slice(0, c);
+          setProgress(priorChars + c);
+          if(c >= text.length){
+            clearInterval(iv);
+            cur.classList.remove('on');
+            meta.classList.add('show');
+            chev.classList.add('show');
+            setTimeout(()=>typeRow(i+1), 130);
+          }
+        }, 38);
+      }
+
+      function showInstant(){
+        document.getElementById('ts-boot').textContent = TS_STRINGS.resultsText;
+        document.getElementById('ts-dots').classList.add('show');
+        document.getElementById('ts-progress-wrap').classList.add('show');
+        document.getElementById('ts-progress-fill').style.width = '100%';
+        document.getElementById('ts-progress-fill').classList.add('done');
+        document.getElementById('ts-progress-pct').textContent = '100%';
+        const success = document.getElementById('ts-success');
+        success.classList.add('show');
+        success.style.animation = 'none';
+        success.style.opacity = '1';
+        success.style.transform = 'none';
+        TS_PROJECTS.forEach((p,i)=>{
+          document.getElementById('ts-row-'+i).classList.add('show');
+          document.getElementById('ts-typed-'+i).textContent = p.slug;
+          document.getElementById('ts-meta-'+i).classList.add('show');
+          const chev = document.getElementById('ts-chev-'+i);
+          chev.classList.add('show');
+          chev.style.animation = 'none';
+        });
+      }
+
+      window.tsToggleRow = function(i){
+        const panel = document.getElementById('ts-panel-'+i);
+        const open = panel.classList.contains('open');
+        document.querySelectorAll('#projekty .ts-panel.open').forEach(p=>p.classList.remove('open'));
+        document.querySelectorAll('#projekty .ts-chev.open').forEach(c=>c.classList.remove('open'));
+        if(!open){
+          panel.classList.add('open');
+          document.getElementById('ts-chev-'+i).classList.add('open');
+        }
+      };
+
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', render);
+      } else {
+        render();
+      }
+    })();
+    </script>
 
     <!-- O MNIE -->
     <section id="o-mnie" style="padding:clamp(72px,9vw,120px) clamp(24px,5vw,72px);border-top:1px solid rgba(232,236,246,.08)">
