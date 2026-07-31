@@ -460,7 +460,7 @@
       };
 
       function initWhenVisible(){
-        const target = document.querySelector('#projekty .ts-crt');
+        const target = document.querySelector('#projekty');
         if(!target){ render(); return; }
         if('IntersectionObserver' in window){
           const io = new IntersectionObserver((entries)=>{
@@ -470,7 +470,7 @@
                 io.disconnect();
               }
             });
-          }, {threshold: 0.15});
+          }, {threshold: 0, rootMargin: '0px 0px -40% 0px'});
           io.observe(target);
         } else {
           render();
