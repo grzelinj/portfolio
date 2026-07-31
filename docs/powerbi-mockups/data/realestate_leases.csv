@@ -1,0 +1,87 @@
+lease_id,asset_id,asset_name,tenant,annual_rent_eur,lease_start,lease_end
+L0000,A000,Warsaw Industrial Park,Tenant 1,608362.0,2023-06-05,2026-06-05
+L0001,A001,Poznan Distribution Center,Tenant 2,125993.0,2022-10-24,2025-10-24
+L0002,A001,Poznan Distribution Center,Tenant 3,147062.0,2023-01-18,2030-01-18
+L0003,A002,Lodz Distribution Center,Tenant 4,25084.0,2023-02-03,2029-02-03
+L0004,A002,Lodz Distribution Center,Tenant 5,28857.0,2024-04-28,2028-04-28
+L0005,A002,Lodz Distribution Center,Tenant 6,27586.0,2023-08-19,2030-08-19
+L0006,A002,Lodz Distribution Center,Tenant 7,32243.0,2025-10-15,2032-10-15
+L0007,A003,Poznan Office Hub,Tenant 8,454943.0,2026-04-10,2029-04-10
+L0008,A003,Poznan Office Hub,Tenant 9,339128.0,2026-04-24,2030-04-24
+L0009,A003,Poznan Office Hub,Tenant 10,441190.0,2022-08-09,2025-08-09
+L0010,A004,Warsaw Corporate Tower,Tenant 11,185329.0,2025-01-27,2031-01-27
+L0011,A004,Warsaw Corporate Tower,Tenant 12,245378.0,2024-07-21,2030-07-21
+L0012,A004,Warsaw Corporate Tower,Tenant 13,263025.0,2023-09-27,2029-09-27
+L0013,A004,Warsaw Corporate Tower,Tenant 14,175661.0,2025-02-18,2032-02-18
+L0014,A005,Krakow Logistics Hub,Tenant 15,653011.0,2023-01-12,2028-01-12
+L0015,A006,Poznan Executive Center,Tenant 16,431877.0,2025-06-28,2031-06-28
+L0016,A006,Poznan Executive Center,Tenant 17,512852.0,2024-04-08,2026-04-08
+L0017,A006,Poznan Executive Center,Tenant 18,464489.0,2024-04-08,2028-04-08
+L0018,A007,Gdansk Industrial Park,Tenant 19,58867.0,2023-08-25,2028-08-25
+L0019,A007,Gdansk Industrial Park,Tenant 20,49661.0,2022-10-01,2025-10-01
+L0020,A007,Gdansk Industrial Park,Tenant 21,48352.0,2024-03-16,2031-03-16
+L0021,A007,Gdansk Industrial Park,Tenant 22,46645.0,2022-10-16,2028-10-16
+L0022,A008,Wroclaw Logistics Hub,Tenant 23,233681.0,2023-04-06,2028-04-06
+L0023,A008,Wroclaw Logistics Hub,Tenant 24,150611.0,2025-10-01,2029-10-01
+L0024,A009,Lodz Distribution Center,Tenant 25,28614.0,2024-11-03,2030-11-03
+L0025,A009,Lodz Distribution Center,Tenant 26,23950.0,2024-09-25,2028-09-25
+L0026,A009,Lodz Distribution Center,Tenant 27,30488.0,2025-06-21,2031-06-21
+L0027,A010,Gdansk Corporate Tower,Tenant 28,267310.0,2025-03-08,2032-03-08
+L0028,A010,Gdansk Corporate Tower,Tenant 29,317337.0,2022-12-21,2028-12-21
+L0029,A011,Krakow Cargo Terminal,Tenant 30,429203.0,2023-10-12,2025-10-12
+L0030,A012,Krakow Executive Center,Tenant 31,1194217.0,2024-06-16,2031-06-16
+L0031,A013,Lodz Office Hub,Tenant 32,936766.0,2026-04-28,2032-04-28
+L0032,A013,Lodz Office Hub,Tenant 33,952436.0,2023-10-01,2030-10-01
+L0033,A014,Poznan Corporate Tower,Tenant 34,133441.0,2024-07-21,2026-07-21
+L0034,A014,Poznan Corporate Tower,Tenant 35,101430.0,2025-06-12,2028-06-12
+L0035,A014,Poznan Corporate Tower,Tenant 36,130479.0,2025-09-15,2031-09-15
+L0036,A014,Poznan Corporate Tower,Tenant 37,89594.0,2023-02-10,2029-02-10
+L0037,A015,Lodz Business Park,Tenant 38,391115.0,2023-09-07,2025-09-07
+L0038,A015,Lodz Business Park,Tenant 39,384103.0,2026-02-18,2032-02-18
+L0039,A015,Lodz Business Park,Tenant 40,329379.0,2025-04-01,2027-04-01
+L0040,A016,Lodz Residence,Tenant 41,68353.0,2024-02-17,2030-02-17
+L0041,A016,Lodz Residence,Tenant 42,78511.0,2023-09-15,2030-09-15
+L0042,A016,Lodz Residence,Tenant 43,91020.0,2026-04-29,2033-04-28
+L0043,A016,Lodz Residence,Tenant 44,95757.0,2026-03-01,2033-03-01
+L0044,A017,Wroclaw Residence,Tenant 45,1127138.0,2026-04-20,2032-04-20
+L0045,A018,Warsaw Executive Center,Tenant 46,372251.0,2022-09-06,2024-09-06
+L0046,A018,Warsaw Executive Center,Tenant 47,537533.0,2025-05-26,2027-05-26
+L0047,A018,Warsaw Executive Center,Tenant 48,452645.0,2025-03-04,2027-03-04
+L0048,A019,Lodz Logistics Hub,Tenant 49,657274.0,2023-04-24,2026-04-24
+L0049,A020,Poznan High Street,Tenant 50,67448.0,2023-08-28,2027-08-28
+L0050,A020,Poznan High Street,Tenant 51,53122.0,2023-11-06,2027-11-06
+L0051,A021,Warsaw Cargo Terminal,Tenant 52,81673.0,2023-09-11,2025-09-11
+L0052,A021,Warsaw Cargo Terminal,Tenant 53,90374.0,2023-05-05,2028-05-05
+L0053,A021,Warsaw Cargo Terminal,Tenant 54,106607.0,2025-10-06,2027-10-06
+L0054,A021,Warsaw Cargo Terminal,Tenant 55,80612.0,2023-01-11,2026-01-11
+L0055,A022,Poznan Distribution Center,Tenant 56,151417.0,2023-12-28,2029-12-28
+L0056,A022,Poznan Distribution Center,Tenant 57,118154.0,2022-09-11,2027-09-11
+L0057,A022,Poznan Distribution Center,Tenant 58,163053.0,2022-08-28,2026-08-28
+L0058,A023,Warsaw High Street,Tenant 59,106086.0,2026-06-05,2031-06-05
+L0059,A023,Warsaw High Street,Tenant 60,93485.0,2022-09-13,2029-09-13
+L0060,A023,Warsaw High Street,Tenant 61,135208.0,2023-09-12,2027-09-12
+L0061,A024,Krakow Executive Center,Tenant 62,491518.0,2022-11-16,2028-11-16
+L0062,A024,Krakow Executive Center,Tenant 63,500775.0,2022-07-21,2027-07-21
+L0063,A024,Krakow Executive Center,Tenant 64,443449.0,2026-04-18,2029-04-18
+L0064,A024,Krakow Executive Center,Tenant 65,476847.0,2024-10-10,2030-10-10
+L0065,A025,Wroclaw Corporate Tower,Tenant 66,845255.0,2022-09-15,2027-09-15
+L0066,A025,Wroclaw Corporate Tower,Tenant 67,607211.0,2026-03-07,2029-03-07
+L0067,A026,Wroclaw Shopping Point,Tenant 68,277245.0,2024-09-22,2027-09-22
+L0068,A026,Wroclaw Shopping Point,Tenant 69,260107.0,2026-06-25,2032-06-25
+L0069,A026,Wroclaw Shopping Point,Tenant 70,211222.0,2025-04-22,2031-04-22
+L0070,A027,Poznan Residence,Tenant 71,193643.0,2025-06-17,2030-06-17
+L0071,A028,Lodz Shopping Point,Tenant 72,520675.0,2025-08-20,2031-08-20
+L0072,A029,Wroclaw Executive Center,Tenant 73,877648.0,2026-02-24,2031-02-24
+L0073,A030,Gdansk Office Hub,Tenant 74,379403.0,2025-01-14,2027-01-14
+L0074,A030,Gdansk Office Hub,Tenant 75,329895.0,2023-09-24,2028-09-24
+L0075,A030,Gdansk Office Hub,Tenant 76,360601.0,2024-02-04,2030-02-04
+L0076,A031,Lodz Residence,Tenant 77,163699.0,2022-12-14,2025-12-14
+L0077,A031,Lodz Residence,Tenant 78,143929.0,2022-08-07,2027-08-07
+L0078,A031,Lodz Residence,Tenant 79,106114.0,2025-05-11,2032-05-11
+L0079,A031,Lodz Residence,Tenant 80,148281.0,2024-01-29,2031-01-28
+L0080,A032,Gdansk Office Hub,Tenant 81,296693.0,2025-01-18,2029-01-18
+L0081,A032,Gdansk Office Hub,Tenant 82,303553.0,2025-06-20,2028-06-20
+L0082,A033,Krakow Industrial Park,Tenant 83,209656.0,2025-05-07,2028-05-07
+L0083,A033,Krakow Industrial Park,Tenant 84,158911.0,2022-11-24,2028-11-24
+L0084,A033,Krakow Industrial Park,Tenant 85,192354.0,2025-12-03,2031-12-03
+L0085,A033,Krakow Industrial Park,Tenant 86,151879.0,2024-03-05,2031-03-05

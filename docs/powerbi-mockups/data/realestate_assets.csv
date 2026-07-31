@@ -1,0 +1,35 @@
+asset_id,asset_name,asset_type,city,area_sqm,value_eur,occupancy_pct
+A000,Warsaw Industrial Park,Warehouse,Warsaw,30075,10114514,88.3
+A001,Poznan Distribution Center,Warehouse,Poznan,12901,4470379,100.0
+A002,Lodz Distribution Center,Warehouse,Lodz,5487,1923244,88.6
+A003,Poznan Office Hub,Office,Poznan,18015,19147461,93.9
+A004,Warsaw Corporate Tower,Office,Warsaw,15368,14343075,95.0
+A005,Krakow Logistics Hub,Warehouse,Krakow,30310,9887783,100.0
+A006,Poznan Executive Center,Office,Poznan,34972,23750560,89.5
+A007,Gdansk Industrial Park,Warehouse,Gdansk,11675,3777112,87.5
+A008,Wroclaw Logistics Hub,Warehouse,Wroclaw,23601,6314438,82.4
+A009,Lodz Distribution Center,Warehouse,Lodz,4584,1360241,100.0
+A010,Gdansk Corporate Tower,Office,Gdansk,11356,10074834,93.9
+A011,Krakow Cargo Terminal,Warehouse,Krakow,32709,8052603,94.1
+A012,Krakow Executive Center,Office,Krakow,33943,23211262,100.0
+A013,Lodz Office Hub,Office,Lodz,33280,30508598,93.4
+A014,Poznan Corporate Tower,Office,Poznan,8553,7762498,83.6
+A015,Lodz Business Park,Office,Lodz,24490,19556183,90.2
+A016,Lodz Residence,Residential,Lodz,8475,5943352,85.6
+A017,Wroclaw Residence,Residential,Wroclaw,17860,15207853,89.0
+A018,Warsaw Executive Center,Office,Warsaw,28509,24339502,89.0
+A019,Lodz Logistics Hub,Warehouse,Lodz,39473,12742707,87.9
+A020,Poznan High Street,Retail,Poznan,3898,2209069,83.0
+A021,Warsaw Cargo Terminal,Warehouse,Warsaw,20584,5781837,100.0
+A022,Poznan Distribution Center,Warehouse,Poznan,33093,7001337,93.2
+A023,Warsaw High Street,Retail,Warsaw,7570,5696885,90.0
+A024,Krakow Executive Center,Office,Krakow,27668,27480029,95.9
+A025,Wroclaw Corporate Tower,Office,Wroclaw,22956,24024427,94.2
+A026,Wroclaw Shopping Point,Retail,Wroclaw,17867,12643136,93.1
+A027,Poznan Residence,Residential,Poznan,4369,3574744,95.5
+A028,Lodz Shopping Point,Retail,Lodz,16933,10121088,92.2
+A029,Wroclaw Executive Center,Office,Wroclaw,18661,17542172,95.4
+A030,Gdansk Office Hub,Office,Gdansk,21252,18841356,95.9
+A031,Lodz Residence,Residential,Lodz,10222,9078040,92.4
+A032,Gdansk Office Hub,Office,Gdansk,13349,12325192,90.1
+A033,Krakow Industrial Park,Warehouse,Krakow,40583,12757994,100.0
