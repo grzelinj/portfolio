@@ -331,9 +331,16 @@
          tags:["Power BI (koncepcja)","Wizualizacja danych","Nieruchomości komercyjne"],
          demoText:"Zobacz mockup", demoHref:"powerbi-real-estate-mockup.html",
          repoHref:null, repoLabel:null,
-         note:"Mockup koncepcyjny na syntetycznych danych, nie prawdziwy raport Power BI — zbudowanie właściwej wersji w Power BI Desktop to kolejny krok."}
+         note:"Mockup koncepcyjny na syntetycznych danych, nie prawdziwy raport Power BI — zbudowanie właściwej wersji w Power BI Desktop to kolejny krok."},
+        {slug:"comeback-season", name:"Comeback Season", visibility:"prywatne · instalowalna aplikacja (PWA)",
+         img:{src:"assets/projekty/comeback-season.jpg", alt:"Comeback Season — tracker nawyków działający jako zainstalowana aplikacja na telefonie", ratio:"2/1", pos:"top"},
+         desc:"Grywalizowany tracker codziennych nawyków — zbudowany i spakowany jako instalowalna, działająca offline Progressive Web App, nie zwykła strona internetowa. Dodajesz go do ekranu głównego telefonu i otwiera się na pełnym ekranie, bez paska przeglądarki, działa nawet bez internetu. Każdy nawyk (trening, szukanie pracy, sen, czytanie) ma przypisane punkty; po przekroczeniu dziennego progu dzień liczy się jako wygrany, z poziomami i licznikiem serii, a waga punktów jest ustawiona pod to, co akurat najważniejsze — obecnie szukanie pracy.",
+         tags:["Progressive Web App","Web App Manifest","Service Worker (cache offline)","localStorage","Vanilla JS"],
+         demoText:"Otwórz aplikację", demoHref:"https://grzelinj.github.io/comeback-season/",
+         repoHref:"https://github.com/grzelinj/comeback-season", repoLabel:"github.com/grzelinj/comeback-season",
+         note:"Zainstaluj sam: otwórz link na telefonie i wybierz \"Dodaj do ekranu głównego\" (Safari na iOS, Chrome na Androidzie) — potem działa jak natywna ikonka aplikacji."}
       ];
-      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"9 wyników. kliknij wiersz, aby rozwinąć." };
+      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"10 wyników. kliknij wiersz, aby rozwinąć." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;

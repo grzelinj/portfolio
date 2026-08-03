@@ -331,9 +331,16 @@
          tags:["Power BI (concept)","Data visualization","Commercial real estate"],
          demoText:"See mockup", demoHref:"powerbi-real-estate-mockup.html",
          repoHref:null, repoLabel:null,
-         note:"Concept mockup with synthetic data, not a real Power BI report — building the actual Power BI Desktop version is next."}
+         note:"Concept mockup with synthetic data, not a real Power BI report — building the actual Power BI Desktop version is next."},
+        {slug:"comeback-season", name:"Comeback Season", visibility:"personal · installable app (PWA)",
+         img:{src:"assets/projekty/comeback-season.jpg", alt:"Comeback Season habit tracker running as an installed phone app", ratio:"2/1", pos:"top"},
+         desc:"A gamified daily habit tracker — built and packaged as an installable, offline-capable Progressive Web App, not just a website. Add it to your phone's home screen and it opens full-screen, no browser chrome, and keeps working without a connection. Every habit (workout, job search, sleep, reading) has a point value; hit the daily threshold and it counts as a win, with levels and a streak counter to keep momentum, weighted toward whatever matters most right now — currently the job search.",
+         tags:["Progressive Web App","Web App Manifest","Service Worker (offline cache)","localStorage","Vanilla JS"],
+         demoText:"Open the app", demoHref:"https://grzelinj.github.io/comeback-season/",
+         repoHref:"https://github.com/grzelinj/comeback-season", repoLabel:"github.com/grzelinj/comeback-season",
+         note:"Install it yourself: open the link on your phone and use \"Add to Home Screen\" (Safari on iOS, Chrome on Android) — it then behaves like a native app icon."}
       ];
-      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"9 results. click a row to open." };
+      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"10 results. click a row to open." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;
