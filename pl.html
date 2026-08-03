@@ -604,39 +604,46 @@ document.addEventListener('DOMContentLoaded', function () {
   var done = false;
   var safety;
 
-  document.body.style.overflow = 'hidden';
-  try { window.scrollTo(0, 0); } catch (e) {}
-
-  function reveal() {
-    if (done) return;
-    done = true;
-    if (safety) clearTimeout(safety);
-    if (flash) {
-      flash.style.opacity = '1';
-      setTimeout(function () { flash.style.opacity = '0'; }, 460);
-    }
-    if (overlay) {
-      overlay.style.pointerEvents = 'none';
-      overlay.style.transition = 'opacity 1s ease';
-      overlay.style.opacity = '0';
-      setTimeout(function () { overlay.style.display = 'none'; }, 1050);
-    }
-    document.body.style.overflow = '';
-  }
-
-  if (vid) {
-    vid.muted = true;
-    vid.playsInline = true;
-    var p = vid.play();
-    if (p && p.catch) p.catch(function () {});
-    vid.addEventListener('ended', reveal);
+  if (sessionStorage.getItem('introSeen')) {
+    if (overlay) overlay.style.display = 'none';
   } else {
-    reveal();
+    document.body.style.overflow = 'hidden';
+    try { window.scrollTo(0, 0); } catch (e) {}
+
+    (function () {
+      function reveal() {
+        if (done) return;
+        done = true;
+        sessionStorage.setItem('introSeen', '1');
+        if (safety) clearTimeout(safety);
+        if (flash) {
+          flash.style.opacity = '1';
+          setTimeout(function () { flash.style.opacity = '0'; }, 460);
+        }
+        if (overlay) {
+          overlay.style.pointerEvents = 'none';
+          overlay.style.transition = 'opacity 1s ease';
+          overlay.style.opacity = '0';
+          setTimeout(function () { overlay.style.display = 'none'; }, 1050);
+        }
+        document.body.style.overflow = '';
+      }
+
+      if (vid) {
+        vid.muted = true;
+        vid.playsInline = true;
+        var p = vid.play();
+        if (p && p.catch) p.catch(function () {});
+        vid.addEventListener('ended', reveal);
+      } else {
+        reveal();
+      }
+
+      if (skip) skip.addEventListener('click', reveal);
+
+      safety = setTimeout(reveal, 9000);
+    })();
   }
-
-  if (skip) skip.addEventListener('click', reveal);
-
-  safety = setTimeout(reveal, 9000);
 });
 </script>
 </body>
