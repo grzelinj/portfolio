@@ -47,7 +47,8 @@
   .timeline-photos{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
   .timeline-photos img{width:180px;height:220px;object-fit:cover;border-radius:10px;border:1px solid rgba(169,184,255,.16)}
   @media (max-width:600px){.timeline-photos img{width:130px;height:160px}}
-  .wiki-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:100px;border:1px solid rgba(169,184,255,.25);background:rgba(120,140,220,.08);font:500 12px 'JetBrains Mono',monospace;color:#e8ecf6}
+  .wiki-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:100px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);font:600 12px 'JetBrains Mono',monospace;color:#f5f5f5;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+  .wiki-badge:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.7);transform:translateY(-1px)}
   .btn-demo{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;background:rgba(169,184,255,.18);border:1px solid rgba(169,184,255,.45);color:#e8ecf6;font:500 13px 'JetBrains Mono',monospace;transition:background .2s ease,border-color .2s ease}
   .btn-demo:hover{background:rgba(169,184,255,.3);border-color:rgba(169,184,255,.7);color:#fff}
   /* ── Terminal Style project list ── */
@@ -506,7 +507,7 @@
             </div>
           </summary>
           <div style="padding:0 28px 32px">
-            <a href="https://pl.wikipedia.org/wiki/Jan_Grzeli%C5%84ski" target="_blank" rel="noopener" class="wiki-badge">📖 See Wikipedia profile (PL)</a>
+            <a href="https://pl.wikipedia.org/wiki/Jan_Grzeli%C5%84ski" target="_blank" rel="noopener" class="wiki-badge">🌐 <strong>Wikipedia</strong> — see profile (PL)</a>
 
             <div class="flags-row" id="flags-row">
               <div class="flag-chip active" data-country="pl"><span class="flag-pl" style="width:22px;height:16px"></span>Poland</div>
