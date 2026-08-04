@@ -250,7 +250,7 @@
             <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:16px">01 — PROJECTS</div>
             <h2 style="margin:0;font:400 clamp(34px,4.4vw,48px)/1 'Newsreader',serif">Selected projects</h2>
           </div>
-          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">10 CASE STUDIES · click to expand</span>
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">11 CASE STUDIES · click to expand</span>
         </div>
         <div class="ts-crt">
           <div class="ts-crt-bar">jan@portfolio:~$ projects — 80x24</div>
@@ -340,9 +340,15 @@
          tags:["Progressive Web App","Web App Manifest","Service Worker (offline cache)","localStorage","Vanilla JS"],
          demoText:"Open the app", demoHref:"https://grzelinj.github.io/comeback-season/",
          repoHref:"https://github.com/grzelinj/comeback-season", repoLabel:"github.com/grzelinj/comeback-season",
-         note:"Install it yourself: open the link on your phone and use \"Add to Home Screen\" (Safari on iOS, Chrome on Android) — it then behaves like a native app icon."}
+         note:"Install it yourself: open the link on your phone and use \"Add to Home Screen\" (Safari on iOS, Chrome on Android) — it then behaves like a native app icon."},
+        {slug:"okx-trading-bot", name:"OKX Trading Bot", visibility:"personal · work in progress",
+         img:{src:"assets/projekty/okx-trading-bot.jpg", alt:"Freqtrade backtest profit plot for the OKX trading bot: price, combined profit, and drawdown over a 2-month backtest", ratio:"1.56/1", pos:"top"},
+         desc:"A semi-automated crypto trading bot on Freqtrade — connects to OKX, manages its own risk (stop-loss, trailing stop), and will notify me on Telegram once live. Currently dry-run only (paper trading, zero real orders). First backtest on BTC/ETH/SOL, 2 months of data, 27 trades: 55.6% win rate, +0.41% return, Sharpe 1.94 — a working pipeline, not yet a strategy I'd trust with real capital.",
+         tags:["Freqtrade","Python","OKX API","Backtesting","Risk management"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Work in progress — shown for the process (data → backtest → risk controls), not the still-early numbers. Needs more strategy tuning and hard daily loss limits before any real capital touches it."}
       ];
-      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"10 results. click a row to open." };
+      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"11 results. click a row to open." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;

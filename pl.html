@@ -250,7 +250,7 @@
             <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:16px">01 — PROJEKTY</div>
             <h2 style="margin:0;font:400 clamp(34px,4.4vw,48px)/1 'Newsreader',serif">Wybrane projekty</h2>
           </div>
-          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">10 CASE STUDIES · kliknij, by rozwinąć</span>
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">11 CASE STUDIES · kliknij, by rozwinąć</span>
         </div>
         <div class="ts-crt">
           <div class="ts-crt-bar">jan@portfolio:~$ projekty — 80x24</div>
@@ -340,9 +340,15 @@
          tags:["Progressive Web App","Web App Manifest","Service Worker (cache offline)","localStorage","Vanilla JS"],
          demoText:"Otwórz aplikację", demoHref:"https://grzelinj.github.io/comeback-season/",
          repoHref:"https://github.com/grzelinj/comeback-season", repoLabel:"github.com/grzelinj/comeback-season",
-         note:"Zainstaluj sam: otwórz link na telefonie i wybierz \"Dodaj do ekranu głównego\" (Safari na iOS, Chrome na Androidzie) — potem działa jak natywna ikonka aplikacji."}
+         note:"Zainstaluj sam: otwórz link na telefonie i wybierz \"Dodaj do ekranu głównego\" (Safari na iOS, Chrome na Androidzie) — potem działa jak natywna ikonka aplikacji."},
+        {slug:"okx-trading-bot", name:"OKX Trading Bot", visibility:"prywatne · w budowie",
+         img:{src:"assets/projekty/okx-trading-bot.jpg", alt:"Wykres zysku z backtestu bota tradingowego OKX (Freqtrade): cena, skumulowany zysk i obsunięcie kapitału w 2-miesięcznym teście", ratio:"1.56/1", pos:"top"},
+         desc:"Częściowo automatyczny bot tradingowy na kryptowalutach, oparty na Freqtrade — łączy się z OKX, sam pilnuje ryzyka (stop-loss, trailing stop) i docelowo będzie wysyłał powiadomienia na Telegram. Na razie działa wyłącznie w trybie dry-run (symulacja, zero realnych zleceń). Pierwszy backtest na BTC/ETH/SOL, 2 miesiące danych, 27 transakcji: 55,6% skuteczności, +0,41% zwrotu, Sharpe 1,94 — działający proces, ale jeszcze nie strategia, której powierzyłbym prawdziwy kapitał.",
+         tags:["Freqtrade","Python","OKX API","Backtesting","Zarządzanie ryzykiem"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Projekt w toku — pokazany ze względu na sam proces (dane → backtest → kontrola ryzyka), nie jeszcze wczesne liczby. Wymaga dalszego strojenia strategii i twardych dziennych limitów strat, zanim dotknie go prawdziwy kapitał."}
       ];
-      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"10 wyników. kliknij wiersz, aby rozwinąć." };
+      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"11 wyników. kliknij wiersz, aby rozwinąć." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;
