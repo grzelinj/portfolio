@@ -346,9 +346,21 @@
          desc:"Częściowo automatyczny bot tradingowy na kryptowalutach, oparty na Freqtrade — łączy się z OKX, sam pilnuje ryzyka (stop-loss, trailing stop) i docelowo będzie wysyłał powiadomienia na Telegram. Na razie działa wyłącznie w trybie dry-run (symulacja, zero realnych zleceń). Pierwszy backtest na BTC/ETH/SOL, 2 miesiące danych, 27 transakcji: 55,6% skuteczności, +0,41% zwrotu, Sharpe 1,94 — działający proces, ale jeszcze nie strategia, której powierzyłbym prawdziwy kapitał.",
          tags:["Freqtrade","Python","OKX API","Backtesting","Zarządzanie ryzykiem"],
          demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Projekt w toku — pokazany ze względu na sam proces (dane → backtest → kontrola ryzyka), nie jeszcze wczesne liczby. Wymaga dalszego strojenia strategii i twardych dziennych limitów strat, zanim dotknie go prawdziwy kapitał."}
+         note:"Projekt w toku — pokazany ze względu na sam proces (dane → backtest → kontrola ryzyka), nie jeszcze wczesne liczby. Wymaga dalszego strojenia strategii i twardych dziennych limitów strat, zanim dotknie go prawdziwy kapitał."},
+        {slug:"oko-forum", name:"Oko Forum — strona gabinetu okulistycznego", visibility:"dla mamy · gabinet okulistyczny",
+         img:{src:"assets/projekty/oko-forum.jpg", alt:"Strona główna gabinetu okulistycznego Oko Forum — sekcja hero z przyciskiem umawiania wizyt", ratio:"1.6/1", pos:"top"},
+         desc:"Strona wizytówkowa dla prawdziwego gabinetu okulistycznego mojej mamy we Wrocławiu (Oko Forum, dr Grzelińska i dr Bugajska) — lekarki, usługi, opinie pacjentek, cennik zabiegów i kontakt z mapą dojazdu. Zaprojektowana pod realny ruch z telefonu i wyszukiwarki: przycisk „Zadzwoń” zawsze widoczny w nagłówku, umawianie wizyt przez link do ZnanyLekarz i pełny cennik bez konieczności dzwonienia.",
+         tags:["HTML/CSS/JS (bez frameworka)","Web design","Formularz kontaktowy (Formspree)","Mapa Google (embed)"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Statyczna strona, jeszcze nie wdrożona pod żadną domenę — formularz kontaktowy czeka na podpięcie realnego endpointu Formspree, zanim pójdzie live. Zrzut ekranu powyżej to prawdziwy render strony."},
+        {slug:"prasa-inwestycyjna", name:"Codzienna Prasa Inwestycyjna", visibility:"projekt osobisty · działa na GitHub Actions",
+         img:{src:"assets/projekty/inwestycyjna-prasa-diagram.svg", alt:"Diagram przepływu: harmonogram, zbieranie z YouTube/Telegrama, podsumowanie przez Claude Haiku, wysyłka na Telegram", ratio:null, pos:null},
+         desc:"Agent AI, który codziennie o 16:00 czyta wybrane kanały YouTube i Telegram o kryptowalutach i wysyła jedną wiadomość na Telegrama z tym, co faktycznie warte uwagi — zamiast ręcznego przewijania godzin nagrań i dziesiątek wpisów. Pobiera transkrypcje z darmowych napisów (fallback: lokalny Whisper + korekta Claude Haiku), Claude Haiku bez sztywnej listy tematów decyduje, co pokazać (konkretne ruchy inwestycyjne trafiają do digestu zawsze), a SQLite pilnuje, żeby nic nie zdublować ani nie zgubić po nieudanym uruchomieniu.",
+         tags:["Python","Telethon (Telegram API)","YouTube RSS + yt-dlp","Claude API (Haiku)","openai-whisper","SQLite","GitHub Actions"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Prywatne repo — czyta wybrane kanały z mojego prywatnego konta Telegram, więc bez publicznego kodu ani demo. Pierwszy udany produkcyjny przebieg: 2026‑08‑04."}
       ];
-      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"11 wyników. kliknij wiersz, aby rozwinąć." };
+      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"13 wyników. kliknij wiersz, aby rozwinąć." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;

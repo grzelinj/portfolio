@@ -346,9 +346,21 @@
          desc:"A semi-automated crypto trading bot on Freqtrade — connects to OKX, manages its own risk (stop-loss, trailing stop), and will notify me on Telegram once live. Currently dry-run only (paper trading, zero real orders). First backtest on BTC/ETH/SOL, 2 months of data, 27 trades: 55.6% win rate, +0.41% return, Sharpe 1.94 — a working pipeline, not yet a strategy I'd trust with real capital.",
          tags:["Freqtrade","Python","OKX API","Backtesting","Risk management"],
          demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Work in progress — shown for the process (data → backtest → risk controls), not the still-early numbers. Needs more strategy tuning and hard daily loss limits before any real capital touches it."}
+         note:"Work in progress — shown for the process (data → backtest → risk controls), not the still-early numbers. Needs more strategy tuning and hard daily loss limits before any real capital touches it."},
+        {slug:"oko-forum", name:"Oko Forum — Eye Clinic Website", visibility:"for my mom · eye clinic",
+         img:{src:"assets/projekty/oko-forum.jpg", alt:"Oko Forum eye clinic homepage — hero section with a book-appointment button", ratio:"1.6/1", pos:"top"},
+         desc:"A marketing site for my mom's real eye clinic in Wrocław (Oko Forum, run by Dr. Grzelińska and Dr. Bugajska) — doctors, services, patient reviews, a procedure price list, and contact with an embedded map. Designed for real phone and search traffic: a \"Call\" button always visible in the header, appointment booking via a ZnanyLekarz link, and a full price list so patients don't need to call just to ask.",
+         tags:["HTML/CSS/JS (no framework)","Web design","Contact form (Formspree)","Google Maps (embed)"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Static site, not yet deployed to a domain — the contact form still needs a real Formspree endpoint wired in before it can go live. The screenshot above is a real render of the site."},
+        {slug:"prasa-inwestycyjna", name:"Daily Investment Press", visibility:"personal project · runs on GitHub Actions",
+         img:{src:"assets/projekty/inwestycyjna-prasa-diagram-en.svg", alt:"Flow diagram: schedule, collect from YouTube/Telegram, summarize via Claude Haiku, deliver to Telegram", ratio:null, pos:null},
+         desc:"An AI agent that reads a curated set of crypto YouTube channels and Telegram channels every day at 16:00 and sends one Telegram message with what's actually worth knowing — instead of scrolling through hours of video and dozens of posts by hand. Pulls transcripts from free captions first (falling back to local Whisper plus Claude Haiku correction), lets Claude Haiku decide with no fixed topic list what to surface (concrete investment moves always make the cut), and uses SQLite to make sure a failed run never duplicates or loses an item.",
+         tags:["Python","Telethon (Telegram API)","YouTube RSS + yt-dlp","Claude API (Haiku)","openai-whisper","SQLite","GitHub Actions"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Private repo — it reads specific channels from my own private Telegram account, so no public code or demo. First successful production run: 2026‑08‑04."}
       ];
-      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"11 results. click a row to open." };
+      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"13 results. click a row to open." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;
