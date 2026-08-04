@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iCloud Cleanup — przykładowy raport | Jan Grzeliński</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#0a0e1c;font-family:'Instrument Sans',system-ui,sans-serif;color:#e8ecf6;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:#a9b8ff;text-decoration:none}
+  a:hover{color:#c8d2ff}
+  .wrap{max-width:760px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(20px,5vw,24px) 96px}
+  .back{display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;margin-bottom:32px}
+  h1{font:500 30px 'Newsreader',serif;margin:0 0 6px}
+  .meta{font:400 13px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5);margin:0 0 4px}
+  .note{font-size:13px;line-height:1.6;color:rgba(232,236,246,.55);background:rgba(120,140,220,.08);border:1px solid rgba(169,184,255,.16);border-radius:10px;padding:14px 16px;margin:20px 0 36px}
+  h2{font:500 18px 'Newsreader',serif;margin:34px 0 12px;padding-top:18px;border-top:1px solid rgba(232,236,246,.08)}
+  h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  p{font-size:14.5px;color:rgba(232,236,246,.78);margin:0 0 12px}
+  strong{color:#e8ecf6}
+  code{font-family:'JetBrains Mono',monospace;font-size:13px;color:#bcc9ff;background:rgba(169,184,255,.1);padding:2px 6px;border-radius:5px}
+  ul{margin:0 0 12px;padding-left:20px}
+  li{font-size:14.5px;color:rgba(232,236,246,.78);margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 16px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(232,236,246,.08);vertical-align:top}
+  th{color:rgba(232,236,246,.5);font:500 11px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+  .footnote{margin-top:36px;padding-top:18px;border-top:1px solid rgba(232,236,246,.08);font-size:12px;color:rgba(232,236,246,.45)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="pl.html#projekty">← Wróć do portfolio</a>
+
+  <h1>Raport z porządkowania iCloud — przykładowe uruchomienie</h1>
+  <p class="meta">iCloud Cleanup · lokalne narzędzie do bezpiecznego wykrywania duplikatów zdjęć i wideo</p>
+  <p class="meta">Zakres: prawdziwe uruchomienie na mojej bibliotece iCloud Photos</p>
+
+  <div class="note">To są <strong>prawdziwe liczby i wpisy</strong> z uruchomienia narzędzia na mojej bibliotece zdjęć. Nazwy plików poniżej to domyślne, generyczne nazwy nadawane automatycznie przez iPhone/iCloud (<code>IMG_XXXX</code>) — nie zawierają danych osobowych ani opisu treści, więc mogę je pokazać bez anonimizacji. Same zdjęcia i filmy nigdy nie są tu pokazywane ani przetwarzane poza moim dyskiem.</div>
+
+  <h2>🔍 Skan i wykrywanie duplikatów</h2>
+  <p>Analiza całej biblioteki <code>Pictures\iCloud Photos\Photos</code>: <strong>22 106 plików</strong>, <strong>145,7 GB</strong>. Narzędzie grupuje zdjęcia zrobione w odstępie kilku sekund (seria z tej samej sceny) i wskazuje kandydatów do przejrzenia — wykryto <strong>1 103 serie</strong>, łącznie <strong>2 121 zdjęć-kandydatów</strong> (przy założeniu zostawienia jednego z każdej serii), ~<strong>4,5 GB</strong> do ewentualnego odzyskania.</p>
+  <table>
+    <tr><th>Seria</th><th>Plik</th><th>Znacznik czasu</th><th>Rozmiar</th></tr>
+    <tr><td rowspan="2">Seria 1</td><td><code>IMG_0229.JPG</code></td><td>2015-06-21 15:59:56</td><td>0,6 MB</td></tr>
+    <tr><td><code>IMG_0232.JPG</code></td><td>2015-06-21 15:59:58</td><td>0,6 MB</td></tr>
+    <tr><td rowspan="3">Seria 2</td><td><code>IMG_0249.JPG</code></td><td>2015-06-21 16:51:21</td><td>2,7 MB</td></tr>
+    <tr><td><code>IMG_0250.JPG</code></td><td>2015-06-21 16:51:22</td><td>2,7 MB</td></tr>
+    <tr><td><code>IMG_0251.JPG</code></td><td>2015-06-21 16:51:23</td><td>2,7 MB</td></tr>
+  </table>
+
+  <h2>🎬 Sortowanie wideo</h2>
+  <p>Osobny przebieg dla wideo: <strong>3 058 filmów</strong> przeanalizowanych (pominięto 853 placeholderów cloud-only, jeszcze nie pobranych na dysk), <strong>~75,6 GB</strong>, posortowanych wg roku i typu — np. nagrania ekranu (<code>screen_recording</code>) trzymane osobno od nagrań kamerą, żeby łatwiej było ocenić co faktycznie warto zachować.</p>
+
+  <h2>🧯 Bezpieczeństwo — kwarantanna, nie kasowanie</h2>
+  <p>Żaden plik nie jest usuwany bezpośrednio. Kandydaci trafiają do folderu kwarantanny z pełnym manifestem (ścieżka oryginalna + docelowa + znacznik czasu przeniesienia) — decyzję o trwałym usunięciu podejmuję ręcznie, dopiero po przejrzeniu listy. Do tej pory żaden plik nie został skasowany bez tego kroku.</p>
+
+  <h2>⚙️ Adaptacyjne dostrajanie pod throttling Apple</h2>
+  <p>Przy wymuszaniu pobrania (rehydratacji) całej biblioteki z chmury na dysk natrafiłem na łagodne dławienie transferu po stronie Apple po ~2h ciągłego pobierania — tempo spadło z ~23 do ~14 plików/min, a błędy zaczęły się pojawiać też na typach plików, które wcześniej działały bez problemu. Rozwiązanie: zejście z 6 do 4 równoległych wątków i logowanie postępu na poziomie <strong>pojedynczego pliku</strong> — wcześniejsza wersja, logująca zbiorczo co 200 plików, "zamilkła" na 2 godziny bez żadnego śladu błędu, gdy proces utknął na jednym pliku-placeholderze czekającym na chmurę.</p>
+
+  <p class="footnote">Prywatne narzędzie działające lokalnie na moim dysku — bez repo ani hostowanego demo, bo operuje na prawdziwej bibliotece zdjęć. Ten raport pokazuje rzeczywiste dane z uruchomienia (liczby, generyczne nazwy plików, znaczniki czasu) — bez samych zdjęć/wideo i bez żadnych danych identyfikujących osoby.</p>
+</div>
+</body>
+</html>

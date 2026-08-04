@@ -362,9 +362,16 @@
          desc:"An AI agent that reads a curated set of crypto YouTube channels and Telegram channels every day at 16:00 and sends one Telegram message with what's actually worth knowing — instead of scrolling through hours of video and dozens of posts by hand. Pulls transcripts from free captions first (falling back to local Whisper plus Claude Haiku correction), lets Claude Haiku decide with no fixed topic list what to surface (concrete investment moves always make the cut), and uses SQLite to make sure a failed run never duplicates or loses an item.",
          tags:["Python","Telethon (Telegram API)","YouTube RSS + yt-dlp","Claude API (Haiku)","openai-whisper","SQLite","GitHub Actions"],
          demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Private repo — it reads specific channels from my own private Telegram account, so no public code or demo. First successful production run: 2026‑08‑04."}
+         note:"Private repo — it reads specific channels from my own private Telegram account, so no public code or demo. First successful production run: 2026‑08‑04."},
+        {slug:"icloud-cleanup", name:"iCloud Cleanup", visibility:"personal project · runs locally",
+         img:{src:"assets/projekty/icloud-cleanup-diagram-en.svg", alt:"Flow diagram: scan library, group duplicate series, quarantine, report for manual review", ratio:null, pos:null},
+         desc:"A tool for safely cleaning up duplicate photos and videos in my iCloud Photos library (145.7 GB, ~22k files) — groups photos shot a few seconds apart into series and flags candidates for review, instead of deleting anything automatically. Along the way I hit a real engineering problem: Apple mildly throttles the download after a long continuous pull from the cloud (throughput dropped from ~23 to ~14 files/min with growing errors) — fixed by adaptively dropping from 6 to 4 threads and logging progress at the single-file level, after an earlier version went silent for 2 hours with no error trace at all.",
+         tags:["Python","Hashing / duplicate detection","File processing","Logging & fault tolerance"],
+         demoText:"See a sample report", demoHref:"icloud-cleanup-report.html",
+         repoHref:null, repoLabel:null,
+         note:"No public demo/repo — it runs locally against my real photo library. The linked report shows real data from an actual run (counts, generic filenames auto-assigned by iPhone) — no photos themselves and nothing that identifies a person."}
       ];
-      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"13 results. click a row to open." };
+      const TS_STRINGS = { bootWords:["Reading","Indexing","Sorting","Compacting"], resultsText:"14 results. click a row to open." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;

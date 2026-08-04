@@ -362,9 +362,16 @@
          desc:"Agent AI, który codziennie o 16:00 czyta wybrane kanały YouTube i Telegram o kryptowalutach i wysyła jedną wiadomość na Telegrama z tym, co faktycznie warte uwagi — zamiast ręcznego przewijania godzin nagrań i dziesiątek wpisów. Pobiera transkrypcje z darmowych napisów (fallback: lokalny Whisper + korekta Claude Haiku), Claude Haiku bez sztywnej listy tematów decyduje, co pokazać (konkretne ruchy inwestycyjne trafiają do digestu zawsze), a SQLite pilnuje, żeby nic nie zdublować ani nie zgubić po nieudanym uruchomieniu.",
          tags:["Python","Telethon (Telegram API)","YouTube RSS + yt-dlp","Claude API (Haiku)","openai-whisper","SQLite","GitHub Actions"],
          demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Prywatne repo — czyta wybrane kanały z mojego prywatnego konta Telegram, więc bez publicznego kodu ani demo. Pierwszy udany produkcyjny przebieg: 2026‑08‑04."}
+         note:"Prywatne repo — czyta wybrane kanały z mojego prywatnego konta Telegram, więc bez publicznego kodu ani demo. Pierwszy udany produkcyjny przebieg: 2026‑08‑04."},
+        {slug:"icloud-cleanup", name:"iCloud Cleanup", visibility:"projekt osobisty · działa lokalnie",
+         img:{src:"assets/projekty/icloud-cleanup-diagram.svg", alt:"Diagram przepływu: skanowanie biblioteki, grupowanie serii duplikatów, kwarantanna, raport do ręcznego przeglądu", ratio:null, pos:null},
+         desc:"Narzędzie do bezpiecznego czyszczenia duplikatów zdjęć i wideo z mojej biblioteki iCloud Photos (145,7 GB, ~22 tys. plików) — grupuje serie zdjęć zrobionych w odstępie kilku sekund i wskazuje kandydatów do przejrzenia, zamiast usuwać cokolwiek automatycznie. Po drodze musiałem rozwiązać realny problem inżynierski: Apple łagodnie dławi transfer po dłuższym ciągłym pobieraniu z chmury (tempo spadało z ~23 do ~14 plików/min z rosnącymi błędami) — rozwiązane przez adaptacyjne zejście z 6 do 4 wątków i logowanie postępu na poziomie pojedynczego pliku, po tym jak wcześniejsza wersja \"zamilkła\" na 2h bez żadnego śladu błędu.",
+         tags:["Python","Hashing / wykrywanie duplikatów","Przetwarzanie plików","Logowanie i odporność na błędy"],
+         demoText:"Zobacz przykładowy raport", demoHref:"icloud-cleanup-raport.html",
+         repoHref:null, repoLabel:null,
+         note:"Brak publicznego demo/repo — działa lokalnie na mojej prawdziwej bibliotece zdjęć. Podlinkowany raport pokazuje prawdziwe dane z uruchomienia (liczby, generyczne nazwy plików nadawane automatycznie przez iPhone) — bez samych zdjęć i bez danych identyfikujących osoby."}
       ];
-      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"13 wyników. kliknij wiersz, aby rozwinąć." };
+      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"14 wyników. kliknij wiersz, aby rozwinąć." };
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;

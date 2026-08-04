@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 385" width="1400" height="385" font-family="'JetBrains Mono', monospace">
+  <defs>
+    <linearGradient id="cardfill3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161d33"/>
+      <stop offset="100%" stop-color="#0d1220"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="385" fill="#0a0e1c"/>
+
+  <text x="700" y="26" text-anchor="middle" fill="#a9b8ff" font-size="13" font-weight="500" letter-spacing="2">SCAN → GROUP SERIES → QUARANTINE → REPORT</text>
+
+  <!-- Box 1: Scan -->
+  <rect x="24" y="60" width="248" height="265" rx="14" fill="url(#cardfill3)" stroke="#a9b8ff" stroke-opacity="0.18"/>
+  <text x="148" y="150" text-anchor="middle" font-size="30">📁</text>
+  <text x="148" y="195" text-anchor="middle" fill="#e8ecf6" font-size="17" font-weight="700">Scan library</text>
+  <text x="148" y="218" text-anchor="middle" fill="#8f9bc2" font-size="12">22,106 files</text>
+  <text x="148" y="236" text-anchor="middle" fill="#8f9bc2" font-size="12">145.7 GB</text>
+
+  <text x="300" y="200" text-anchor="middle" fill="#5c6690" font-size="22">→</text>
+
+  <!-- Box 2: Group -->
+  <rect x="326" y="60" width="248" height="265" rx="14" fill="url(#cardfill3)" stroke="#a9b8ff" stroke-opacity="0.18"/>
+  <text x="450" y="150" text-anchor="middle" font-size="30">🔗</text>
+  <text x="450" y="195" text-anchor="middle" fill="#e8ecf6" font-size="17" font-weight="700">Group series</text>
+  <text x="450" y="218" text-anchor="middle" fill="#8f9bc2" font-size="12">same scene, shot</text>
+  <text x="450" y="236" text-anchor="middle" fill="#8f9bc2" font-size="12">seconds apart</text>
+
+  <text x="602" y="200" text-anchor="middle" fill="#5c6690" font-size="22">→</text>
+
+  <!-- Box 3: Quarantine (wider) -->
+  <rect x="628" y="60" width="290" height="265" rx="14" fill="url(#cardfill3)" stroke="#bcc9ff" stroke-opacity="0.32"/>
+  <text x="773" y="150" text-anchor="middle" font-size="30">🧯</text>
+  <text x="773" y="195" text-anchor="middle" fill="#e8ecf6" font-size="17" font-weight="700">Quarantine</text>
+  <text x="773" y="218" text-anchor="middle" fill="#bcc9ff" font-size="12">nothing deleted outright</text>
+  <text x="773" y="236" text-anchor="middle" fill="#8f9bc2" font-size="12">full move manifest</text>
+
+  <text x="944" y="200" text-anchor="middle" fill="#5c6690" font-size="22">→</text>
+
+  <!-- Box 4: Report -->
+  <rect x="970" y="60" width="248" height="265" rx="14" fill="url(#cardfill3)" stroke="#a9b8ff" stroke-opacity="0.18"/>
+  <text x="1094" y="150" text-anchor="middle" font-size="30">📋</text>
+  <text x="1094" y="195" text-anchor="middle" fill="#e8ecf6" font-size="17" font-weight="700">Report</text>
+  <text x="1094" y="218" text-anchor="middle" fill="#8f9bc2" font-size="12">1,103 series</text>
+  <text x="1094" y="236" text-anchor="middle" fill="#8f9bc2" font-size="12">for manual review</text>
+
+  <text x="1250" y="200" text-anchor="middle" fill="#5c6690" font-size="22">→</text>
+
+  <!-- Box 5: Result -->
+  <rect x="1300" y="130" width="76" height="125" rx="12" fill="none" stroke="#5c6690" stroke-opacity="0.4" stroke-dasharray="4 4"/>
+  <text x="1338" y="185" text-anchor="middle" font-size="24">🔒</text>
+  <text x="1338" y="220" text-anchor="middle" fill="#8f9bc2" font-size="10">zero</text>
+  <text x="1338" y="234" text-anchor="middle" fill="#8f9bc2" font-size="10">deletions</text>
+</svg>

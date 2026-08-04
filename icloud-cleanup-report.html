@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iCloud Cleanup — sample report | Jan Grzeliński</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#0a0e1c;font-family:'Instrument Sans',system-ui,sans-serif;color:#e8ecf6;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:#a9b8ff;text-decoration:none}
+  a:hover{color:#c8d2ff}
+  .wrap{max-width:760px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(20px,5vw,24px) 96px}
+  .back{display:inline-flex;align-items:center;gap:7px;font:500 13px 'JetBrains Mono',monospace;margin-bottom:32px}
+  h1{font:500 30px 'Newsreader',serif;margin:0 0 6px}
+  .meta{font:400 13px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5);margin:0 0 4px}
+  .note{font-size:13px;line-height:1.6;color:rgba(232,236,246,.55);background:rgba(120,140,220,.08);border:1px solid rgba(169,184,255,.16);border-radius:10px;padding:14px 16px;margin:20px 0 36px}
+  h2{font:500 18px 'Newsreader',serif;margin:34px 0 12px;padding-top:18px;border-top:1px solid rgba(232,236,246,.08)}
+  h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  p{font-size:14.5px;color:rgba(232,236,246,.78);margin:0 0 12px}
+  strong{color:#e8ecf6}
+  code{font-family:'JetBrains Mono',monospace;font-size:13px;color:#bcc9ff;background:rgba(169,184,255,.1);padding:2px 6px;border-radius:5px}
+  ul{margin:0 0 12px;padding-left:20px}
+  li{font-size:14.5px;color:rgba(232,236,246,.78);margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 16px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(232,236,246,.08);vertical-align:top}
+  th{color:rgba(232,236,246,.5);font:500 11px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+  .footnote{margin-top:36px;padding-top:18px;border-top:1px solid rgba(232,236,246,.08);font-size:12px;color:rgba(232,236,246,.45)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html#projekty">← Back to portfolio</a>
+
+  <h1>iCloud cleanup report — sample run</h1>
+  <p class="meta">iCloud Cleanup · local tool for safely finding duplicate photos and videos</p>
+  <p class="meta">Scope: a real run against my own iCloud Photos library</p>
+
+  <div class="note">These are <strong>real numbers and entries</strong> from running the tool on my own photo library. The filenames below are the default, generic names iPhone/iCloud assigns automatically (<code>IMG_XXXX</code>) — they carry no personal data or content description, so they're shown as-is, unredacted. The actual photos and videos are never shown here or processed anywhere off my own disk.</div>
+
+  <h2>🔍 Scan and duplicate detection</h2>
+  <p>Scanned the full <code>Pictures\iCloud Photos\Photos</code> library: <strong>22,106 files</strong>, <strong>145.7 GB</strong>. The tool groups photos taken a few seconds apart (the same burst/scene) and flags candidates for review — it found <strong>1,103 series</strong>, <strong>2,121 candidate photos</strong> in total (assuming one is kept per series), ~<strong>4.5 GB</strong> potentially recoverable.</p>
+  <table>
+    <tr><th>Series</th><th>File</th><th>Timestamp</th><th>Size</th></tr>
+    <tr><td rowspan="2">Series 1</td><td><code>IMG_0229.JPG</code></td><td>2015-06-21 15:59:56</td><td>0.6 MB</td></tr>
+    <tr><td><code>IMG_0232.JPG</code></td><td>2015-06-21 15:59:58</td><td>0.6 MB</td></tr>
+    <tr><td rowspan="3">Series 2</td><td><code>IMG_0249.JPG</code></td><td>2015-06-21 16:51:21</td><td>2.7 MB</td></tr>
+    <tr><td><code>IMG_0250.JPG</code></td><td>2015-06-21 16:51:22</td><td>2.7 MB</td></tr>
+    <tr><td><code>IMG_0251.JPG</code></td><td>2015-06-21 16:51:23</td><td>2.7 MB</td></tr>
+  </table>
+
+  <h2>🎬 Video sorting</h2>
+  <p>A separate pass for video: <strong>3,058 videos</strong> analyzed (skipping 853 cloud-only placeholders not yet downloaded), <strong>~75.6 GB</strong>, sorted by year and type — e.g. screen recordings kept separate from camera footage, so it's easier to judge what's actually worth keeping.</p>
+
+  <h2>🧯 Safety — quarantine, not deletion</h2>
+  <p>No file is ever deleted directly. Candidates are moved to a quarantine folder with a full manifest (original path + destination path + move timestamp) — the actual deletion decision is made manually, only after reviewing the list. No file has ever been deleted without that step.</p>
+
+  <h2>⚙️ Adaptive tuning against Apple's throttling</h2>
+  <p>While forcing the whole library to download (rehydrate) from the cloud to disk, I hit mild throttling on Apple's side after ~2h of continuous downloading — throughput dropped from ~23 to ~14 files/min, and errors started appearing on file types that had been fine before. The fix: dropping from 6 to 4 parallel threads and logging progress at the <strong>single-file</strong> level — the earlier version, which only logged every 200 files, went silent for 2 hours with no error trace at all when it got stuck on one cloud placeholder file.</p>
+
+  <p class="footnote">A private tool that runs locally on my own machine — no repo or hosted demo, since it operates on a real photo library. This report shows real data from an actual run (counts, generic filenames, timestamps) — no photos/videos themselves and nothing that identifies a person.</p>
+</div>
+</body>
+</html>
