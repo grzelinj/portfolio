@@ -54,6 +54,9 @@
   .cv-card:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.7);transform:translateY(-1px)}
   .cv-card-thumb{width:44px;height:57px;object-fit:cover;object-position:top;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,.35)}
   .cv-card-sub{display:block;margin-top:2px;font-weight:400;opacity:.6}
+  .cv-card-hero{display:inline-flex;align-items:center;gap:11px;padding:8px 26px 8px 10px;border-radius:9px;border:1px solid rgba(169,184,255,.45);background:rgba(169,184,255,.1);color:#e8ecf6;font-size:15px;transition:background .2s ease}
+  .cv-card-hero:hover{background:rgba(169,184,255,.18)}
+  .cv-card-hero img{width:30px;height:39px;object-fit:cover;object-position:top;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.35)}
   .btn-demo{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;background:rgba(169,184,255,.18);border:1px solid rgba(169,184,255,.45);color:#e8ecf6;font:500 13px 'JetBrains Mono',monospace;transition:background .2s ease,border-color .2s ease}
   .btn-demo:hover{background:rgba(169,184,255,.3);border-color:rgba(169,184,255,.7);color:#fff}
   /* ── Terminal Style project list ── */
@@ -61,6 +64,15 @@
   .ts-crt-bar{padding:12px 20px;border-bottom:1px solid rgba(169,184,255,.16);font-size:11.5px;color:rgba(232,236,246,.6)}
   .ts-crt-body{padding:24px 26px 30px}
   .ts-line{color:#8fd6a8;margin-bottom:6px;font-size:14px}
+  .ts-filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}
+  .ts-filter-chip{font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.55);background:rgba(169,184,255,.06);border:1px solid rgba(169,184,255,.18);border-radius:100px;padding:7px 15px;cursor:pointer;transition:background .3s ease,border-color .3s ease,color .3s ease,box-shadow .3s ease}
+  .ts-filter-chip:hover{background:rgba(169,184,255,.12);color:#e8ecf6}
+  .ts-filter-chip.active{background:rgba(169,184,255,.2);border-color:rgba(169,184,255,.6);color:#e8ecf6}
+  @keyframes tsSpotlightGlow{0%,100%{box-shadow:0 0 0 0 rgba(255,196,90,.0);border-color:rgba(255,196,90,.55)}50%{box-shadow:0 0 20px 5px rgba(255,196,90,.5);border-color:rgba(255,196,90,.9)}}
+  .ts-filter-chip.spotlight{color:#ffe6b3;background:rgba(255,196,90,.12);animation:tsSpotlightGlow 1.7s ease-in-out infinite}
+  .ts-spotlight-hint{display:none;align-items:center;gap:7px;margin:-10px 0 20px;font:500 12px 'JetBrains Mono',monospace;color:#ffcf80;opacity:0;transition:opacity .3s ease}
+  .ts-spotlight-hint.show{display:flex;opacity:1}
+  .ts-life{display:inline-block}
   .ts-boot{display:flex;align-items:center;gap:9px;color:rgba(232,236,246,.55);font-size:13px;margin:0 0 20px;min-height:18px}
   .ts-boot .glyph{color:#a9b8ff;display:inline-block;width:14px;text-align:center}
   .ts-row{display:grid;grid-template-columns:34px 22px 1fr auto;gap:12px;align-items:baseline;padding:11px 4px;cursor:pointer;color:#e8ecf6;opacity:0;transition:opacity .12s ease,background .15s ease;border-radius:8px;font-size:14.5px}
@@ -78,6 +90,9 @@
   .ts-cursor-sq{display:none;width:8px;height:14px;background:#8fd6a8;margin-left:1px;vertical-align:-2px;box-shadow:0 0 7px #8fd6a8;animation:tsBlink .8s step-end infinite}
   .ts-cursor-sq.on{display:inline-block}
   @keyframes tsBlink{50%{opacity:0}}
+  .ts-typed{transition:color .25s ease,text-shadow .25s ease}
+  .ts-row.ts-typing-now .ts-typed{color:#ffcf80;text-shadow:0 0 10px rgba(255,196,90,.55)}
+  .ts-row.ts-typing-now .ts-cursor-sq{background:#ffcf80;box-shadow:0 0 7px #ffcf80}
   .ts-dots{display:inline-flex;gap:4px;margin-left:8px;vertical-align:middle}
   .ts-dots span{width:5px;height:5px;border-radius:50%;background:#8fd6a8;opacity:0}
   .ts-dots.show span{opacity:.25;box-shadow:0 0 6px #8fd6a8;animation:tsDotPulse 1.3s ease-in-out infinite}
@@ -236,11 +251,14 @@
         <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#a9b8ff;margin-bottom:28px">KOSZYKÓWKA · NIERUCHOMOŚCI · FINANSE · DANE · AI</div>
         <h1 style="margin:0;font:400 clamp(36px,6.4vw,76px)/1.12 'Newsreader',serif;letter-spacing:-.015em;max-width:16ch">Grałem na boisku. Dziś gram <em style="font-style:italic;color:#bcc9ff">danymi</em> — reguły się nie zmieniły.</h1>
         <p style="margin:32px 0 0;font-size:clamp(17px,1.6vw,22px);line-height:1.6;color:rgba(232,236,246,.78);max-width:640px">Od reprezentacji Polski w koszykówce, przez nieruchomości komercyjne i finanse, po budowanie narzędzi AI. Wszędzie to samo: przygotowanie, dyscyplina, wynik. Buduję strony, narzędzia i aplikacje — część usprawnia mi pracę, część po prostu ułatwia codzienne życie. Zawsze w tym samym kierunku: efektywność i progres.</p>
-        <div style="display:flex;gap:14px;margin-top:40px;flex-wrap:wrap">
+        <div style="display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;align-items:center">
           <a href="#projekty" style="padding:15px 30px;border-radius:9px;background:#e8ecf6;color:#0a0e1c;font-weight:600;font-size:15px">Zobacz projekty</a>
           <a href="#o-mnie" style="padding:15px 30px;border-radius:9px;border:1px solid rgba(232,236,246,.26);color:#e8ecf6;font-size:15px">O mnie</a>
           <a href="#kontakt" style="padding:15px 30px;border-radius:9px;border:1px solid rgba(232,236,246,.26);color:#e8ecf6;font-size:15px">Kontakt</a>
-          <a href="assets/cv/Jan_Grzelinski_CV_2026.pdf" download style="padding:15px 30px;border-radius:9px;border:1px solid rgba(169,184,255,.45);background:rgba(169,184,255,.1);color:#e8ecf6;font-size:15px">↓ Pobierz CV</a>
+          <a href="assets/cv/Jan_Grzelinski_CV_2026.pdf" download class="cv-card-hero">
+            <img src="assets/cv/cv-thumbnail.jpg" alt="Podgląd pierwszej strony CV">
+            ↓ Pobierz CV
+          </a>
         </div>
       </div>
       <div style="position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(232,236,246,.5);font:500 11px 'JetBrains Mono',monospace;letter-spacing:.1em;animation:hintBob 2.2s ease-in-out infinite">PRZEWIŃ<span style="font-size:16px">↓</span></div>
@@ -254,12 +272,19 @@
             <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#a9b8ff;margin-bottom:16px">01 — PROJEKTY</div>
             <h2 style="margin:0;font:400 clamp(34px,4.4vw,48px)/1 'Newsreader',serif">Wybrane projekty</h2>
           </div>
-          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">14 CASE STUDIES · kliknij, by rozwinąć</span>
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(232,236,246,.5)">16 CASE STUDIES · kliknij, by rozwinąć</span>
         </div>
         <div class="ts-crt">
           <div class="ts-crt-bar">jan@portfolio:~$ projekty — 80x24</div>
           <div class="ts-crt-body">
-            <div class="ts-line">$ list projects<span class="ts-dots" id="ts-dots"><span></span><span></span><span></span></span></div>
+            <div class="ts-line">$ <span id="ts-cmd">list projects</span><span class="ts-dots" id="ts-dots"><span></span><span></span><span></span></span></div>
+            <div class="ts-filters" id="ts-filters">
+              <button type="button" class="ts-filter-chip active" data-cat="all" onclick="tsSetCategory('all')">Wszystkie</button>
+              <button type="button" class="ts-filter-chip" data-cat="ai" onclick="tsSetCategory('ai')">AI i automatyzacja</button>
+              <button type="button" class="ts-filter-chip" data-cat="dane" onclick="tsSetCategory('dane')">Dane i finanse</button>
+              <button type="button" class="ts-filter-chip" data-cat="web" onclick="tsSetCategory('web')">Web i appki</button>
+            </div>
+            <div class="ts-spotlight-hint" id="ts-spotlight-hint">👀 Zerknij: <strong id="ts-spotlight-hint-label"></strong></div>
             <div class="ts-boot" id="ts-boot"></div>
             <div id="ts-rows"></div>
             <div class="ts-progress-wrap" id="ts-progress-wrap">
@@ -276,117 +301,195 @@
     <script>
     (function(){
       const TS_PROJECTS = [
-        {slug:"flight-tracker", name:"Flight Tracker", visibility:"repo prywatne",
-         img:{src:"assets/projekty/flightwatch.jpg", alt:"Zrzut ekranu Flight Tracker", ratio:"3.28/1", pos:"top"},
-         desc:"System alertów cenowych dla lotów — monitoruje ceny 24/7 i wysyła e‑mail, gdy cena spadnie poniżej progu. Silnik cyklicznie odpytuje API lotnicze, zapisuje historię cen w SQLite i wyzwala powiadomienia po przekroczeniu reguł progowych. Działa lokalnie — nie było wdrażane publicznie (prywatne klucze API).",
-         tags:["Flask","SQLite","Kiwi/Tequila API","Skyscanner (RapidAPI)"],
-         demoText:"Zobacz demo", demoHref:"https://flightwatch-yku0.onrender.com",
+        {slug:"upgrade-dmc", name:"Upgrade DMC — strona biura podróży", visibility:"dla rodzinnego biura podróży · live", cat:"web", life:"prywatne",
+         img:{src:"assets/projekty/upgrade-dmc.jpg", alt:"Baner destynacji Upgrade DMC — Lizbona, Wrocław, Barcelona, Wyspy Kanaryjskie", ratio:"1.6/1", pos:"top"},
+         desc:"Działająca strona WordPress dla Upgrade DMC, biura podróży z Barcelony prowadzonego przez moją siostrę i jej partnera. Przejąłem projekt w trakcie, gdy poprzedni freelancer przestał pracować — odzyskałem dostęp do panelu admina, zbudowałem cztery podstrony destynacji (Hiszpania, Portugalia, Polska, Andora), naprawiłem rotator zdjęć hero, przepisałem tekst O nas, podpiąłem formularz kontaktowy i na bieżąco wdrażam kolejne poprawki.",
+         tags:["WordPress","WPBakery (motyw Brooklyn)","Poprawki PHP/JS","Administracja hosting/FTP","Komunikacja z klientem"],
+         demoText:"Zobacz żywą stronę", demoHref:"https://upgradedmc.com",
          repoHref:null, repoLabel:null,
-         note:"Demo z przykładowymi danymi (bez realnych zapytań do zewnętrznych API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności."},
-        {slug:"setup-checker", name:"Setup Checker", visibility:"repo publiczne",
-         img:{src:"assets/projekty/setup-checker.jpg", alt:"Zrzut ekranu Setup Checker", ratio:"3.28/1", pos:"left top"},
-         desc:"Aplikacja Streamlit przetwarzająca dane z Excela i generująca gotowe zapytania SQL do setup checków. Wczytuje arkusz, waliduje pola i zwraca gotowy do użycia SQL — oszczędza do 70% ręcznej pracy.",
-         tags:["Streamlit","Python","Pandas","SQL"],
-         demoText:"Zobacz demo", demoHref:"https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/",
-         repoHref:"https://github.com/grzelinj/setup-check-streamlit", repoLabel:"github.com/grzelinj/setup-check-streamlit",
-         note:null},
-        {slug:"timeline-generator", name:"Timeline Generator", visibility:"repo publiczne",
-         img:{src:"assets/projekty/timeline-generator.jpg", alt:"Zrzut ekranu Timeline Generator", ratio:"3.28/1", pos:"left top"},
-         desc:"Aplikacja Streamlit generująca harmonogramy projektów z szablonów Excel. Zbudowana do automatyzacji harmonogramów vestingowych (RSU / ESPP / SAYE) w Computershare — skróciła proces z godzin do minut.",
-         tags:["Streamlit","Python","openpyxl","Excel"],
-         demoText:"Zobacz demo", demoHref:"https://timeline-generator-cpu.streamlit.app/",
-         repoHref:"https://github.com/grzelinj/Timeline-Generator", repoLabel:"github.com/grzelinj/Timeline-Generator",
-         note:null},
-        {slug:"asystent-diety", name:"Asystent diety", visibility:"z Kacprem Rogowskim",
-         img:{src:"assets/projekty/asystent-diety.jpg", alt:"Zrzut ekranu Asystent diety", ratio:"3.28/1", pos:"left top"},
-         desc:"Aplikacja Streamlit, która na podstawie profilu i celu generuje spersonalizowaną rekomendację diety i plan posiłków przez Claude API. Wspólny projekt z Kacprem Rogowskim — pełna rekomendacja (makro, produkty, suplementacja) i plan posiłków na cały tydzień, z eksportem do PDF. Produkty można też zeskanować kodem kreskowym — dane z Open Food Facts.",
-         tags:["Streamlit","Python","Claude API","Open Food Facts API"],
-         demoText:"Zobacz demo", demoHref:"https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app",
-         repoHref:"https://github.com/grzelinj/asystent-diety-demo", repoLabel:"github.com/grzelinj/asystent-diety-demo",
-         note:"Demo z przykładowymi danymi (bez realnych zapytań do Claude API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności."},
-        {slug:"obsidian-second-brain", name:"Obsidian Second Brain", visibility:"projekt osobisty · działa lokalnie",
-         img:{src:"assets/projekty/second-brain-diagram.jpg", alt:"Architektura systemu: wejście, przetwarzanie, baza wiedzy, podsumowanie", ratio:null, pos:null},
-         desc:"System zarządzania wiedzą osobistą sterowany rozmową z Claude Code. Trzy kanały wejścia (Whisper Flow do notatek głosowych, web clipper na artykuły, \"share to Obsidian\" z YouTube/Instagrama) trafiają do jednego Inbox-a — transkrybowane, kategoryzowane i linkowane do właściwych folderów wiedzy, a Cron przypomina o cotygodniowym przeglądzie i wysyła podsumowanie \"Poranna Prasa\".",
-         tags:["Python","Claude Code (custom skills + Cron)","Whisper AI","youtube-transcript-api","Obsidian","Gmail SMTP"],
+         note:"Prawdziwa, ciągła praca z klientem — wyceniona i dostarczana jak każdy projekt freelance, nie jednorazowa przysługa."},
+        {slug:"soulstate", name:"The Soulstate — Travel & Experiences (w trakcie)", visibility:"dla marki podróżniczej znajomej · w trakcie", cat:"web", life:"prywatne",
+         img:{src:"assets/projekty/soulstate.jpg", alt:"Propozycja graficzna The Soulstate — sekcja hero", ratio:"1.6/1", pos:"top"},
+         desc:"Nowa strona marki podróżniczej, obecnie na etapie projektowania, dla The Soulstate — organizatora kameralnych wyjazdów aktywnych dla kobiet (trekkingi, retreaty, podróże kulturowe). Przygotowuję kilka propozycji kierunku graficznego do wyboru przez klientkę, zanim ruszy budowa — obejmują identyfikację marki, strukturę strony i treści dla destynacji oraz rezerwacji wyjazdów.",
+         tags:["Web design","HTML/CSS","Identyfikacja marki","Propozycje dla klienta"],
          demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Działa wyłącznie lokalnie — brak publicznego demo (dostęp do prywatnych notatek i poczty)."},
-        {slug:"gmail-inbox-agent", name:"Gmail Inbox Agent", visibility:"projekt osobisty · działa na n8n",
+         note:"Projekt w trakcie — obecnie na etapie propozycji graficznych (klientka wybiera kierunek), zanim ruszy budowa."},
+        {slug:"gmail-inbox-agent", name:"Gmail Inbox Agent", visibility:"projekt osobisty · działa na n8n", cat:"ai", life:"praca",
          img:{src:"assets/projekty/gmail-inbox-agent-diagram.svg", alt:"Diagram przepływu: harmonogram, pobranie, klasyfikacja przez Claude, wysyłka", ratio:null, pos:null},
          desc:"Codzienny agent AI, który podczas szukania pracy przegląda moją skrzynkę — wyłapuje na samą górę każdą realną odpowiedź od rekrutera, ocenia generyczne oferty względem mojego profilu i wysyła jedno priorytetyzowane poranne podsumowanie zamiast przewijania setek maili. Harmonogram n8n odpala się co rano, pobiera nieoetykietowane maile, wysyła podsumowanie z krytycznymi sprawami na górze, a potem etykietuje przetworzone maile, żeby kolejne uruchomienie nigdy nie zdublowało raportu.",
          tags:["n8n","Claude API (Sonnet)","Gmail API","JavaScript (Code nodes)"],
          demoText:"Zobacz przykładowy raport", demoHref:"gmail-inbox-agent-raport.html",
          repoHref:null, repoLabel:null,
          note:"Brak publicznego demo (dostęp do mojej prywatnej skrzynki) — podlinkowany raport to prawdziwy wynik z mojej skrzynki, zanonimizowany przed publikacją."},
-        {slug:"padel-court-finder", name:"Padel Court Finder", visibility:"prywatne repo",
-         img:{src:"assets/projekty/padel-court-finder.jpg", alt:"Zrzut ekranu Padel Court Finder: lista priorytetowych terminów i mapa klubów w Warszawie", ratio:"1.43/1", pos:"top"},
-         desc:"Aplikacja Next.js, która na dziś wieczór znajduje wolny kort do padla w Warszawie — scrapuje grafiki wszystkich lokalnych klubów, geokoduje i nanosi je na mapę, i pokazuje terminy faktycznie pasujące do mojej preferowanej pory i typu kortu. Adresy geokodowane przez Nominatim i naniesione na mapę Leaflet, korty single'owe i wieczorne godziny szczytu wypływają na górę listy, posortowanej dodatkowo według odległości od domu.",
-         tags:["Next.js","TypeScript","Leaflet","cheerio (scraping)","Nominatim (geokodowanie)"],
-         demoText:null, demoHref:null,
+        {slug:"prasa-inwestycyjna", name:"Codzienna Prasa Inwestycyjna", visibility:"projekt osobisty · działa na GitHub Actions", cat:"ai", life:"prywatne",
+         img:{src:"assets/projekty/inwestycyjna-prasa-diagram.svg", alt:"Diagram przepływu: harmonogram, zbieranie z YouTube/Telegrama, podsumowanie przez Claude Haiku, wysyłka na Telegram", ratio:null, pos:null},
+         desc:"Agent AI, który codziennie o 16:00 czyta wybrane kanały YouTube i Telegram o kryptowalutach i wysyła jedną wiadomość na Telegrama z tym, co faktycznie warte uwagi — zamiast ręcznego przewijania godzin nagrań i dziesiątek wpisów. Pobiera transkrypcje z darmowych napisów (fallback: lokalny Whisper + korekta Claude Haiku), Claude Haiku bez sztywnej listy tematów decyduje, co pokazać (konkretne ruchy inwestycyjne trafiają do digestu zawsze), a SQLite pilnuje, żeby nic nie zdublować ani nie zgubić po nieudanym uruchomieniu.",
+         tags:["Python","Telethon (Telegram API)","YouTube RSS + yt-dlp","Claude API (Haiku)","openai-whisper","SQLite","GitHub Actions"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Prywatne repo — czyta wybrane kanały z mojego prywatnego konta Telegram, więc bez publicznego kodu ani demo. Pierwszy udany produkcyjny przebieg: 2026‑08‑04."},
+        {slug:"oko-forum", name:"Oko Forum — strona gabinetu okulistycznego", visibility:"dla mamy · gabinet okulistyczny", cat:"web", life:"prywatne",
+         img:{src:"assets/projekty/oko-forum.jpg", alt:"Strona główna gabinetu okulistycznego Oko Forum — sekcja hero z przyciskiem umawiania wizyt", ratio:"1.6/1", pos:"top"},
+         desc:"Strona wizytówkowa dla prawdziwego gabinetu okulistycznego mojej mamy we Wrocławiu (Oko Forum, dr Grzelińska i dr Bugajska) — lekarki, usługi, opinie pacjentek, cennik zabiegów i kontakt z mapą dojazdu. Zaprojektowana pod realny ruch z telefonu i wyszukiwarki: przycisk „Zadzwoń” zawsze widoczny w nagłówku, umawianie wizyt przez link do ZnanyLekarz i pełny cennik bez konieczności dzwonienia.",
+         tags:["HTML/CSS/JS (bez frameworka)","Web design","Formularz kontaktowy (Formspree)","Mapa Google (embed)"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Statyczna strona, jeszcze nie wdrożona pod żadną domenę — formularz kontaktowy czeka na podpięcie realnego endpointu Formspree, zanim pójdzie live. Zrzut ekranu powyżej to prawdziwy render strony."},
+        {slug:"obsidian-second-brain", name:"Obsidian Second Brain", visibility:"projekt osobisty · działa lokalnie", cat:"ai", life:"prywatne",
+         img:{src:"assets/projekty/second-brain-diagram.jpg", alt:"Architektura systemu: wejście, przetwarzanie, baza wiedzy, podsumowanie", ratio:null, pos:null},
+         desc:"System zarządzania wiedzą osobistą sterowany rozmową z Claude Code. Trzy kanały wejścia (Whisper Flow do notatek głosowych, web clipper na artykuły, \"share to Obsidian\" z YouTube/Instagrama) trafiają do jednego Inbox-a — transkrybowane, kategoryzowane i linkowane do właściwych folderów wiedzy, a Cron przypomina o cotygodniowym przeglądzie i wysyła podsumowanie \"Poranna Prasa\".",
+         tags:["Python","Claude Code (custom skills + Cron)","Whisper AI","youtube-transcript-api","Obsidian","Gmail SMTP"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Działa wyłącznie lokalnie — brak publicznego demo (dostęp do prywatnych notatek i poczty)."},
+        {slug:"okx-trading-bot", name:"OKX Trading Bot", visibility:"prywatne · w budowie", cat:"ai", life:"prywatne",
+         img:{src:"assets/projekty/okx-trading-bot.jpg", alt:"Wykres zysku z backtestu bota tradingowego OKX (Freqtrade): cena, skumulowany zysk i obsunięcie kapitału w 2-miesięcznym teście", ratio:"1.56/1", pos:"top"},
+         desc:"Częściowo automatyczny bot tradingowy na kryptowalutach, oparty na Freqtrade — łączy się z OKX, sam pilnuje ryzyka (stop-loss, trailing stop) i docelowo będzie wysyłał powiadomienia na Telegram. Na razie działa wyłącznie w trybie dry-run (symulacja, zero realnych zleceń). Pierwszy backtest na BTC/ETH/SOL, 2 miesiące danych, 27 transakcji: 55,6% skuteczności, +0,41% zwrotu, Sharpe 1,94 — działający proces, ale jeszcze nie strategia, której powierzyłbym prawdziwy kapitał.",
+         tags:["Freqtrade","Python","OKX API","Backtesting","Zarządzanie ryzykiem"],
+         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
+         note:"Projekt w toku — pokazany ze względu na sam proces (dane → backtest → kontrola ryzyka), nie jeszcze wczesne liczby. Wymaga dalszego strojenia strategii i twardych dziennych limitów strat, zanim dotknie go prawdziwy kapitał."},
+        {slug:"icloud-cleanup", name:"iCloud Cleanup", visibility:"projekt osobisty · działa lokalnie", cat:"ai", life:"prywatne",
+         img:{src:"assets/projekty/icloud-cleanup-diagram.svg", alt:"Diagram przepływu: skanowanie biblioteki, grupowanie serii duplikatów, kwarantanna, raport do ręcznego przeglądu", ratio:null, pos:null},
+         desc:"Narzędzie do bezpiecznego czyszczenia duplikatów zdjęć i wideo z mojej biblioteki iCloud Photos (145,7 GB, ~22 tys. plików) — grupuje serie zdjęć zrobionych w odstępie kilku sekund i wskazuje kandydatów do przejrzenia, zamiast usuwać cokolwiek automatycznie. Po drodze musiałem rozwiązać realny problem inżynierski: Apple łagodnie dławi transfer po dłuższym ciągłym pobieraniu z chmury (tempo spadało z ~23 do ~14 plików/min z rosnącymi błędami) — rozwiązane przez adaptacyjne zejście z 6 do 4 wątków i logowanie postępu na poziomie pojedynczego pliku, po tym jak wcześniejsza wersja \"zamilkła\" na 2h bez żadnego śladu błędu.",
+         tags:["Python","Hashing / wykrywanie duplikatów","Przetwarzanie plików","Logowanie i odporność na błędy"],
+         demoText:"Zobacz przykładowy raport", demoHref:"icloud-cleanup-raport.html",
          repoHref:null, repoLabel:null,
-         note:"Brak publicznego demo — działa na moim prywatnym loginie do kluby.org i jest celowo spowolnione pod jednego, uprzejmego użytkownika, nie pod równoczesny ruch z internetu. Zrzut ekranu powyżej to prawdziwe uruchomienie na żywych danych."},
-        {slug:"equity-comp-dashboard", name:"Dashboard Equity Compensation (koncepcja)", visibility:"mockup koncepcyjny · Power BI",
+         note:"Brak publicznego demo/repo — działa lokalnie na mojej prawdziwej bibliotece zdjęć. Podlinkowany raport pokazuje prawdziwe dane z uruchomienia (liczby, generyczne nazwy plików nadawane automatycznie przez iPhone) — bez samych zdjęć i bez danych identyfikujących osoby."},
+        {slug:"setup-checker", name:"Setup Checker", visibility:"repo publiczne", cat:"dane", life:"praca",
+         img:{src:"assets/projekty/setup-checker.jpg", alt:"Zrzut ekranu Setup Checker", ratio:"3.28/1", pos:"left top"},
+         desc:"Aplikacja Streamlit przetwarzająca dane z Excela i generująca gotowe zapytania SQL do setup checków. Wczytuje arkusz, waliduje pola i zwraca gotowy do użycia SQL — oszczędza do 70% ręcznej pracy.",
+         tags:["Streamlit","Python","Pandas","SQL"],
+         demoText:"Zobacz demo", demoHref:"https://grzelinj-setup-check-streamlit-app-itfuqx.streamlit.app/",
+         repoHref:"https://github.com/grzelinj/setup-check-streamlit", repoLabel:"github.com/grzelinj/setup-check-streamlit",
+         note:null},
+        {slug:"timeline-generator", name:"Timeline Generator", visibility:"repo publiczne", cat:"dane", life:"praca",
+         img:{src:"assets/projekty/timeline-generator.jpg", alt:"Zrzut ekranu Timeline Generator", ratio:"3.28/1", pos:"left top"},
+         desc:"Aplikacja Streamlit generująca harmonogramy projektów z szablonów Excel. Zbudowana do automatyzacji harmonogramów vestingowych (RSU / ESPP / SAYE) w Computershare — skróciła proces z godzin do minut.",
+         tags:["Streamlit","Python","openpyxl","Excel"],
+         demoText:"Zobacz demo", demoHref:"https://timeline-generator-cpu.streamlit.app/",
+         repoHref:"https://github.com/grzelinj/Timeline-Generator", repoLabel:"github.com/grzelinj/Timeline-Generator",
+         note:null},
+        {slug:"equity-comp-dashboard", name:"Dashboard Equity Compensation (koncepcja)", visibility:"mockup koncepcyjny · Power BI", cat:"dane", life:"praca",
          img:{src:"assets/projekty/powerbi-equity-comp.jpg", alt:"Mockup koncepcyjny dashboardu equity compensation", ratio:"2/1", pos:"top"},
          desc:"Mockup koncepcyjny raportu Power BI dla equity compensation/vestingu — wartość portfela, nadchodzące zdarzenia vestingu, podział wg typu planu — wzorowany bezpośrednio na raportach, które dziś ręcznie buduję w Computershare. Odzwierciedla wskaźniki, z którymi pracuję na co dzień: aktywni uczestnicy planów, wartość odblokowana, wartość w oczekiwaniu, nadchodzące zdarzenia vestingu, podział wg typu planu (RSU / ESPP / SAYE) i top spółki wg wartości vestingu.",
          tags:["Power BI (koncepcja)","Wizualizacja danych","Equity compensation"],
          demoText:"Zobacz mockup", demoHref:"powerbi-equity-comp-mockup.html",
          repoHref:null, repoLabel:null,
          note:"Mockup koncepcyjny na syntetycznych danych, nie prawdziwy raport Power BI — zbudowanie właściwej wersji w Power BI Desktop to kolejny krok."},
-        {slug:"real-estate-dashboard", name:"Dashboard portfela nieruchomości (koncepcja)", visibility:"mockup koncepcyjny · Power BI",
+        {slug:"real-estate-dashboard", name:"Dashboard portfela nieruchomości (koncepcja)", visibility:"mockup koncepcyjny · Power BI", cat:"dane", life:"praca",
          img:{src:"assets/projekty/powerbi-real-estate.jpg", alt:"Mockup koncepcyjny dashboardu portfela nieruchomości komercyjnych", ratio:"2/1", pos:"top"},
          desc:"Mockup koncepcyjny raportu Power BI dla portfela nieruchomości komercyjnych — obłożenie, wartość wg typu aktywa, harmonogram wygaśnięcia najmów — czerpiący z mojego wcześniejszego doświadczenia jako analityk nieruchomości (CBRE, Knight Frank). Obejmuje całkowitą wartość portfela, trend obłożenia, podział wg typu aktywa, harmonogram wygaśnięcia najmów i top aktywa wg wartości.",
          tags:["Power BI (koncepcja)","Wizualizacja danych","Nieruchomości komercyjne"],
          demoText:"Zobacz mockup", demoHref:"powerbi-real-estate-mockup.html",
          repoHref:null, repoLabel:null,
          note:"Mockup koncepcyjny na syntetycznych danych, nie prawdziwy raport Power BI — zbudowanie właściwej wersji w Power BI Desktop to kolejny krok."},
-        {slug:"comeback-season", name:"Comeback Season", visibility:"prywatne · instalowalna aplikacja (PWA)",
+        {slug:"comeback-season", name:"Comeback Season", visibility:"prywatne · instalowalna aplikacja (PWA)", cat:"web", life:"prywatne",
          img:{src:"assets/projekty/comeback-season.jpg", alt:"Comeback Season — tracker nawyków działający jako zainstalowana aplikacja na telefonie", ratio:"2/1", pos:"top"},
          desc:"Grywalizowany tracker codziennych nawyków — zbudowany i spakowany jako instalowalna, działająca offline Progressive Web App, nie zwykła strona internetowa. Dodajesz go do ekranu głównego telefonu i otwiera się na pełnym ekranie, bez paska przeglądarki, działa nawet bez internetu. Każdy nawyk (trening, szukanie pracy, sen, czytanie) ma przypisane punkty; po przekroczeniu dziennego progu dzień liczy się jako wygrany, z poziomami i licznikiem serii, a waga punktów jest ustawiona pod to, co akurat najważniejsze — obecnie szukanie pracy.",
          tags:["Progressive Web App","Web App Manifest","Service Worker (cache offline)","localStorage","Vanilla JS"],
          demoText:"Otwórz aplikację", demoHref:"https://grzelinj.github.io/comeback-season/",
          repoHref:"https://github.com/grzelinj/comeback-season", repoLabel:"github.com/grzelinj/comeback-season",
          note:"Zainstaluj sam: otwórz link na telefonie i wybierz \"Dodaj do ekranu głównego\" (Safari na iOS, Chrome na Androidzie) — potem działa jak natywna ikonka aplikacji."},
-        {slug:"okx-trading-bot", name:"OKX Trading Bot", visibility:"prywatne · w budowie",
-         img:{src:"assets/projekty/okx-trading-bot.jpg", alt:"Wykres zysku z backtestu bota tradingowego OKX (Freqtrade): cena, skumulowany zysk i obsunięcie kapitału w 2-miesięcznym teście", ratio:"1.56/1", pos:"top"},
-         desc:"Częściowo automatyczny bot tradingowy na kryptowalutach, oparty na Freqtrade — łączy się z OKX, sam pilnuje ryzyka (stop-loss, trailing stop) i docelowo będzie wysyłał powiadomienia na Telegram. Na razie działa wyłącznie w trybie dry-run (symulacja, zero realnych zleceń). Pierwszy backtest na BTC/ETH/SOL, 2 miesiące danych, 27 transakcji: 55,6% skuteczności, +0,41% zwrotu, Sharpe 1,94 — działający proces, ale jeszcze nie strategia, której powierzyłbym prawdziwy kapitał.",
-         tags:["Freqtrade","Python","OKX API","Backtesting","Zarządzanie ryzykiem"],
-         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Projekt w toku — pokazany ze względu na sam proces (dane → backtest → kontrola ryzyka), nie jeszcze wczesne liczby. Wymaga dalszego strojenia strategii i twardych dziennych limitów strat, zanim dotknie go prawdziwy kapitał."},
-        {slug:"oko-forum", name:"Oko Forum — strona gabinetu okulistycznego", visibility:"dla mamy · gabinet okulistyczny",
-         img:{src:"assets/projekty/oko-forum.jpg", alt:"Strona główna gabinetu okulistycznego Oko Forum — sekcja hero z przyciskiem umawiania wizyt", ratio:"1.6/1", pos:"top"},
-         desc:"Strona wizytówkowa dla prawdziwego gabinetu okulistycznego mojej mamy we Wrocławiu (Oko Forum, dr Grzelińska i dr Bugajska) — lekarki, usługi, opinie pacjentek, cennik zabiegów i kontakt z mapą dojazdu. Zaprojektowana pod realny ruch z telefonu i wyszukiwarki: przycisk „Zadzwoń” zawsze widoczny w nagłówku, umawianie wizyt przez link do ZnanyLekarz i pełny cennik bez konieczności dzwonienia.",
-         tags:["HTML/CSS/JS (bez frameworka)","Web design","Formularz kontaktowy (Formspree)","Mapa Google (embed)"],
-         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Statyczna strona, jeszcze nie wdrożona pod żadną domenę — formularz kontaktowy czeka na podpięcie realnego endpointu Formspree, zanim pójdzie live. Zrzut ekranu powyżej to prawdziwy render strony."},
-        {slug:"prasa-inwestycyjna", name:"Codzienna Prasa Inwestycyjna", visibility:"projekt osobisty · działa na GitHub Actions",
-         img:{src:"assets/projekty/inwestycyjna-prasa-diagram.svg", alt:"Diagram przepływu: harmonogram, zbieranie z YouTube/Telegrama, podsumowanie przez Claude Haiku, wysyłka na Telegram", ratio:null, pos:null},
-         desc:"Agent AI, który codziennie o 16:00 czyta wybrane kanały YouTube i Telegram o kryptowalutach i wysyła jedną wiadomość na Telegrama z tym, co faktycznie warte uwagi — zamiast ręcznego przewijania godzin nagrań i dziesiątek wpisów. Pobiera transkrypcje z darmowych napisów (fallback: lokalny Whisper + korekta Claude Haiku), Claude Haiku bez sztywnej listy tematów decyduje, co pokazać (konkretne ruchy inwestycyjne trafiają do digestu zawsze), a SQLite pilnuje, żeby nic nie zdublować ani nie zgubić po nieudanym uruchomieniu.",
-         tags:["Python","Telethon (Telegram API)","YouTube RSS + yt-dlp","Claude API (Haiku)","openai-whisper","SQLite","GitHub Actions"],
-         demoText:null, demoHref:null, repoHref:null, repoLabel:null,
-         note:"Prywatne repo — czyta wybrane kanały z mojego prywatnego konta Telegram, więc bez publicznego kodu ani demo. Pierwszy udany produkcyjny przebieg: 2026‑08‑04."},
-        {slug:"icloud-cleanup", name:"iCloud Cleanup", visibility:"projekt osobisty · działa lokalnie",
-         img:{src:"assets/projekty/icloud-cleanup-diagram.svg", alt:"Diagram przepływu: skanowanie biblioteki, grupowanie serii duplikatów, kwarantanna, raport do ręcznego przeglądu", ratio:null, pos:null},
-         desc:"Narzędzie do bezpiecznego czyszczenia duplikatów zdjęć i wideo z mojej biblioteki iCloud Photos (145,7 GB, ~22 tys. plików) — grupuje serie zdjęć zrobionych w odstępie kilku sekund i wskazuje kandydatów do przejrzenia, zamiast usuwać cokolwiek automatycznie. Po drodze musiałem rozwiązać realny problem inżynierski: Apple łagodnie dławi transfer po dłuższym ciągłym pobieraniu z chmury (tempo spadało z ~23 do ~14 plików/min z rosnącymi błędami) — rozwiązane przez adaptacyjne zejście z 6 do 4 wątków i logowanie postępu na poziomie pojedynczego pliku, po tym jak wcześniejsza wersja \"zamilkła\" na 2h bez żadnego śladu błędu.",
-         tags:["Python","Hashing / wykrywanie duplikatów","Przetwarzanie plików","Logowanie i odporność na błędy"],
-         demoText:"Zobacz przykładowy raport", demoHref:"icloud-cleanup-raport.html",
+        {slug:"padel-court-finder", name:"Padel Court Finder", visibility:"prywatne repo", cat:"web", life:"prywatne",
+         img:{src:"assets/projekty/padel-court-finder.jpg", alt:"Zrzut ekranu Padel Court Finder: lista priorytetowych terminów i mapa klubów w Warszawie", ratio:"1.43/1", pos:"top"},
+         desc:"Aplikacja Next.js, która na dziś wieczór znajduje wolny kort do padla w Warszawie — scrapuje grafiki wszystkich lokalnych klubów, geokoduje i nanosi je na mapę, i pokazuje terminy faktycznie pasujące do mojej preferowanej pory i typu kortu. Adresy geokodowane przez Nominatim i naniesione na mapę Leaflet, korty single'owe i wieczorne godziny szczytu wypływają na górę listy, posortowanej dodatkowo według odległości od domu.",
+         tags:["Next.js","TypeScript","Leaflet","cheerio (scraping)","Nominatim (geokodowanie)"],
+         demoText:null, demoHref:null,
          repoHref:null, repoLabel:null,
-         note:"Brak publicznego demo/repo — działa lokalnie na mojej prawdziwej bibliotece zdjęć. Podlinkowany raport pokazuje prawdziwe dane z uruchomienia (liczby, generyczne nazwy plików nadawane automatycznie przez iPhone) — bez samych zdjęć i bez danych identyfikujących osoby."}
+         note:"Brak publicznego demo — działa na moim prywatnym loginie do kluby.org i jest celowo spowolnione pod jednego, uprzejmego użytkownika, nie pod równoczesny ruch z internetu. Zrzut ekranu powyżej to prawdziwe uruchomienie na żywych danych."},
+        {slug:"asystent-diety", name:"Asystent diety", visibility:"z Kacprem Rogowskim", cat:"ai", life:"prywatne",
+         img:{src:"assets/projekty/asystent-diety.jpg", alt:"Zrzut ekranu Asystent diety", ratio:"3.28/1", pos:"left top"},
+         desc:"Aplikacja Streamlit, która na podstawie profilu i celu generuje spersonalizowaną rekomendację diety i plan posiłków przez Claude API. Wspólny projekt z Kacprem Rogowskim — pełna rekomendacja (makro, produkty, suplementacja) i plan posiłków na cały tydzień, z eksportem do PDF. Produkty można też zeskanować kodem kreskowym — dane z Open Food Facts.",
+         tags:["Streamlit","Python","Claude API","Open Food Facts API"],
+         demoText:"Zobacz demo", demoHref:"https://asystent-diety-gtxth6fei68tug3eknaj8g.streamlit.app",
+         repoHref:"https://github.com/grzelinj/asystent-diety-demo", repoLabel:"github.com/grzelinj/asystent-diety-demo",
+         note:"Demo z przykładowymi danymi (bez realnych zapytań do Claude API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności."},
+        {slug:"flight-tracker", name:"Flight Tracker", visibility:"repo prywatne", cat:"ai", life:"prywatne",
+         img:{src:"assets/projekty/flightwatch.jpg", alt:"Zrzut ekranu Flight Tracker", ratio:"3.28/1", pos:"top"},
+         desc:"System alertów cenowych dla lotów — monitoruje ceny 24/7 i wysyła e‑mail, gdy cena spadnie poniżej progu. Silnik cyklicznie odpytuje API lotnicze, zapisuje historię cen w SQLite i wyzwala powiadomienia po przekroczeniu reguł progowych. Działa lokalnie — nie było wdrażane publicznie (prywatne klucze API).",
+         tags:["Flask","SQLite","Kiwi/Tequila API","Skyscanner (RapidAPI)"],
+         demoText:"Zobacz demo", demoHref:"https://flightwatch-yku0.onrender.com",
+         repoHref:null, repoLabel:null,
+         note:"Demo z przykładowymi danymi (bez realnych zapytań do zewnętrznych API) — pierwsze wejście może potrwać ~30–50s, bo darmowy hosting usypia po bezczynności."}
       ];
-      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"], resultsText:"14 wyników. kliknij wiersz, aby rozwinąć." };
+      const TS_STRINGS = { bootWords:["Wczytywanie","Indeksowanie","Sortowanie","Kompresowanie"] };
+      const TS_CATEGORIES = [
+        {key:"all", label:"Wszystkie", cmd:null},
+        {key:"ai", label:"AI i automatyzacja", cmd:"ai"},
+        {key:"dane", label:"Dane i finanse", cmd:"dane"},
+        {key:"web", label:"Web i appki", cmd:"web"}
+      ];
       const TS_GLYPHS = ['✢','✳','∗','✻','✽','∗'];
+      const TS_SPOTLIGHT_ORDER = ['all','ai','dane','web'];
+      const TS_SPOTLIGHT_INTERVAL = 5000;
       const TS_TOTAL_CHARS = TS_PROJECTS.reduce((s,p)=>s+p.slug.length, 0);
       let tsBootInterval = null;
+      let tsActiveCat = 'all';
+      let tsSpotlightTimer = null;
 
       function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+      function tsStopSpotlight(){
+        clearTimeout(tsSpotlightTimer);
+        document.querySelectorAll('.ts-filter-chip.spotlight').forEach(el=>el.classList.remove('spotlight'));
+        const hint = document.getElementById('ts-spotlight-hint');
+        if(hint) hint.classList.remove('show');
+      }
+
+      function tsRunSpotlightStep(i){
+        if(i >= TS_SPOTLIGHT_ORDER.length){
+          tsApplyFilter('all');
+          tsStopSpotlight();
+          return;
+        }
+        document.querySelectorAll('.ts-filter-chip.spotlight').forEach(el=>el.classList.remove('spotlight'));
+        const key = TS_SPOTLIGHT_ORDER[i];
+        tsApplyFilter(key);
+        const btn = document.querySelector(`.ts-filter-chip[data-cat="${key}"]`);
+        const catDef = TS_CATEGORIES.find(c=>c.key===key);
+        if(btn) btn.classList.add('spotlight');
+        const hint = document.getElementById('ts-spotlight-hint');
+        const label = document.getElementById('ts-spotlight-hint-label');
+        if(hint && label && catDef){
+          label.textContent = catDef.label;
+          hint.classList.add('show');
+        }
+        tsSpotlightTimer = setTimeout(()=>tsRunSpotlightStep(i+1), TS_SPOTLIGHT_INTERVAL);
+      }
+
+      function tsStartSpotlight(fromIndex){
+        if(tsActiveCat !== 'all') return;
+        tsRunSpotlightStep(fromIndex);
+      }
+
+      function tsSpotlightShowAll(){
+        document.querySelectorAll('.ts-filter-chip.spotlight').forEach(el=>el.classList.remove('spotlight'));
+        const btn = document.querySelector('.ts-filter-chip[data-cat="all"]');
+        if(btn) btn.classList.add('spotlight');
+        const hint = document.getElementById('ts-spotlight-hint');
+        const label = document.getElementById('ts-spotlight-hint-label');
+        const catDef = TS_CATEGORIES.find(c=>c.key==='all');
+        if(hint && label && catDef){
+          label.textContent = catDef.label;
+          hint.classList.add('show');
+        }
+      }
+
+      function tsResultsText(n){
+        const mod10 = n % 10, mod100 = n % 100;
+        let word;
+        if(n === 1) word = 'wynik';
+        else if(mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) word = 'wyniki';
+        else word = 'wyników';
+        return `${n} ${word}. kliknij wiersz, aby rozwinąć.`;
+      }
 
       function render(){
         const container = document.getElementById('ts-rows');
         if(!container) return;
         container.innerHTML = TS_PROJECTS.map((p,i)=>`
-          <div class="ts-row" id="ts-row-${i}" onclick="tsToggleRow(${i})">
-            <span class="ts-idx">${String(i+1).padStart(2,'0')}</span>
+          <div class="ts-row" id="ts-row-${i}" data-cat="${p.cat}" onclick="tsToggleRow(${i})">
+            <span class="ts-idx" id="ts-idx-${i}">${String(i+1).padStart(2,'0')}</span>
             <span class="ts-chev" id="ts-chev-${i}"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <span class="ts-name"><span class="ts-typed" id="ts-typed-${i}"></span><span class="ts-cursor-sq" id="ts-cur-${i}"></span></span>
-            <span class="ts-meta" id="ts-meta-${i}">${esc(p.visibility)}</span>
+            <span class="ts-meta" id="ts-meta-${i}"><span class="ts-life" title="${p.life === 'praca' ? 'Związane z pracą zawodową' : 'Projekt prywatny'}">${p.life === 'praca' ? '💼' : '🏠'}</span> ${esc(p.visibility)}</span>
           </div>
           <div class="ts-panel" id="ts-panel-${i}">
             ${p.img ? `<div class="ts-shot"><div class="ts-shot-bar"><span class="ts-shot-dot"></span><span class="ts-shot-dot"></span><span class="ts-shot-dot"></span><span class="ts-shot-name">${esc(p.img.src.split('/').pop())}</span></div><img src="${p.img.src}" alt="${esc(p.img.alt)}" style="${p.img.ratio ? `aspect-ratio:${p.img.ratio};object-fit:cover;object-position:${p.img.pos};` : 'height:auto;'}"></div>` : ''}
@@ -416,6 +519,7 @@
       }
 
       function runBoot(){
+        tsSpotlightShowAll();
         const boot = document.getElementById('ts-boot');
         let tick = 0;
         boot.innerHTML = `<span class="glyph" id="ts-boot-glyph">${TS_GLYPHS[0]}</span><span id="ts-boot-word">${TS_STRINGS.bootWords[0]}…</span>`;
@@ -433,11 +537,12 @@
       function typeRow(i){
         if(i >= TS_PROJECTS.length){
           clearInterval(tsBootInterval);
-          document.getElementById('ts-boot').textContent = TS_STRINGS.resultsText;
+          document.getElementById('ts-boot').textContent = tsResultsText(TS_PROJECTS.length);
           document.getElementById('ts-dots').classList.add('show');
           setProgress(TS_TOTAL_CHARS);
           setTimeout(()=>document.getElementById('ts-success').classList.add('show'), 150);
           sessionStorage.setItem('tsProjectsSeen', '1');
+          tsStartSpotlight(1);
           return;
         }
         const row = document.getElementById('ts-row-'+i);
@@ -447,6 +552,7 @@
         const chev = document.getElementById('ts-chev-'+i);
         if(!row) return;
         row.classList.add('show');
+        row.classList.add('ts-typing-now');
         cur.classList.add('on');
         const text = TS_PROJECTS[i].slug;
         const priorChars = TS_PROJECTS.slice(0, i).reduce((s,p)=>s+p.slug.length, 0);
@@ -457,6 +563,7 @@
           setProgress(priorChars + c);
           if(c >= text.length){
             clearInterval(iv);
+            row.classList.remove('ts-typing-now');
             cur.classList.remove('on');
             meta.classList.add('show');
             chev.classList.add('show');
@@ -466,7 +573,7 @@
       }
 
       function showInstant(){
-        document.getElementById('ts-boot').textContent = TS_STRINGS.resultsText;
+        document.getElementById('ts-boot').textContent = tsResultsText(TS_PROJECTS.length);
         document.getElementById('ts-dots').classList.add('show');
         document.getElementById('ts-progress-wrap').classList.add('show');
         document.getElementById('ts-progress-fill').style.width = '100%';
@@ -485,6 +592,7 @@
           chev.classList.add('show');
           chev.style.animation = 'none';
         });
+        tsStartSpotlight(0);
       }
 
       window.tsToggleRow = function(i){
@@ -496,6 +604,51 @@
           panel.classList.add('open');
           document.getElementById('ts-chev-'+i).classList.add('open');
         }
+      };
+
+      function tsCountFor(cat){
+        if(cat === 'all') return TS_PROJECTS.length;
+        return TS_PROJECTS.filter(p => p.cat === cat).length;
+      }
+
+      function tsApplyFilter(cat){
+        tsActiveCat = cat;
+        document.querySelectorAll('.ts-filter-chip').forEach(btn=>{
+          btn.classList.toggle('active', btn.dataset.cat === cat);
+        });
+        const cmdEl = document.getElementById('ts-cmd');
+        if(cmdEl){
+          const catDef = TS_CATEGORIES.find(c=>c.key===cat);
+          cmdEl.textContent = catDef && catDef.cmd ? `list projects --tag=${catDef.cmd}` : 'list projects';
+        }
+        let visibleIdx = 0;
+        TS_PROJECTS.forEach((p,i)=>{
+          const row = document.getElementById('ts-row-'+i);
+          const panel = document.getElementById('ts-panel-'+i);
+          if(!row) return;
+          const match = cat === 'all' || p.cat === cat;
+          row.style.display = match ? '' : 'none';
+          if(panel) panel.style.display = match ? '' : 'none';
+          if(!match && panel && panel.classList.contains('open')){
+            panel.classList.remove('open');
+            document.getElementById('ts-chev-'+i).classList.remove('open');
+          }
+          if(match){
+            visibleIdx++;
+            const idxEl = document.getElementById('ts-idx-'+i);
+            if(idxEl) idxEl.textContent = String(visibleIdx).padStart(2,'0');
+          }
+        });
+        const boot = document.getElementById('ts-boot');
+        const dots = document.getElementById('ts-dots');
+        if(boot && dots && dots.classList.contains('show')){
+          boot.textContent = tsResultsText(tsCountFor(cat));
+        }
+      }
+
+      window.tsSetCategory = function(cat){
+        tsStopSpotlight();
+        tsApplyFilter(cat);
       };
 
       function initWhenVisible(){
